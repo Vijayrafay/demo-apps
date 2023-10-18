@@ -17,7 +17,7 @@ spec:
       version: latest
     managedNodeGroups:
     - amiFamily: AmazonLinux2
-      desiredCapacity: 1
+      desiredCapacity: 3
       instanceTypes:
       - t3.xlarge
       maxSize: 4
