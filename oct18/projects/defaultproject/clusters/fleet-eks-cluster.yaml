@@ -9,7 +9,7 @@ metadata:
 spec:
   blueprintConfig:
     name: minimal
-    version: Latest
+    version: 2.0.0
   cloudCredentials: simha-aws
   config:
     addons:
