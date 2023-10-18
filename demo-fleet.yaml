@@ -1,0 +1,48 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: FleetPlan
+metadata:
+  name: demo-fleet
+  project: defaultproject
+spec:
+  agents:
+  - name: gitops-agent-2
+  - name: simha-docker
+  - name: gitops-agent-1
+  fleet:
+    kind: clusters
+    labels:
+      surname: simha
+    projects:
+    - name: defaultproject
+  operationWorkflow:
+    operations:
+    - action:
+        description: cp-ng-upgrade
+        name: cp-ng-upgrade
+        nodeGroupsAndControlPlaneUpgradeConfig:
+          version: "1.26"
+        type: nodeGroupsAndControlPlaneUpgrade
+      name: cp-ng-upgrade
+      prehooks:
+      - containerConfig:
+          arguments:
+          - get
+          - nodes
+          - -A
+          image: bitnami/kubectl
+          runner:
+            type: cluster
+        inject:
+        - KUBECONFIG
+        name: prehook
+      - containerConfig:
+          arguments:
+          - get
+          - pods
+          - -A
+          image: bitnami/kubectl
+          runner:
+            type: cluster
+        inject:
+        - KUBECONFIG
+        name: second-prehook
