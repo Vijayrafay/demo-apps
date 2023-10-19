@@ -6,8 +6,4 @@ metadata:
 spec:
   fleet:
     kind: clusters
-    labels:
-      rafay.dev/clusterName: vijaysimha-oct18-eks
-    projects:
-    - name: defaultproject
   operationWorkflow: {}
