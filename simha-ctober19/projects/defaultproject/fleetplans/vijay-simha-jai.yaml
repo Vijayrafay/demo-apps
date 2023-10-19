@@ -4,16 +4,8 @@ metadata:
   name: vijay-simha-jai
   project: defaultproject
 spec:
-  agents:
-  - name: gitops-agent-2
-  - name: simha-docker
-  - name: gitops-agent-1
   fleet:
     kind: clusters
-    labels:
-      surname: simha
-    projects:
-    - name: defaultproject
   operationWorkflow:
     operations:
     - action:
