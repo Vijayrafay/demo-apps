@@ -20,7 +20,7 @@ spec:
         description: cp-ng-upgrade
         name: cp-ng-upgrade
         nodeGroupsAndControlPlaneUpgradeConfig:
-          version: "1.26"
+          version: "1.27"
         type: nodeGroupsAndControlPlaneUpgrade
       name: cp-ng-upgrade
       prehooks:
