@@ -1,7 +1,7 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: FleetPlan
 metadata:
-  name: vijay-fleet
+  name: vijayan-fleet
   project: defaultproject
 spec:
   fleet:
