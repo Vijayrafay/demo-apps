@@ -1,7 +1,7 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: FleetPlan
 metadata:
-  name: third-fleet
+  name: final-fleet
   project: defaultproject
 spec:
   fleet:
@@ -16,7 +16,7 @@ spec:
         description: cp-ng-upgrade
         name: cp-ng-upgrade
         nodeGroupsAndControlPlaneUpgradeConfig:
-          version: "1.26"
+          version: "1.25"
         type: nodeGroupsAndControlPlaneUpgrade
       name: cp-ng-upgrade
       prehooks:
