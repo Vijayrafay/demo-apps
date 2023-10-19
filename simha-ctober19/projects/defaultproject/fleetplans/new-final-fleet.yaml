@@ -1,0 +1,15 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: FleetPlan
+metadata:
+  name: new-final-fleet
+  project: defaultproject
+spec:
+  agents:
+  - name: simha-docker
+  fleet:
+    kind: clusters
+    labels:
+      rafay.dev/clusterName: vijaysimha-oct18-eks
+    projects:
+    - name: defaultproject
+  operationWorkflow: {}
