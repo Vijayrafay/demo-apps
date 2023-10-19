@@ -6,5 +6,7 @@ metadata:
 spec:
   fleet:
     kind: clusters
+    labels:
+      rafay.dev/k8sVersion: "1.26"
     projects:
     - name: defaultproject
