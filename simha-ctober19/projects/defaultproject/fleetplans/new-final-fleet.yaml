@@ -4,8 +4,6 @@ metadata:
   name: new-final-fleet
   project: defaultproject
 spec:
-  agents:
-  - name: simha-docker
   fleet:
     kind: clusters
     labels:
