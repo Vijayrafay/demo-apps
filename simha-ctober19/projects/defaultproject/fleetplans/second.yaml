@@ -21,6 +21,6 @@ spec:
         patchConfig:
         - op: replace
           path: .spec.config.managedNodeGroups[0].desiredCapacity
-          value: 2
+          value: 3
         type: patch
       name: scaling
