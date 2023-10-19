@@ -1,0 +1,9 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: FleetPlan
+metadata:
+  name: new-final-fleet
+  project: defaultproject
+spec:
+  fleet:
+    kind: clusters
+  operationWorkflow: {}
