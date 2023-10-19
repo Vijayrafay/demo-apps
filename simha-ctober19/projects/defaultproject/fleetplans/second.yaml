@@ -4,9 +4,6 @@ metadata:
   name: second
   project: defaultproject
 spec:
-  agents:
-  - name: ranjith-dcoker
-  - name: simha-docker
   fleet:
     kind: clusters
     labels:
