@@ -20,6 +20,6 @@ spec:
         patchConfig:
         - op: replace
           path: .spec.blueprintConfig.name
-          value: default
+          value: minimal
         type: patch
       name: cp-upgrade
