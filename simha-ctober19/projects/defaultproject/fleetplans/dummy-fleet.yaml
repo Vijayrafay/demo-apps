@@ -6,5 +6,3 @@ metadata:
 spec:
   fleet:
     kind: clusters
-    projects:
-    - name: defaultproject
