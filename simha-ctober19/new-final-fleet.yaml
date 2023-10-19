@@ -1,7 +1,7 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: FleetPlan
 metadata:
-  name: final-fleet
+  name: new-final-fleet
   project: defaultproject
 spec:
   agents:
