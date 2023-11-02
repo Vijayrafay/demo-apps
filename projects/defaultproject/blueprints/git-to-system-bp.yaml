@@ -1,7 +1,7 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Blueprint
 metadata:
-  name: new-file-added
+  name: git-to-system-bp
   project: defaultproject
 spec:
   base:
