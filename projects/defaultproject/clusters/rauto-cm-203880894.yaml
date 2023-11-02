@@ -1,0 +1,97 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    rauto: rauto-cm-203880894
+  name: rauto-cm-203880894
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default
+  cloudCredentials: rauto_12879
+  config:
+    addons:
+    - name: aws-ebs-csi-driver
+      version: latest
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    - us-east-1c
+    - us-east-1d
+    - us-east-1f
+    iam:
+      serviceAccounts: []
+      withOIDC: true
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-543470760
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: "1.27"
+      volumeSize: 80
+      volumeType: gp2
+    metadata:
+      name: rauto-cm-203880894
+      region: us-east-1
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: "1.27"
+    network:
+      cni:
+        name: aws-cni
+    nodeGroups:
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 4
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 4
+      minSize: 2
+      name: rauto-ng1-203880894
+      overrideBootstrapCommand: null
+      version: "1.27"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng2-203880894
+      overrideBootstrapCommand: null
+      version: "1.26"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-717445225
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: "1.27"
+      volumeSize: 80
+      volumeType: gp2
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: false
+        publicAccess: true
+      nat:
+        gateway: Single
+  proxyConfig: {}
+  type: aws-eks
