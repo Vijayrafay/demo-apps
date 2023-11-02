@@ -18,4 +18,4 @@ spec:
   driftWebhook:
     enabled: true
   type: custom
-  version: v1
+  version: v2
