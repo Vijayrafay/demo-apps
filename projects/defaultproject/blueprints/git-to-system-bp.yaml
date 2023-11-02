@@ -1,9 +1,0 @@
-apiVersion: infra.k8smgmt.io/v3
-kind: Blueprint
-metadata:
-  name: git-to-system-bp
-  project: defaultproject
-spec:
-  base:
-    name: default
-    version: 2.0.0
