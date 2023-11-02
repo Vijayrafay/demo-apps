@@ -1,16 +1,13 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: cli-eksrauto-windows983338551
+  name: cli-eksrauto-195693881
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: cli-cprauto-983338551
+  cloudCredentials: cli-cprauto-195693881
   config:
-    addons:
-    - name: aws-ebs-csi-driver
-      version: latest
     availabilityZones:
     - us-east-1a
     - us-east-1b
@@ -18,29 +15,25 @@ spec:
     - us-east-1d
     - us-east-1f
     metadata:
-      name: cli-eksrauto-windows983338551
+      name: cli-eksrauto-195693881
       region: us-east-1
       tags:
         email: automation@rafay.co
         env: automation
-      version: "1.27"
-    network:
-      cni:
-        name: aws-cni
+      version: "1.25"
     nodeGroups:
-    - amiFamily: AmazonLinux2
-      desiredCapacity: 1
-      iam:
-        withAddonPolicies:
-          autoScaler: true
-          imageBuilder: true
-      instanceType: t3.large
+    - desiredCapacity: 1
+      instanceType: t3.xlarge
       maxSize: 1
       minSize: 1
-      name: cli-ngrauto-first-983338551
-      version: "1.27"
-      volumeSize: 80
-      volumeType: gp3
+      name: cli-ngrauto-first-195693881
+      version: "1.25"
+    - desiredCapacity: 1
+      instanceType: t3.xlarge
+      maxSize: 1
+      minSize: 1
+      name: cli-ngrauto-second-195693881
+      version: "1.25"
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
@@ -48,5 +41,4 @@ spec:
         publicAccess: false
       nat:
         gateway: Single
-  proxyConfig: {}
   type: aws-eks
