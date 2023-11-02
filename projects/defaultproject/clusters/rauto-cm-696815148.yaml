@@ -44,7 +44,7 @@ spec:
       minSize: 2
       name: rauto-ng2-696815148
       overrideBootstrapCommand: null
-      version: "1.26"
+      version: "1.27"
       volumeSize: 80
       volumeType: gp2
     metadata:
