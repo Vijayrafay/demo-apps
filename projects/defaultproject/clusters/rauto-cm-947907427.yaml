@@ -1,42 +1,24 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-vpccm-452244984
+  name: rauto-cm-947907427
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rauto_80037
+  cloudCredentials: rauto_67032
   config:
-    managedNodeGroups:
-    - ami: ami-05281fd537dda5581
-      desiredCapacity: 2
-      iam:
-        withAddonPolicies:
-          autoScaler: true
-          imageBuilder: true
-      instanceType: t3a.xlarge
-      maxSize: 2
-      minSize: 2
-      name: rauto-ng1-452244984
-      overrideBootstrapCommand: '| [Ubuntu]'
-      volumeSize: 80
-      volumeType: gp2
-    - ami: ami-05281fd537dda5581
-      desiredCapacity: 2
-      iam:
-        withAddonPolicies:
-          autoScaler: true
-          imageBuilder: true
-      instanceType: t3a.xlarge
-      maxSize: 2
-      minSize: 2
-      name: rauto-ng2-452244984
-      overrideBootstrapCommand: '| [Ubuntu]'
-      volumeSize: 80
-      volumeType: gp2
+    addons:
+    - name: aws-ebs-csi-driver
+      version: latest
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    - us-east-1c
+    - us-east-1d
+    - us-east-1f
     metadata:
-      name: rauto-vpccm-452244984
+      name: rauto-cm-947907427
       region: us-east-1
       tags:
         email: automation@rafay.co
@@ -45,22 +27,39 @@ spec:
     network:
       cni:
         name: aws-cni
+    nodeGroups:
+    - ami: ami-05281fd537dda5581
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng1-947907427
+      overrideBootstrapCommand: '| [Ubuntu]'
+      volumeSize: 80
+      volumeType: gp2
+    - ami: ami-05281fd537dda5581
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng2-947907427
+      overrideBootstrapCommand: '| [Ubuntu]'
+      volumeSize: 80
+      volumeType: gp2
     vpc:
+      cidr: 192.168.0.0/16
       clusterEndpoints:
         privateAccess: false
         publicAccess: true
       nat:
         gateway: Single
-      subnets:
-        private:
-          subnet-0205849a93dc1a7c8:
-            id: subnet-0205849a93dc1a7c8
-          subnet-0c1955c9a5c78d0d2:
-            id: subnet-0c1955c9a5c78d0d2
-        public:
-          subnet-07de918da939fb783:
-            id: subnet-07de918da939fb783
-          subnet-0d6857db67a6722ef:
-            id: subnet-0d6857db67a6722ef
   proxyConfig: {}
   type: aws-eks
