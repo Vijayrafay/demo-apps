@@ -71,7 +71,7 @@ spec:
       minSize: 2
       name: rauto-ng2-203880894
       overrideBootstrapCommand: null
-      version: "1.26"
+      version: "1.27"
       volumeSize: 80
       volumeType: gp2
     - amiFamily: AmazonLinux2
