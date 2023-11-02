@@ -24,10 +24,10 @@ spec:
       withOIDC: true
     managedNodeGroups:
     - amiFamily: AmazonLinux2
-      desiredCapacity: 1
+      desiredCapacity: 0
       instanceType: t3a.xlarge
       maxSize: 1
-      minSize: 1
+      minSize: 0
       name: rauto-ng-543470760
       tags:
         email: automation@rafay.co
