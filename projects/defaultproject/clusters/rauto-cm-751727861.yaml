@@ -6,9 +6,12 @@ metadata:
 spec:
   blueprintConfig:
     name: rauto-blueprint-2954032
-    version: v1
+    version: v2
   cloudCredentials: rauto_14920
   config:
+    addons:
+    - name: aws-ebs-csi-driver
+      version: latest
     availabilityZones:
     - us-east-1a
     - us-east-1b
