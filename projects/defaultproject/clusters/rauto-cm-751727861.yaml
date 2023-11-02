@@ -74,6 +74,18 @@ spec:
       overrideBootstrapCommand: null
       volumeSize: 80
       volumeType: gp2
+    - ami: ami-0b3aab406659a526d
+      desiredCapacity: 1
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng2-win-638972083
+      overrideBootstrapCommand: '| [Windows]'
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
