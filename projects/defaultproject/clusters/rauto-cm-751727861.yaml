@@ -18,6 +18,12 @@ spec:
     - us-east-1c
     - us-east-1d
     - us-east-1f
+    identityMappings:
+      arns:
+      - arn: arn:aws:iam::679196758854:user/automation-qa
+        group:
+        - system:masters
+        username: automation
     metadata:
       name: rauto-cm-751727861
       region: us-east-1
