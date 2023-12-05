@@ -4,6 +4,10 @@ metadata:
   name: simha-pipeline
   project: defaultproject
 spec:
+  sharing:
+    enabled: true
+    projects:
+    - name: pavi
   stages:
   - config:
       destinationRepo: {}

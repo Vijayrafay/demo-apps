@@ -1,0 +1,8 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: default-stable-helm
+  project: pavi
+spec:
+  endpoint: https://charts.helm.sh/stable
+  type: Helm
