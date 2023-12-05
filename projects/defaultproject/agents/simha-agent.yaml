@@ -1,0 +1,11 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: simha-agent
+  project: defaultproject
+spec:
+  active: true
+  cluster:
+    name: automation-cluster-boot-eks-9009
+  type: Cluster
+  version: r1.27.0

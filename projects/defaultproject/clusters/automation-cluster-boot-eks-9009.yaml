@@ -3,23 +3,23 @@ kind: Cluster
 metadata:
   labels:
     rauto: label
-  name: automation-cluster-boot-eks-8056
+  name: automation-cluster-boot-eks-9009
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rauto_91113
+  cloudCredentials: rauto_81318
   config:
     addons:
     - name: aws-ebs-csi-driver
       version: latest
     metadata:
-      name: automation-cluster-boot-eks-8056
+      name: automation-cluster-boot-eks-9009
       region: us-east-1
       tags:
         email: automation@rafay.co
         env: automation
-      version: "1.26"
+      version: "1.25"
     network:
       cni:
         name: aws-cni
@@ -33,8 +33,8 @@ spec:
       instanceType: t3a.xlarge
       maxSize: 2
       minSize: 2
-      name: automation-ng-8056
-      version: "1.26"
+      name: automation-ng-9009
+      version: "1.25"
       volumeSize: 80
       volumeType: gp2
     vpc:
@@ -55,4 +55,9 @@ spec:
           subnet-0d6857db67a6722ef:
             id: subnet-0d6857db67a6722ef
   proxyConfig: {}
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-infra-test-project
+    - name: rauto-sharing-test-project
   type: aws-eks
