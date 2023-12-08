@@ -1,11 +1,11 @@
 apiVersion: gitops.k8smgmt.io/v3
 kind: Agent
 metadata:
-  name: simha-agent
+  name: simha-gitops
   project: defaultproject
 spec:
   active: true
   cluster:
-    name: automation-cluster-boot-eks-9009
+    name: simha-bottlerocket-eks
   type: Cluster
   version: r1.27.0

@@ -3,18 +3,18 @@ kind: Cluster
 metadata:
   labels:
     rauto: label
-  name: automation-cluster-boot-eks-9009
+  name: automation-cluster-boot-eks-6300
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rauto_81318
+  cloudCredentials: rauto_42133
   config:
     addons:
     - name: aws-ebs-csi-driver
       version: latest
     metadata:
-      name: automation-cluster-boot-eks-9009
+      name: automation-cluster-boot-eks-6300
       region: us-east-1
       tags:
         email: automation@rafay.co
@@ -33,7 +33,7 @@ spec:
       instanceType: t3a.xlarge
       maxSize: 2
       minSize: 2
-      name: automation-ng-9009
+      name: automation-ng-6300
       version: "1.25"
       volumeSize: 80
       volumeType: gp2

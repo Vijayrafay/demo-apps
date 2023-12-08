@@ -1,8 +1,0 @@
-apiVersion: infra.k8smgmt.io/v3
-kind: Namespace
-metadata:
-  name: rauto-bootstrap-ns-558
-  project: pavi
-spec:
-  limitRange: {}
-  resourceQuotas: {}

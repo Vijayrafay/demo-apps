@@ -1,44 +1,43 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: pavi-cbp-cl1
-  project: pavi
+  name: simha-bottlerocket-eks
+  project: defaultproject
 spec:
   blueprintConfig:
     name: default
     version: 1.27.0
-  cloudCredentials: pavi
+  cloudCredentials: simha-role
   config:
     addons:
     - name: aws-ebs-csi-driver
       version: latest
-    managedNodeGroups:
-    - amiFamily: Bottlerocket
-      desiredCapacity: 1
-      iam:
-        withAddonPolicies:
-          autoScaler: true
-      instanceTypes:
-      - t3.xlarge
-      maxSize: 2
-      minSize: 1
-      name: pavi-cbp-cl1
-      ssh:
-        allow: true
-        publicKeyName: pavi-ssh
-      version: "1.25"
-      volumeSize: 80
-      volumeType: gp3
     metadata:
-      name: pavi-cbp-cl1
+      name: simha-bottlerocket-eks
       region: us-west-2
       tags:
-        email: pavithran@rafay.co
-        env: dev
+        email: vijay@rafay.co
+        env: qa
       version: "1.25"
     network:
       cni:
-        name: Calico-v3.24.5
+        name: aws-cni
+    nodeGroups:
+    - ami: auto-ssm
+      amiFamily: Bottlerocket
+      desiredCapacity: 1
+      instancesDistribution:
+        instanceTypes:
+        - t3.xlarge
+      maxSize: 2
+      minSize: 1
+      name: simha-bottlerocket-eks-ng
+      ssh:
+        allow: true
+        publicKeyName: aws-abi-key
+      version: "1.25"
+      volumeSize: 80
+      volumeType: gp3
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
