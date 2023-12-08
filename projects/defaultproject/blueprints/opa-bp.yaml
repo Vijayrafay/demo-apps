@@ -1,0 +1,23 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: opa-bp
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 1.27.0
+  defaultAddons:
+    enableIngress: true
+    enableMonitoring: true
+  opaPolicy:
+    opaPolicy:
+    - name: policy-restricted
+      version: version-1702047396
+    - name: policy-privileged
+      version: version-1702047396
+    profile:
+      name: default
+      version: latest
+  type: custom
+  version: v1

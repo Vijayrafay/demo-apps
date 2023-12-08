@@ -6,7 +6,6 @@ metadata:
 spec:
   blueprintConfig:
     name: default
-    version: 1.27.0
   cloudCredentials: simha-role
   config:
     addons:
