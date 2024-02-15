@@ -1,7 +1,7 @@
 apiVersion: gitops.k8smgmt.io/v3
 kind: Agent
 metadata:
-  name: simha-fix
+  name: simha-test-fix
   project: defaultproject
 spec:
   active: true
