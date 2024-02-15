@@ -1,0 +1,19 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: simha
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      catalog: default-bitnami
+      chartName: nginx
+      chartVersion: 15.10.3
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: vijayns
+  placement:
+    selector: rafay.dev/clusterName=upgrade-testing-simha
+  version: simha-v2-202402141253000000

@@ -1,0 +1,23 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: FleetPlan
+metadata:
+  name: ng-scaling
+  project: defaultproject
+spec:
+  fleet:
+    kind: clusters
+    labels:
+      rafay.dev/clusterName: feb12-simha-eks
+    projects:
+    - name: defaultproject
+  operationWorkflow:
+    operations:
+    - action:
+        description: ng-scaling
+        name: ng-scaling
+        patchConfig:
+        - op: replace
+          path: .spec.config.nodeGroups[0].desiredCapacity
+          value: 2
+        type: patch
+      name: ng-scaling

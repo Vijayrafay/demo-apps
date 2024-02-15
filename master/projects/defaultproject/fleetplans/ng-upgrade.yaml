@@ -1,0 +1,23 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: FleetPlan
+metadata:
+  name: ng-upgrade
+  project: defaultproject
+spec:
+  fleet:
+    kind: clusters
+    labels:
+      rafay.dev/clusterName: fleet-test-simha-eks
+    projects:
+    - name: defaultproject
+  operationWorkflow:
+    operations:
+    - action:
+        description: ng-upgrade
+        name: ng-upgrade
+        nodeGroupsUpgradeConfig:
+          names:
+          - fleet-test-simha-eks-ng
+          version: "1.26"
+        type: nodeGroupsUpgrade
+      name: ng-upgrade

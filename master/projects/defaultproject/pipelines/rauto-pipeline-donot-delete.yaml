@@ -1,0 +1,11 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Pipeline
+metadata:
+  name: rauto-pipeline-donot-delete
+  project: defaultproject
+spec:
+  stages:
+  - config:
+      workload: workloadrauto-502745
+    name: stage1
+    type: DeployWorkload

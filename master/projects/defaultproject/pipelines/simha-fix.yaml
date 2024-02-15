@@ -1,0 +1,30 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Pipeline
+metadata:
+  name: simha-fix
+  project: defaultproject
+spec:
+  active: true
+  stages:
+  - config:
+      destinationRepo: {}
+      gitToSystemSync: true
+      includedResources:
+      - name: '*'
+      sourceAsDestination: true
+      sourceRepo:
+        path:
+          name: master
+        repository: simha-git-fix
+        revision: master
+      systemToGitSync: true
+    name: simha
+    type: SystemSync
+  triggers:
+  - config:
+      repo:
+        provider: Github
+        repository: simha-git-fix
+        revision: master
+    name: simha-trigger
+    type: Webhook

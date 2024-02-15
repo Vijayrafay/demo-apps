@@ -1,0 +1,11 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: simha-fix
+  project: defaultproject
+spec:
+  active: true
+  cluster:
+    name: simha-fix-verify-eks
+  type: Cluster
+  version: r2.3.0

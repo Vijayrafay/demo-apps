@@ -1,0 +1,12 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: ns-983090923
+  project: defaultproject
+spec:
+  limitRange: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: eks-cbp-983090923
+  resourceQuotas: {}

@@ -1,0 +1,54 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: Driver
+metadata:
+  description: des
+  name: sp-tf1
+  project: defaultproject
+spec:
+  config:
+    container:
+      arguments:
+      - refresh=false
+      cpuLimitMilli: "102"
+      envVars:
+        DEBU1G: sealed://driverconfig.container.envs.DEBU1G
+        DEBUG: sealed://driverconfig.container.envs.DEBUG
+        TF_VAR_rafay_config_file: sealed://driverconfig.container.envs.TF_VAR_rafay_config_file
+      files:
+        config.json: c2VhbGVkOi8vZHJpdmVyY29uZmlnLmNvbnRhaW5lci5maWxlcy5jb25maWcuanNvbg==
+      image: gumpumadhu/terraform-driver:madhu-driver-tf-1-5-5
+      imagePullCredentials:
+        password: sealed://registry_credentials
+        registry: https://index.docker.io/v1/
+        username: gumpumadhu
+      kubeConfigOptions:
+        kubeConfig: sealed://cluster_kubeconfig
+        outOfCluster: true
+      kubeOptions:
+        labels:
+          lab1: lab2
+          lab3: lab4
+        namespace: sp
+        nodeSelector:
+          first39: ""
+        securityContext:
+          privileged: false
+          readOnlyRootFileSystem: false
+        serviceAccountName: sp
+      memoryLimitMb: "103"
+      volumes:
+      - mountPath: testsp1/mount
+        pvcSizeGB: "2"
+        pvcStorageClass: gp2
+        usePVC: true
+      - mountPath: testsp2/mount
+    timeoutSeconds: 3600
+    type: container
+  secret:
+    name: file://artifacts/sp-tf1/sealed-secret.yaml
+  sharing:
+    enabled: true
+    projects:
+    - id: lk5dwme
+      name: sp-proj1
+status: {}

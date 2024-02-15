@@ -1,0 +1,13 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: sp-agent
+  project: defaultproject
+spec:
+  active: true
+  sharing:
+    enabled: true
+    projects:
+    - name: '*'
+  type: Docker
+  version: r2.3.0
