@@ -9,6 +9,9 @@ spec:
     version: latest
   cloudCredentials: simha-aws
   config:
+    addons:
+    - name: aws-ebs-csi-driver
+      version: latest
     fargateProfiles:
     - name: simha-qa
       selectors:
