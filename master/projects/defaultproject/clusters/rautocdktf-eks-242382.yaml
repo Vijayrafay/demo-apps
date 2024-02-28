@@ -8,6 +8,9 @@ spec:
     name: default
   cloudCredentials: rautocdktf-cloudp-242382
   config:
+    addons:
+    - name: aws-ebs-csi-driver
+      version: latest
     availabilityZones:
     - us-east-1a
     - us-east-1b
@@ -23,18 +26,12 @@ spec:
       efaEnabled: false
       enableDetailedMonitoring: false
       instanceType: t3a.xlarge
-      labels:
-        key: rauto
       maxPodsPerNode: 0
       maxSize: 2
       minSize: 1
       name: rauto-ngmanaged0
       privateNetworking: false
       spot: false
-      taints:
-      - effect: NoSchedule
-        key: nodetaint
-        value: rauto
       version: "1.26"
       volumeEncrypted: false
       volumeIOPS: 3000
@@ -79,15 +76,4 @@ spec:
         publicAccess: false
       nat:
         gateway: Single
-  systemComponentsPlacement:
-    daemonSetOverride:
-      tolerations:
-      - operator: Exists
-    nodeSelector:
-      key: rauto
-    tolerations:
-    - effect: NoSchedule
-      key: nodetaint
-      operator: Equal
-      value: rauto
   type: aws-eks
