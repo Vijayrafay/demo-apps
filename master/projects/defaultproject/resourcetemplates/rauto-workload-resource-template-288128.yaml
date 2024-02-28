@@ -1,0 +1,28 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ResourceTemplate
+metadata:
+  createdBy:
+    id: 7w2lnkp
+    username: onprem@rafay.co
+  modifiedBy: {}
+  name: rauto-workload-resource-template-288128
+  project: defaultproject
+spec:
+  agents:
+  - name: dockeronprem
+  contexts:
+  - name: rauto-rafay-creds-config-context-288128
+  - name: rauto-workload-config-config-context-288128
+  hooks: {}
+  provider: terraform
+  providerOptions:
+    terraform:
+      backendType: system
+      lock: true
+      version: 1.4.4
+  repositoryOptions:
+    branch: master
+    directoryPath: workloads/eaas/terraform/rafay-workload
+    name: rauto-repo-288128
+  version: version1-288128
+  versionState: active

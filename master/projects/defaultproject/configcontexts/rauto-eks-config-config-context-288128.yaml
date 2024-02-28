@@ -1,0 +1,55 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: rauto-eks-config-config-context-288128
+  project: defaultproject
+spec:
+  secret:
+    name: file://artifacts/rauto-eks-config-config-context-288128/sealed-secret.yaml
+  variables:
+  - name: eks_cluster_name
+    options: {}
+    value: rauto-eks-288128
+    valueType: text
+  - name: aws_cloud_provider_name
+    options: {}
+    value: rauto-aws-cloud-provider-name-288128
+    valueType: text
+  - name: email_tag
+    options: {}
+    value: automation@rafay.co
+    valueType: text
+  - name: eks_cluster_project
+    options: {}
+    value: defaultproject
+    valueType: text
+  - name: aws_cloud_provider_access_key
+    options:
+      description: aws_access_key
+      override:
+        type: allowed
+      required: true
+      sensitive: true
+    value: sealed://variables.4
+    valueType: text
+  - name: aws_cloud_provider_secret_key
+    options:
+      description: aws_secret
+      override:
+        type: allowed
+      sensitive: true
+    value: sealed://variables.5
+    valueType: text
+  - name: eks_cluster_region
+    options: {}
+    value: us-east-1
+    valueType: text
+  - name: eks_cluster_az
+    options: {}
+    value: '["us-east-1a", "us-east-1b"]'
+    valueType: json
+  - name: eks_cluster_node_group_az
+    options: {}
+    value: '["us-east-1a"]'
+    valueType: json
+status: {}

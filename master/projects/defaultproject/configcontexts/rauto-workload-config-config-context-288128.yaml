@@ -1,0 +1,43 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: rauto-workload-config-config-context-288128
+  project: defaultproject
+spec:
+  envs:
+  - key: TF_VAR_postgres_host
+    value: $(resource."rauto-rds-resource-template-288128".output.rds_hostname.value)$
+  - key: TF_VAR_postgres_username
+    value: $(resource."rauto-rds-resource-template-288128".output.rds_username.value)$
+  - key: TF_VAR_postgres_password
+    value: $(resource."rauto-rds-resource-template-288128".output.rds_password.value)$
+  - key: TF_VAR_redis_config_endpoint
+    value: $(resource."rauto-ec-resource-template-288128".output.configuration_endpoint_address.value)$
+  - key: TF_VAR_postgres_port
+    value: $("\(resource."rauto-rds-resource-template-288128".output.rds_port.value)")$
+  variables:
+  - name: workload_name
+    options: {}
+    value: rauto-workload-name-288128
+    valueType: text
+  - name: workload_namespace
+    options: {}
+    value: rauto-workload-namespace-288128
+    valueType: text
+  - name: workload_project
+    options: {}
+    value: defaultproject
+    valueType: text
+  - name: cluster_name
+    options: {}
+    value: rauto-eks-288128
+    valueType: text
+  - name: workload_env
+    options: {}
+    value: rauto-workload-name-288128
+    valueType: text
+  - name: workload_project
+    options: {}
+    value: defaultproject
+    valueType: text
+status: {}

@@ -1,0 +1,15 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: 2-sync
+  project: defaultproject
+spec:
+  agents:
+  - name: simha-fix-agent
+  credentials:
+    password: sealed://credentials.password
+    username: vijay@rafay.co
+  endpoint: https://github.com/Vijayrafay/demo-apps.git
+  secret:
+    name: file://artifacts/2-sync/sealed-secret.yaml
+  type: Git

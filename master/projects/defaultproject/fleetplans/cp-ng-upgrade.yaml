@@ -1,0 +1,47 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: FleetPlan
+metadata:
+  name: cp-ng-upgrade
+  project: defaultproject
+spec:
+  agents:
+  - name: dockeronprem
+  fleet:
+    kind: clusters
+    labels:
+      name: simha
+    projects:
+    - name: defaultproject
+  operationWorkflow:
+    operations:
+    - action:
+        description: cp-ng-upgrade
+        name: cp-ng-upgrade
+        nodeGroupsAndControlPlaneUpgradeConfig:
+          version: "1.27"
+        type: nodeGroupsAndControlPlaneUpgrade
+      name: cp-ng-upgrade
+      posthooks:
+      - containerConfig:
+          arguments:
+          - get
+          - pods
+          - -A
+          image: bitnami/kubectl
+          runner:
+            type: cluster
+        inject:
+        - KUBECONFIG
+        name: posthook-cp-ng-upgrade
+      prehooks:
+      - containerConfig:
+          arguments:
+          - get
+          - pods
+          - -A
+          image: bitnami/kubectl
+          runner:
+            type: cluster
+        inject:
+        - KUBECONFIG
+        name: cp-ng-upgrade-prehook

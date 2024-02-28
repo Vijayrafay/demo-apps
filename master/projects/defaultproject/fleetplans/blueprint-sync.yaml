@@ -1,0 +1,54 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: FleetPlan
+metadata:
+  name: blueprint-sync
+  project: defaultproject
+spec:
+  agents:
+  - name: dockeronprem
+  fleet:
+    kind: clusters
+    labels:
+      name: simha
+    projects:
+    - name: defaultproject
+  operationWorkflow:
+    operations:
+    - action:
+        description: bp-sync
+        name: bp-sync
+        patchConfig:
+        - op: replace
+          path: .spec.blueprintConfig.name
+          value: simha-bp
+        - op: replace
+          path: .spec.blueprintConfig.version
+          value: v1
+        type: patch
+      name: bp-sync
+      posthooks:
+      - containerConfig:
+          arguments:
+          - get
+          - pods
+          - -A
+          image: bitnami/kubectl
+          runner:
+            type: cluster
+        description: posthook-bp-sync
+        inject:
+        - KUBECONFIG
+        name: posthook-bp-sync
+      prehooks:
+      - containerConfig:
+          arguments:
+          - get
+          - pods
+          - -A
+          image: bitnami/kubectl
+          runner:
+            type: cluster
+        description: prehook-bp-sync
+        inject:
+        - KUBECONFIG
+        name: prehook-bp-sync

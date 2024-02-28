@@ -1,0 +1,21 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Pipeline
+metadata:
+  name: fix-pipeline
+  project: defaultproject
+spec:
+  stages:
+  - config:
+      destinationRepo: {}
+      gitToSystemSync: true
+      includedResources:
+      - name: '*'
+      sourceAsDestination: true
+      sourceRepo:
+        path:
+          name: master
+        repository: 2-sync
+        revision: master
+      systemToGitSync: true
+    name: fix-pipe
+    type: SystemSync

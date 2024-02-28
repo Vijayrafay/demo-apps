@@ -1,0 +1,10 @@
+apiVersion: security.k8smgmt.io/v3
+kind: ClusterNetworkPolicy
+metadata:
+  name: rauto-network-policy-639672351
+  project: defaultproject
+spec:
+  rules:
+  - name: rauto-network-rule-639672351
+    version: v1.1
+  version: v1.1
