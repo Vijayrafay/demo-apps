@@ -7,5 +7,9 @@ spec:
   active: true
   cluster:
     name: ranjith-cluster-2-feb26
+  sharing:
+    enabled: true
+    projects:
+    - name: '*'
   type: Cluster
   version: r2.3.0
