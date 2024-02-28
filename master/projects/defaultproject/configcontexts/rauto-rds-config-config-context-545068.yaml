@@ -1,0 +1,39 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: rauto-rds-config-config-context-545068
+  project: defaultproject
+spec:
+  secret:
+    name: file://artifacts/rauto-rds-config-config-context-545068/sealed-secret.yaml
+  variables:
+  - name: vpc_name
+    options: {}
+    value: qa-rauto-eks-stack-donotdelete-VPC
+    valueType: text
+  - name: email
+    options: {}
+    value: automation@rafay.co
+    valueType: text
+  - name: name
+    options: {}
+    value: rauto-rds-name-545068
+    valueType: text
+  - name: db_username
+    options: {}
+    value: postgres
+    valueType: text
+  - name: db_password
+    options:
+      description: db_password
+      override:
+        type: allowed
+      required: true
+      sensitive: true
+    value: sealed://variables.4
+    valueType: text
+  - name: region
+    options: {}
+    value: us-east-1
+    valueType: text
+status: {}
