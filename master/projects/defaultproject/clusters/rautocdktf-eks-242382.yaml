@@ -1,0 +1,93 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rautocdktf-eks-242382
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default
+  cloudCredentials: rautocdktf-cloudp-242382
+  config:
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    - us-east-1c
+    - us-east-1d
+    - us-east-1f
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3a.xlarge
+      labels:
+        key: rauto
+      maxPodsPerNode: 0
+      maxSize: 2
+      minSize: 1
+      name: rauto-ngmanaged0
+      privateNetworking: false
+      spot: false
+      taints:
+      - effect: NoSchedule
+        key: nodetaint
+        value: rauto
+      version: "1.26"
+      volumeEncrypted: false
+      volumeIOPS: 3000
+      volumeSize: 80
+      volumeThroughput: 125
+      volumeType: gp3
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3a.xlarge
+      maxPodsPerNode: 0
+      maxSize: 2
+      minSize: 1
+      name: rauto-ngmanaged01
+      privateNetworking: false
+      spot: false
+      version: "1.26"
+      volumeEncrypted: false
+      volumeIOPS: 3000
+      volumeSize: 80
+      volumeThroughput: 125
+      volumeType: gp3
+    metadata:
+      name: rautocdktf-eks-242382
+      region: us-east-1
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: "1.26"
+    network:
+      cni:
+        name: aws-cni
+    vpc:
+      autoAllocateIPv6: false
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+  systemComponentsPlacement:
+    daemonSetOverride:
+      tolerations:
+      - operator: Exists
+    nodeSelector:
+      key: rauto
+    tolerations:
+    - effect: NoSchedule
+      key: nodetaint
+      operator: Equal
+      value: rauto
+  type: aws-eks
