@@ -12,4 +12,3 @@ spec:
   namespace: ns-755696086
   placement:
     selector: rafay.dev/clusterName=rauto-eks-755696086
-  version: workloadrauto-755696086-v1-202402281216330000
