@@ -1,0 +1,15 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: ranjith1
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 2.2.0
+  defaultAddons:
+    enableMonitoring: true
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v1

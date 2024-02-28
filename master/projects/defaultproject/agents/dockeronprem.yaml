@@ -1,0 +1,14 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: dockeronprem
+  project: defaultproject
+spec:
+  cluster:
+    name: ranjith-cluster-2-feb26
+  sharing:
+    enabled: true
+    projects:
+    - name: '*'
+  type: Cluster
+  version: r2.3.0

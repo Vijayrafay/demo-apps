@@ -1,0 +1,14 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: rauto-addon-yaml-open-188443376
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/rauto-addon-yaml-open-188443376/rauto-addon-yaml-open-188443376.yaml
+    type: Yaml
+  namespace: default-fm
+  sharing: {}
+  version: v1

@@ -1,0 +1,17 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: republish-helm3-workload-multiserv-dnd
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/republish-helm3-workload-multiserv-dnd/hpa-chart-0.1.0.tgz
+      valuesPaths:
+      - name: file://artifacts/republish-helm3-workload-multiserv-dnd/helmworkload2005.yaml
+    type: Helm
+  namespace: rauto-bootstrap-ns-985
+  placement:
+    selector: rafay.dev/clusterName in (automation-cluster-boot-onprem-4501,automation-cluster-boot-eks-2202)
+  version: republish-helm3-workload-multiserv-dnd-v7-202402270800370000

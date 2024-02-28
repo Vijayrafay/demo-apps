@@ -1,0 +1,10 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: Environment
+metadata:
+  name: simha-env
+  project: defaultproject
+spec:
+  template:
+    name: simha-env-temp
+    version: simha-env-temp
+    versionState: draft

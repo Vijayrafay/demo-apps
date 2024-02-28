@@ -1,0 +1,15 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: workloadrauto-10873379
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/workloadrauto-10873379/workloadrauto-10873379.yaml
+    type: Yaml
+  namespace: namespace-575745879
+  placement:
+    selector: rauto=label,edit=edit_575745879
+  version: workloadrauto-10873379-v1-202402262100080000

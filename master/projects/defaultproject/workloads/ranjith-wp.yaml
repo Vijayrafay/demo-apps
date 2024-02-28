@@ -1,0 +1,18 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: ranjith-wp
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      catalog: default-bitnami
+      chartName: wordpress
+      chartVersion: 19.4.1
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: second
+  placement:
+    selector: rafay.dev/clusterName=ranjith-cluster-2-feb26
