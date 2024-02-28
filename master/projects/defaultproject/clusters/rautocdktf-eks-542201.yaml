@@ -1,24 +1,32 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rautocdktf-eks-373936
+  name: rautocdktf-eks-542201
   project: defaultproject
 spec:
   blueprintConfig:
-    name: default
-  cloudCredentials: rautocdktf-cloudp-373936
+    name: rautocdktf-blueprint-542201
+    version: v1.0
+  cloudCredentials: rautocdktf-cloudp-542201
   config:
-    addons:
-    - name: aws-ebs-csi-driver
-      version: latest
     availabilityZones:
     - us-east-1a
     - us-east-1b
     - us-east-1c
     - us-east-1d
     - us-east-1f
-    managedNodeGroups:
-    - amiFamily: Ubuntu2004
+    metadata:
+      name: rautocdktf-eks-542201
+      region: us-east-1
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: "1.27"
+    network:
+      cni:
+        name: aws-cni
+    nodeGroups:
+    - amiFamily: Bottlerocket
       desiredCapacity: 1
       disableIMDSv1: false
       disablePodIMDS: false
@@ -26,48 +34,34 @@ spec:
       efaEnabled: false
       enableDetailedMonitoring: false
       instanceType: t3a.xlarge
-      maxPodsPerNode: 0
       maxSize: 2
       minSize: 1
-      name: rauto-ngmanaged0
+      name: rauto-ng0
       privateNetworking: false
-      spot: false
-      version: "1.28"
-      volumeEncrypted: false
-      volumeIOPS: 3000
-      volumeSize: 80
-      volumeThroughput: 125
-      volumeType: gp3
-    - amiFamily: Ubuntu2004
-      desiredCapacity: 1
-      disableIMDSv1: false
-      disablePodIMDS: false
-      ebsOptimized: false
-      efaEnabled: false
-      enableDetailedMonitoring: false
-      instanceType: t3a.xlarge
-      maxPodsPerNode: 0
-      maxSize: 2
-      minSize: 1
-      name: rauto-ngmanaged01
-      privateNetworking: false
-      spot: false
       version: "1.27"
       volumeEncrypted: false
       volumeIOPS: 3000
       volumeSize: 80
       volumeThroughput: 125
       volumeType: gp3
-    metadata:
-      name: rautocdktf-eks-373936
-      region: us-east-1
-      tags:
-        email: automation@rafay.co
-        env: automation
-      version: "1.28"
-    network:
-      cni:
-        name: aws-cni
+    - amiFamily: Bottlerocket
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 1
+      name: rauto-ng01
+      privateNetworking: false
+      version: "1.27"
+      volumeEncrypted: false
+      volumeIOPS: 3000
+      volumeSize: 80
+      volumeThroughput: 125
+      volumeType: gp3
     vpc:
       autoAllocateIPv6: false
       cidr: 192.168.0.0/16

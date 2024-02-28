@@ -40,7 +40,7 @@ spec:
       minSize: 1
       name: rauto-ng0
       privateNetworking: false
-      version: "1.27"
+      version: "1.28"
       volumeEncrypted: false
       volumeIOPS: 3000
       volumeSize: 80
