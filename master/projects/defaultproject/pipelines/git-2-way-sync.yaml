@@ -4,7 +4,6 @@ metadata:
   name: git-2-way-sync
   project: defaultproject
 spec:
-  active: true
   stages:
   - config:
       destinationRepo: {}
