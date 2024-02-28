@@ -1,0 +1,18 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: rauto-rafay-creds-config-context-150672
+  project: defaultproject
+spec:
+  files:
+  - data: c2VhbGVkOi8vZmlsZXMuMA==
+    name: opt/rafay/rctl.conf
+    sensitive: true
+  secret:
+    name: file://artifacts/rauto-rafay-creds-config-context-150672/sealed-secret.yaml
+  variables:
+  - name: rafay_config_file
+    options: {}
+    value: opt/rafay/rctl.conf
+    valueType: text
+status: {}

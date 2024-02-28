@@ -1,0 +1,31 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: Environment
+metadata:
+  name: rauto-environment-eks-ec-rds-name-150672
+  project: defaultproject
+spec:
+  secret:
+    name: file://artifacts/rauto-environment-eks-ec-rds-name-150672/sealed-secret.yaml
+  template:
+    name: rauto-environment-eks-ec-rds-template-name-150672
+    version: version1-150672
+    versionState: active
+  variables:
+  - name: db_password
+    options:
+      description: db_password
+      override:
+        type: allowed
+      required: true
+      sensitive: true
+    value: sealed://variables.0
+    valueType: text
+  - name: aws_cloud_provider_access_key
+    options:
+      description: aws_access_key
+      override:
+        type: allowed
+      required: true
+      sensitive: true
+    value: sealed://variables.1
+    valueType: text
