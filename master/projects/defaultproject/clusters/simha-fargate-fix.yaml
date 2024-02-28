@@ -5,8 +5,7 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: default
-    version: latest
+    name: minimal
   cloudCredentials: simha-aws
   config:
     addons:
