@@ -23,6 +23,7 @@ spec:
       serviceAccounts:
       - attachPolicyARNs:
         - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
         metadata:
           annotations:
             irsa: rauto-191403400
@@ -31,6 +32,7 @@ spec:
           name: rauto-irsa-473687
           namespace: namespace-191403400
         tags:
+          awstag: rauto-irsa-191403400
           irsatag: rauto-191403400
       withOIDC: true
     metadata:
