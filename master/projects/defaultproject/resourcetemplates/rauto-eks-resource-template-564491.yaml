@@ -1,0 +1,28 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ResourceTemplate
+metadata:
+  createdBy:
+    id: 7w2lnkp
+    username: onprem@rafay.co
+  modifiedBy: {}
+  name: rauto-eks-resource-template-564491
+  project: defaultproject
+spec:
+  agents:
+  - name: dockeronprem
+  contexts:
+  - name: rauto-rafay-creds-config-context-564491
+  - name: rauto-eks-config-config-context-564491
+  hooks: {}
+  provider: terraform
+  providerOptions:
+    terraform:
+      backendType: system
+      lock: true
+      version: 1.5.0
+  repositoryOptions:
+    branch: master
+    directoryPath: workloads/eaas/terraform/rafay-eks
+    name: rauto-repo-564491
+  version: version1-564491
+  versionState: active

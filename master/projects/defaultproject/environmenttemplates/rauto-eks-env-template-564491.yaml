@@ -1,0 +1,21 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: EnvironmentTemplate
+metadata:
+  createdBy:
+    id: 7w2lnkp
+    username: onprem@rafay.co
+  modifiedBy: {}
+  name: rauto-eks-env-template-564491
+  project: defaultproject
+spec:
+  agents:
+  - name: dockeronprem
+  hooks: {}
+  resources:
+  - kind: resourcetemplate
+    name: rauto-eks-resource-template-564491
+    resourceOptions:
+      version: version1-564491
+    type: dynamic
+  version: version1-564491
+  versionState: active
