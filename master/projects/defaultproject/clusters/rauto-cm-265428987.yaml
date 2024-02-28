@@ -61,6 +61,17 @@ spec:
       version: "1.26"
       volumeSize: 80
       volumeType: gp2
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-488366767
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
