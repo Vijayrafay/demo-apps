@@ -1,0 +1,72 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rautocdktf-eks-198920
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default
+  cloudCredentials: rautocdktf-cloudp-198920
+  config:
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    - us-east-1c
+    - us-east-1d
+    - us-east-1f
+    metadata:
+      name: rautocdktf-eks-198920
+      region: us-east-1
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: "1.27"
+    network:
+      cni:
+        name: aws-cni
+    nodeGroups:
+    - ami: ami-028dd53b28f10fd2b
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 1
+      name: rauto-ng0
+      overrideBootstrapCommand: '[Bottlerocket]'
+      privateNetworking: false
+      volumeEncrypted: false
+      volumeIOPS: 3000
+      volumeSize: 80
+      volumeThroughput: 125
+      volumeType: gp3
+    - ami: ami-028dd53b28f10fd2b
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 1
+      name: rauto-ng01
+      overrideBootstrapCommand: '[Bottlerocket]'
+      privateNetworking: false
+      volumeEncrypted: false
+      volumeIOPS: 3000
+      volumeSize: 80
+      volumeThroughput: 125
+      volumeType: gp3
+    vpc:
+      autoAllocateIPv6: false
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+  type: aws-eks
