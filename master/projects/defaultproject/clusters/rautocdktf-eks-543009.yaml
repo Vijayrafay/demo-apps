@@ -1,93 +1,66 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rautocdktf-eks-242382
+  name: rautocdktf-eks-543009
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rautocdktf-cloudp-242382
+  cloudCredentials: rautocdktf-cloudp-543009
   config:
-    addons:
-    - name: aws-ebs-csi-driver
-      version: latest
     availabilityZones:
     - us-east-1a
     - us-east-1b
     - us-east-1c
     - us-east-1d
     - us-east-1f
-    managedNodeGroups:
-    - amiFamily: AmazonLinux2
-      desiredCapacity: 1
-      disableIMDSv1: false
-      disablePodIMDS: false
-      ebsOptimized: false
-      efaEnabled: false
-      enableDetailedMonitoring: false
-      instanceType: t3a.xlarge
-      maxPodsPerNode: 0
-      maxSize: 2
-      minSize: 1
-      name: rauto-ngmanaged0
-      privateNetworking: false
-      spot: false
-      version: "1.26"
-      volumeEncrypted: false
-      volumeIOPS: 3000
-      volumeSize: 80
-      volumeThroughput: 125
-      volumeType: gp3
-    - amiFamily: AmazonLinux2
-      desiredCapacity: 1
-      disableIMDSv1: false
-      disablePodIMDS: false
-      ebsOptimized: false
-      efaEnabled: false
-      enableDetailedMonitoring: false
-      instanceType: t3a.xlarge
-      maxPodsPerNode: 0
-      maxSize: 2
-      minSize: 1
-      name: rauto-ngmanaged01
-      privateNetworking: false
-      spot: false
-      version: "1.26"
-      volumeEncrypted: false
-      volumeIOPS: 3000
-      volumeSize: 80
-      volumeThroughput: 125
-      volumeType: gp3
-    - amiFamily: WindowsServer2022CoreContainer
-      desiredCapacity: 1
-      disableIMDSv1: false
-      disablePodIMDS: false
-      ebsOptimized: false
-      efaEnabled: false
-      enableDetailedMonitoring: false
-      instanceType: t3a.xlarge
-      maxPodsPerNode: 0
-      maxSize: 2
-      minSize: 1
-      name: rauto-ng-windows-242382
-      privateNetworking: false
-      spot: false
-      version: "1.26"
-      volumeEncrypted: false
-      volumeIOPS: 3000
-      volumeSize: 80
-      volumeThroughput: 125
-      volumeType: gp3
     metadata:
-      name: rautocdktf-eks-242382
+      name: rautocdktf-eks-543009
       region: us-east-1
       tags:
         email: automation@rafay.co
         env: automation
-      version: "1.26"
+      version: "1.27"
     network:
       cni:
         name: aws-cni
+    nodeGroups:
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 1
+      name: rauto-ng0
+      privateNetworking: false
+      version: "1.27"
+      volumeEncrypted: false
+      volumeIOPS: 3000
+      volumeSize: 80
+      volumeThroughput: 125
+      volumeType: gp3
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 1
+      name: rauto-ng01
+      privateNetworking: false
+      version: "1.27"
+      volumeEncrypted: false
+      volumeIOPS: 3000
+      volumeSize: 80
+      volumeThroughput: 125
+      volumeType: gp3
     vpc:
       autoAllocateIPv6: false
       cidr: 192.168.0.0/16
