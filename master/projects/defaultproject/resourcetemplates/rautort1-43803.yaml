@@ -1,0 +1,32 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ResourceTemplate
+metadata:
+  createdBy:
+    id: 7w2lnkp
+    username: onprem@rafay.co
+  modifiedBy:
+    id: 7w2lnkp
+    username: onprem@rafay.co
+  name: rautort1-43803
+  project: defaultproject
+spec:
+  agents:
+  - name: dockeronprem
+  contexts:
+  - name: rauto-ec2-config-config-context-43803
+  - name: rauto-aws-config-config-context-43803
+  - name: rauto-infra-config-config-context-43803
+  hooks: {}
+  provider: terraform
+  providerOptions:
+    terraform:
+      backendConfigs:
+      - tmp/inputs/one.tfvars
+      backendType: custom
+      lock: true
+  repositoryOptions:
+    branch: master
+    directoryPath: workloads/eaas/terraform-guides/infrastructure-as-code/aws-ec2-instance/
+    name: rauto-repo-43803
+  version: v3
+  versionState: active

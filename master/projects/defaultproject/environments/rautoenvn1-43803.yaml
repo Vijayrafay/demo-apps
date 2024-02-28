@@ -6,5 +6,5 @@ metadata:
 spec:
   template:
     name: rautoenv-tmp1-43803
-    version: version1-43803
-    versionState: draft
+    version: v3
+    versionState: active
