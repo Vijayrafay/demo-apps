@@ -1,0 +1,22 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: Environment
+metadata:
+  name: rauto-environment-eks-ec-rds-name-564491
+  project: defaultproject
+spec:
+  secret:
+    name: file://artifacts/rauto-environment-eks-ec-rds-name-564491/sealed-secret.yaml
+  template:
+    name: rauto-environment-eks-ec-rds-template-name-564491
+    version: version1-564491
+    versionState: active
+  variables:
+  - name: db_password
+    options:
+      description: db_password
+      override:
+        type: allowed
+      required: true
+      sensitive: true
+    value: sealed://variables.0
+    valueType: text
