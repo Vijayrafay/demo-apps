@@ -32,6 +32,7 @@ spec:
       tags:
         email: automation@rafay.co
         env: automation
+      version: "1.27"
       volumeSize: 80
       volumeType: gp2
     metadata:
