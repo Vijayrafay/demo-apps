@@ -4,8 +4,6 @@ metadata:
   name: rauto-repo-991758
   project: defaultproject
 spec:
-  agents:
-  - name: dockeronprem
   credentials:
     password: sealed://credentials.password
     username: automation-user@rafay.co

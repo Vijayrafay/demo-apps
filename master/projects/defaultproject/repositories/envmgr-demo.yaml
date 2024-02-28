@@ -4,8 +4,6 @@ metadata:
   name: envmgr-demo
   project: defaultproject
 spec:
-  agents:
-  - name: dockeronprem
   credentials:
     password: sealed://credentials.password
     username: vijay@rafay.co
