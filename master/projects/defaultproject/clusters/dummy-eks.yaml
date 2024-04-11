@@ -19,7 +19,7 @@ spec:
     - name: aws-ebs-csi-driver
       version: latest
     metadata:
-      name: simha-apr11-eks
+      name: dummy-eks
       region: us-west-2
       tags:
         email: vijay@rafay.co
