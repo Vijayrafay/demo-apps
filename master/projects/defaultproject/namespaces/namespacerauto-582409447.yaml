@@ -4,12 +4,12 @@ metadata:
   annotations:
     a1: v3
     a2: v4
+    rafay.dev/description: ""
   name: namespacerauto-582409447
   project: defaultproject
 spec:
   limitRange: {}
   namespaceMeshPolicyParams: {}
-  networkPolicyParams: {}
   placement:
     labels:
     - key: rafay.dev/clusterName

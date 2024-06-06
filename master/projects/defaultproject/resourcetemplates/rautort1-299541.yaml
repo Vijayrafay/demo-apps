@@ -71,7 +71,5 @@ spec:
     branch: master
     directoryPath: workloads/eaas/terraform-guides/infrastructure-as-code/aws-ec2-instance/
     name: rauto-repo-299541
-  sharing:
-    enabled: true
   version: version1-299541
   versionState: active
