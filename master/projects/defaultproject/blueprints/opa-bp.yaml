@@ -4,6 +4,25 @@ metadata:
   name: opa-bp
   project: defaultproject
 spec:
-  driftWebhook:
-    enabled: true
+  base:
+    name: default
+    version: 2.6.0
+  defaultAddons:
+    csiSecretStoreConfig:
+      providers:
+        aws: true
+    enableCsiSecretStore: true
+    enableIngress: true
+    enableMonitoring: true
+  driftWebhook: {}
+  opaPolicy:
+    opaPolicy:
+    - name: policy-restricted
+      version: version-1717414389
+    - name: policy-privileged
+      version: version-1717414389
+    profile:
+      name: default
+      version: latest
   type: custom
+  version: v1
