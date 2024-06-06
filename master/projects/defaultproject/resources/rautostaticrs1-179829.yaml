@@ -1,0 +1,11 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: Resource
+metadata:
+  name: rautostaticrs1-179829
+  project: defaultproject
+spec:
+  variables:
+  - name: eks_cluster_name
+    value: rauto-eks-40769130
+    valueType: text
+status: {}

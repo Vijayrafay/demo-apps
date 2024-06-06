@@ -1,0 +1,24 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: rauto-ec-config-config-context-179829
+  project: defaultproject
+spec:
+  variables:
+  - name: vpc_name
+    options: {}
+    value: qa-rauto-eks-stack-donotdelete-VPC
+    valueType: text
+  - name: email
+    options: {}
+    value: automation@rafay.co
+    valueType: text
+  - name: cluster_id
+    options: {}
+    value: rauto-cluster-id-179829
+    valueType: text
+  - name: region
+    options: {}
+    value: us-east-1
+    valueType: text
+status: {}
