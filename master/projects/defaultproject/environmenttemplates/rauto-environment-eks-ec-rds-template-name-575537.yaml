@@ -1,0 +1,29 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: EnvironmentTemplate
+metadata:
+  name: rauto-environment-eks-ec-rds-template-name-575537
+  project: defaultproject
+spec:
+  agents:
+  - name: dockeronprem
+  hooks: {}
+  resources:
+  - kind: resourcetemplate
+    name: rauto-eks-resource-template-575537
+    resourceOptions:
+      version: version1-575537
+    type: dynamic
+  - kind: resourcetemplate
+    name: rauto-ec-resource-template-575537
+    resourceOptions:
+      dedicated: true
+      version: version1-575537
+    type: dynamic
+  - kind: resourcetemplate
+    name: rauto-rds-resource-template-575537
+    resourceOptions:
+      dedicated: true
+      version: version1-575537
+    type: dynamic
+  version: version1-575537
+  versionState: active
