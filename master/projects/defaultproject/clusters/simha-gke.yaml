@@ -9,7 +9,7 @@ spec:
     version: latest
   cloudCredentials: simha-gke
   config:
-    controlPlaneVersion: "1.27"
+    controlPlaneVersion: "1.28"
     features:
       enableComputeEnginePersistentDiskCSIDriver: true
     gcpProject: on-prem-382813
