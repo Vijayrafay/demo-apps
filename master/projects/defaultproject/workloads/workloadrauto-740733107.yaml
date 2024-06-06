@@ -1,0 +1,12 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: workloadrauto-740733107
+  project: defaultproject
+spec:
+  artifact:
+    artifact: {}
+    type: Helm
+  namespace: ns-740733107
+  placement:
+    selector: rafay.dev/clusterName=automation-cluster-boot-eks-5694

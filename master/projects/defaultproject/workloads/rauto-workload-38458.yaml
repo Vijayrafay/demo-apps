@@ -1,0 +1,10 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: rauto-workload-38458
+  project: defaultproject
+spec:
+  artifact:
+    artifact: {}
+    type: Yaml
+  namespace: ns-38458

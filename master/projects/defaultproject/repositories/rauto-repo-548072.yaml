@@ -1,0 +1,26 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: rauto-repo-548072
+  project: defaultproject
+spec:
+  agents:
+  - name: dockeronprem
+  credentials:
+    password: sealed://credentials.password
+    username: automation-user@rafay.co
+  endpoint: https://github.com/RafaySystems/qa-automation-applications
+  options: {}
+  secret:
+    name: file://artifacts/rauto-repo-548072/sealed-secret.yaml
+  type: Git
+status:
+  agents:
+  - id: rx28oml
+    name: dockeronprem
+  projects:
+  - projectId: rx28oml
+    repositoryId: lk5xw72
+  webhookConfig:
+    webhookSecret: aac46159cc75f1ed8e971bbf6415f48c3ad7fb09c6fb242a96fdfae4f969f53e
+    webhookURL: https://console.varun.dev.rafay-edge.net/v2/config/webhook/repository/lk5xw72

@@ -1,0 +1,6 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: default-rafay-2-6-3june
+  project: defaultproject
+spec: {}

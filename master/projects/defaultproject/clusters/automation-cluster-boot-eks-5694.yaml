@@ -1,0 +1,71 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    rauto: label
+  name: automation-cluster-boot-eks-5694
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: rauto-blueprint-7649417
+    version: v1
+  cloudCredentials: rauto_82899
+  config:
+    addons:
+    - name: vpc-cni
+      version: v1.18.1-eksbuild.3
+    - name: coredns
+      version: v1.10.1-eksbuild.11
+    - name: kube-proxy
+      version: v1.28.8-eksbuild.2
+    - name: aws-ebs-csi-driver
+      version: latest
+    metadata:
+      name: automation-cluster-boot-eks-5694
+      region: us-east-1
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: "1.28"
+    network:
+      cni:
+        name: aws-cni
+    nodeGroups:
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 2
+      name: automation-ng-5694
+      privateNetworking: true
+      version: "1.28"
+      volumeSize: 80
+      volumeType: gp2
+    vpc:
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+      subnets:
+        private:
+          subnet-0205849a93dc1a7c8:
+            id: subnet-0205849a93dc1a7c8
+          subnet-0c1955c9a5c78d0d2:
+            id: subnet-0c1955c9a5c78d0d2
+        public:
+          subnet-07de918da939fb783:
+            id: subnet-07de918da939fb783
+          subnet-0d6857db67a6722ef:
+            id: subnet-0d6857db67a6722ef
+  proxyConfig: {}
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-infra-test-project
+    - name: rauto-sharing-test-project
+  type: aws-eks

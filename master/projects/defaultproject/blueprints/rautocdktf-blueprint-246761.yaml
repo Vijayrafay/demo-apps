@@ -1,0 +1,19 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: rautocdktf-blueprint-246761
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 2.6.0
+  customAddons:
+  - name: rautocdktf-addon-246761
+    version: v1.0
+  defaultAddons:
+    enableIngress: true
+    enableMonitoring: true
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v1.0

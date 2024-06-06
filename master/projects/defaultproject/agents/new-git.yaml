@@ -1,0 +1,11 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: new-git
+  project: defaultproject
+spec:
+  active: true
+  cluster:
+    name: automation-cluster-boot-eks-5694
+  type: Cluster
+  version: r2.6.0

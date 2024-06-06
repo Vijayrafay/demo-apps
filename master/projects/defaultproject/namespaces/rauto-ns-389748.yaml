@@ -1,0 +1,12 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: rauto-ns-389748
+  project: defaultproject
+spec:
+  limitRange: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: rauto-rancher-55572
+  resourceQuotas: {}

@@ -1,0 +1,21 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: rauto-git-repo
+  project: defaultproject
+spec:
+  credentials:
+    password: sealed://credentials.password
+    username: automation-user@rafay.co
+  endpoint: https://github.com/RafaySystems/qa-automation-applications
+  options: {}
+  secret:
+    name: file://artifacts/rauto-git-repo/sealed-secret.yaml
+  type: Git
+status:
+  projects:
+  - projectId: rx28oml
+    repositoryId: 9d2wyk8
+  webhookConfig:
+    webhookSecret: 465292b09d2a925ed9b7669d8a4304e271b3c0fd1d06668320091b0ea8f5e4a7
+    webhookURL: https://console.varun.dev.rafay-edge.net/v2/config/webhook/repository/9d2wyk8

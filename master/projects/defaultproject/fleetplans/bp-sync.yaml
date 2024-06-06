@@ -1,0 +1,22 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: FleetPlan
+metadata:
+  name: bp-sync
+  project: defaultproject
+spec:
+  fleet:
+    kind: clusters
+    labels:
+      rafay.dev/clusterName: rauto-eks-611881
+    projects:
+    - name: defaultproject
+  operationWorkflow:
+    operations:
+    - action:
+        name: bp-sync
+        patchConfig:
+        - op: replace
+          path: .spec.blueprintConfig.name
+          value: default
+        type: patch
+      name: bp-sync

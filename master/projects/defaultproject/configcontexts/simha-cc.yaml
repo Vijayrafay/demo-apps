@@ -1,0 +1,52 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: simha-cc
+  project: defaultproject
+spec:
+  envs:
+  - key: AWS_ACCESS_KEY_ID
+    sensitive: true
+    value: sealed://AWS_ACCESS_KEY_ID
+  - key: AWS_SECRET_KEY_ID
+    sensitive: true
+    value: sealed://AWS_SECRET_KEY_ID
+  files:
+  - data: ewogICAgInByb2ZpbGUiOiAiIiwKICAgICJhcGlfa2V5IjogInJhMi44NjMzZDYwZTc1OGEwNzM3NTQ3ZTA2ZTAxZjFmYzIzYzQzODYxOGY0LjZjNDVkMTA3MDU4ZmVlZGRlNTcwNTYyOGQxNDMzMmQ1YTA0OWVhYTY1MzYzMmUyZmQwMTI3ODgyZGViM2YzZGIiLAogICAgImFwaV9zZWNyZXQiOiAiNmM0NWQxMDcwNThmZWVkZGU1NzA1NjI4ZDE0MzMyZDVhMDQ5ZWFhNjUzNjMyZTJmZDAxMjc4ODJkZWIzZjNkYiIsCiAgICAicHJvamVjdF9pZCI6ICJyeDI4b21sIiwKICAgICJza2lwX3NlcnZlcl9jZXJ0X2NoZWNrIjogInRydWUiLAogICAgInJlc3RfZW5kcG9pbnQiOiAiY29uc29sZS52YXJ1bi5kZXYucmFmYXktZWRnZS5uZXQiLAogICAgIm9wc19lbmRwb2ludCI6ICJvcHMtY29uc29sZS52YXJ1bi5kZXYucmFmYXktZWRnZS5uZXQiCn0=
+    name: config.json
+  secret:
+    name: file://artifacts/simha-cc/sealed-secret.yaml
+  variables:
+  - name: aws_cloud_provider_name
+    options:
+      override:
+        type: allowed
+    value: simha-cp
+    valueType: text
+  - name: aws_cloud_provider_access_key
+    options:
+      override:
+        type: allowed
+      sensitive: true
+    value: sealed://variables.1
+    valueType: text
+  - name: aws_cloud_provider_secret_key
+    options:
+      override:
+        type: allowed
+      sensitive: true
+    value: sealed://variables.2
+    valueType: text
+  - name: eks_cluster_project
+    options:
+      override:
+        type: allowed
+    value: defaultproject
+    valueType: text
+  - name: rafay_config_file
+    options:
+      override:
+        type: allowed
+    value: config.json
+    valueType: text
+status: {}

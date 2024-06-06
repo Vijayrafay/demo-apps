@@ -1,0 +1,11 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: rauto-test-addon-367909308
+  project: defaultproject
+spec:
+  artifact:
+    artifact: {}
+    type: Yaml
+  namespace: ns-367909308
+  sharing: {}

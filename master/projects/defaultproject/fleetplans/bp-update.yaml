@@ -1,0 +1,21 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: FleetPlan
+metadata:
+  name: bp-update
+  project: defaultproject
+spec:
+  fleet:
+    kind: clusters
+    labels:
+      rafay.dev/clusterName: automation-cluster-boot-eks-5694
+    projects:
+    - name: defaultproject
+  operationWorkflow:
+    operations:
+    - action:
+        blueprintUpdateConfig:
+          name: default
+          version: v1
+        name: bp-update
+        type: blueprintUpdate
+      name: bp-update

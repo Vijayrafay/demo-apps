@@ -1,0 +1,12 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: workloadrauto-444569451
+  project: defaultproject
+spec:
+  artifact:
+    artifact: {}
+    type: Yaml
+  namespace: rauto-bootstrap-namespace
+  placement:
+    selector: rafay.dev/clusterName=automation-cluster-boot-eks-5694

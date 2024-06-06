@@ -1,0 +1,12 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: workloadrauto-726003743
+  project: defaultproject
+spec:
+  artifact:
+    artifact: {}
+    type: Yaml
+  namespace: namespace-726003743
+  placement:
+    selector: rafay.dev/clusterName=rauto-cm-66775935

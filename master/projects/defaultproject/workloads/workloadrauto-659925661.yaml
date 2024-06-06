@@ -1,0 +1,16 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: workloadrauto-659925661
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: workloads/native_yaml/nginx_webserver/nginx-with-GSLB-annotation-testbed.yaml
+      repository: rauto-git-repo
+      revision: master
+    type: Yaml
+  namespace: ns-659925661
+  placement:
+    selector: rafay.dev/clusterName=automation-cluster-boot-eks-5694

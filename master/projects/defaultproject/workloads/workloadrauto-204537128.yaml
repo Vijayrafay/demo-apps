@@ -1,0 +1,12 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: workloadrauto-204537128
+  project: defaultproject
+spec:
+  artifact:
+    artifact: {}
+    type: Helm
+  namespace: namespacerauto-892860875
+  placement:
+    selector: rafay.dev/clusterName=rauto-cli-aws-hacluster-184229991

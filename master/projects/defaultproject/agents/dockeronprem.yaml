@@ -1,0 +1,15 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: dockeronprem
+  project: defaultproject
+spec:
+  active: true
+  cluster:
+    name: automation-cluster-boot-eks-5694
+  sharing:
+    enabled: true
+    projects:
+    - name: '*'
+  type: Cluster
+  version: r2.6.0

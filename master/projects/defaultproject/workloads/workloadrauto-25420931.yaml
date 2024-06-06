@@ -1,0 +1,12 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: workloadrauto-25420931
+  project: defaultproject
+spec:
+  artifact:
+    artifact: {}
+    type: Helm
+  namespace: namespacerauto-680436209
+  placement:
+    selector: rafay.dev/clusterName=rauto-cli-nonha-ocicluster-309324248

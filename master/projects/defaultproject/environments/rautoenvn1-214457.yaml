@@ -1,0 +1,10 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: Environment
+metadata:
+  name: rautoenvn1-214457
+  project: defaultproject
+spec:
+  template:
+    name: rautoenv-tmp1-214457
+    version: version1-214457
+    versionState: draft

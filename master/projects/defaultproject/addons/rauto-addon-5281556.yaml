@@ -1,0 +1,11 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: rauto-addon-5281556
+  project: defaultproject
+spec:
+  artifact:
+    artifact: {}
+    type: Helm
+  namespace: default-rafay-2-6-3june
+  sharing: {}
