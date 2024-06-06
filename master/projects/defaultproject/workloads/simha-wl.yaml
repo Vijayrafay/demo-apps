@@ -16,4 +16,3 @@ spec:
   namespace: vijayns
   placement:
     selector: rafay.dev/clusterName=simha-jun6-eks
-  version: simha-wl-v1-202406061245330000
