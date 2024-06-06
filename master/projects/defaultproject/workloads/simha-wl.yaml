@@ -1,0 +1,19 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: simha-wl
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      catalog: default-bitnami
+      chartName: nginx
+      chartVersion: 17.3.2
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: vijayns
+  placement:
+    selector: rafay.dev/clusterName=simha-jun6-eks
+  version: simha-wl-v1-202406061248120000
