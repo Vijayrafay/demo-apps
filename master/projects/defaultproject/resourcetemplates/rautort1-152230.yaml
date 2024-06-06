@@ -1,0 +1,28 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ResourceTemplate
+metadata:
+  name: rautort1-152230
+  project: defaultproject
+spec:
+  agents:
+  - name: dockeronprem
+  contexts:
+  - name: rauto-ec2-config-config-context-152230
+  - name: rauto-infra-config-config-context-152230
+  hooks: {}
+  provider: terraform
+  providerOptions:
+    driver:
+      name: custom-driver1-152230
+    terraform:
+      backendConfigs:
+      - tmp/inputs/one.tfvars
+      backendType: custom
+      volumes:
+      - mountPath: /root/.loft
+  repositoryOptions:
+    branch: master
+    directoryPath: workloads/eaas/terraform-guides/infrastructure-as-code/aws-ec2-instance/
+    name: rauto-repo-152230
+  version: version1-152230
+  versionState: active
