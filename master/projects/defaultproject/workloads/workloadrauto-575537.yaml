@@ -16,4 +16,3 @@ spec:
     environment:
       name: rauto-environment-eks-ec-rds-name-575537
     selector: rafay.dev/clusterName=rauto-eks-575537
-  version: workloadrauto-575537-v1-202406061039570000
