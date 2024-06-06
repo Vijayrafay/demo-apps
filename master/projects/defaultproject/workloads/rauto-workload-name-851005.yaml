@@ -1,0 +1,19 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: rauto-workload-name-851005
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://django-app-0.1.0.tgz
+      valuesPaths:
+      - name: file://values.yaml
+    options:
+      timeout: 0s
+    type: Helm
+  namespace: rauto-workload-namespace-851005
+  placement:
+    selector: rafay.dev/clusterName=rauto-eks-851005
+  version: v4
