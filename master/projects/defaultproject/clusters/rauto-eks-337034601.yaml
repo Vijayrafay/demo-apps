@@ -5,7 +5,7 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-test-bp-337034601
+    name: minimal
     version: v1
   cloudCredentials: rauto_30440
   config:
