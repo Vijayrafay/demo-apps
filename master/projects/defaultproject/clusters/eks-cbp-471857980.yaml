@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-cm-125282225
+  name: eks-cbp-471857980
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rauto_86849
+  cloudCredentials: rauto_95354
   config:
     addons:
     - name: vpc-cni
@@ -15,8 +15,6 @@ spec:
       version: v1.11.1-eksbuild.11
     - name: kube-proxy
       version: v1.29.3-eksbuild.5
-    - name: aws-ebs-csi-driver
-      version: latest
     availabilityZones:
     - us-east-1a
     - us-east-1b
@@ -24,12 +22,12 @@ spec:
     - us-east-1d
     - us-east-1f
     metadata:
-      name: rauto-cm-125282225
+      name: eks-cbp-471857980
       region: us-east-1
       tags:
-        DeleteBefore: "2024-08-13T01:24:39Z"
-        build_num: airgapped-eks-cluster-creation-fix-airgapped-11
-        creation_time: "2024-08-12T19:24:39Z"
+        DeleteBefore: "2024-08-13T02:33:57Z"
+        build_num: airgapped-eks-cluster-creation-fix-airgapped-12
+        creation_time: "2024-08-12T20:33:57Z"
         email: automation@rafay.co
         env: automation
         squad: all
@@ -38,7 +36,7 @@ spec:
       cni:
         name: aws-cni
     nodeGroups:
-    - ami: ami-0051607a416876cec
+    - amiFamily: AmazonLinux2
       desiredCapacity: 2
       iam:
         withAddonPolicies:
@@ -47,23 +45,9 @@ spec:
       instanceType: t3a.xlarge
       maxSize: 2
       minSize: 2
-      name: rauto-ng1-125282225
-      overrideBootstrapCommand: '| [Ubuntu]'
+      name: rauto-ng-471857980
       privateNetworking: true
-      volumeSize: 80
-      volumeType: gp2
-    - ami: ami-0051607a416876cec
-      desiredCapacity: 2
-      iam:
-        withAddonPolicies:
-          autoScaler: true
-          imageBuilder: true
-      instanceType: t3a.xlarge
-      maxSize: 2
-      minSize: 2
-      name: rauto-ng2-125282225
-      overrideBootstrapCommand: '| [Ubuntu]'
-      privateNetworking: true
+      version: "1.29"
       volumeSize: 80
       volumeType: gp2
     vpc:
