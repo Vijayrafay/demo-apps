@@ -5,7 +5,7 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: rauto-blueprint-open-591763135
+    name: default-upstream
     version: v2
   config:
     kubernetesVersion: v1.29.4
