@@ -15,4 +15,27 @@ spec:
         version: 3.26.1
       podSubnet: 10.244.0.0/16
       serviceSubnet: 10.96.0.0/12
+    nodes:
+    - arch: x86_64
+      hostname: rauto-sdk-1723496134-455347
+      operatingSystem: AlmaLinux9.4
+      privateIP: 10.0.0.199
+      roles:
+      - Worker
+      - Storage
+    - arch: x86_64
+      hostname: rauto-sdk-1723496065-11999
+      operatingSystem: AlmaLinux9.4
+      privateIP: 10.0.0.162
+      roles:
+      - Worker
+      - Storage
+    - arch: x86_64
+      hostname: rauto-sdk-1723495995-280998
+      operatingSystem: AlmaLinux9.4
+      privateIP: 10.0.0.80
+      roles:
+      - ControlPlane
+      - Storage
+      - Worker
   type: mks
