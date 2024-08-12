@@ -40,4 +40,12 @@ spec:
       roles:
       - Worker
       - Storage
+    - arch: x86_64
+      hostname: rauto-sdk-1723499004-237316
+      operatingSystem: AlmaLinux9.4
+      privateIP: 10.0.0.54
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
   type: mks
