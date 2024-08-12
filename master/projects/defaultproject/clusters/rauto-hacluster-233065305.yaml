@@ -43,6 +43,12 @@ spec:
       - ControlPlane
       - Storage
     - arch: amd64
+      hostname: ip-172-31-18-36
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.18.36
+      roles:
+      - Worker
+    - arch: amd64
       hostname: ip-172-31-16-129
       operatingSystem: Ubuntu22.04
       privateIP: 172.31.16.129
