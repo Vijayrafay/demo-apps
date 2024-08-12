@@ -46,6 +46,20 @@ spec:
         group:
         - system:masters
         username: automation
+    managedNodeGroups:
+    - ami: ami-007b14959df3a12c5
+      desiredCapacity: 1
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng1-win-811891463
+      overrideBootstrapCommand: '| [Windows]'
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     metadata:
       name: rauto-cm-603296322
       region: us-east-1
