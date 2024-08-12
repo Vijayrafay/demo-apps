@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  labels:
+    rauto: rauto-almalinux9os-483847901
   name: rauto-almalinux9os-483847901
   project: defaultproject
 spec:
@@ -17,13 +19,6 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: x86_64
-      hostname: rauto-sdk-1723496134-455347
-      operatingSystem: AlmaLinux9.4
-      privateIP: 10.0.0.199
-      roles:
-      - Worker
-      - Storage
-    - arch: x86_64
       hostname: rauto-sdk-1723496065-11999
       operatingSystem: AlmaLinux9.4
       privateIP: 10.0.0.162
@@ -38,4 +33,11 @@ spec:
       - ControlPlane
       - Storage
       - Worker
+    - arch: x86_64
+      hostname: rauto-sdk-1723496134-455347
+      operatingSystem: AlmaLinux9.4
+      privateIP: 10.0.0.199
+      roles:
+      - Worker
+      - Storage
   type: mks
