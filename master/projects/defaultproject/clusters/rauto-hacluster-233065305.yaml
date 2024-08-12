@@ -7,7 +7,8 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: default-upstream
+    name: rauto-blueprint-339583
+    version: v1
   config:
     highAvailability: true
     kubernetesVersion: v1.28.9
@@ -19,32 +20,9 @@ spec:
       serviceSubnet: 10.21.0.0/20
     nodes:
     - arch: amd64
-      hostname: ip-172-31-25-167
-      operatingSystem: Ubuntu22.04
-      privateIP: 172.31.25.167
-      roles:
-      - Storage
-      - Worker
-      - ControlPlane
-    - arch: amd64
       hostname: ip-172-31-29-133
       operatingSystem: Ubuntu22.04
       privateIP: 172.31.29.133
-      roles:
-      - Worker
-      - ControlPlane
-      - Storage
-    - arch: amd64
-      hostname: ip-172-31-26-106
-      operatingSystem: Ubuntu22.04
-      privateIP: 172.31.26.106
-      roles:
-      - Storage
-      - Worker
-    - arch: amd64
-      hostname: ip-172-31-16-129
-      operatingSystem: Ubuntu22.04
-      privateIP: 172.31.16.129
       roles:
       - Worker
       - ControlPlane
@@ -58,11 +36,34 @@ spec:
       - ControlPlane
       - Storage
     - arch: amd64
+      hostname: ip-172-31-16-129
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.16.129
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+    - arch: amd64
+      hostname: ip-172-31-25-167
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.25.167
+      roles:
+      - Storage
+      - Worker
+      - ControlPlane
+    - arch: amd64
       hostname: ip-172-31-22-255
       operatingSystem: Ubuntu22.04
       privateIP: 172.31.22.255
       roles:
       - ControlPlane
+      - Storage
+      - Worker
+    - arch: amd64
+      hostname: ip-172-31-26-106
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.26.106
+      roles:
       - Storage
       - Worker
   type: mks
