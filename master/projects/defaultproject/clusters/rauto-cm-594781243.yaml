@@ -1,0 +1,122 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    rauto: rauto-cm-594781243
+  name: rauto-cm-594781243
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default
+  cloudCredentials: rauto_59974
+  config:
+    addons:
+    - name: vpc-cni
+      version: v1.18.3-eksbuild.1
+    - name: coredns
+      version: v1.10.1-eksbuild.13
+    - name: kube-proxy
+      version: v1.28.8-eksbuild.5
+    - name: aws-ebs-csi-driver
+      version: latest
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    - us-east-1c
+    - us-east-1d
+    - us-east-1f
+    iam:
+      serviceAccounts:
+      - attachPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        metadata:
+          annotations:
+            irsa: rauto-64206
+          labels:
+            irsalabel: rauto-64206
+          name: rauto-irsa-33522
+          namespace: namespace-64206
+        roleOnly: true
+        tags:
+          irsatag: rauto-64206
+      withOIDC: true
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-832226022
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
+    metadata:
+      name: rauto-cm-594781243
+      region: us-east-1
+      tags:
+        DeleteBefore: "2024-08-12T22:12:29Z"
+        build_num: airgapped-eks-cluster-creation-fix-airgapped-11
+        creation_time: "2024-08-12T16:12:29Z"
+        email: automation@rafay.co
+        env: automation
+        squad: all
+      version: "1.29"
+    network:
+      cni:
+        name: aws-cni
+    nodeGroups:
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 4
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 4
+      minSize: 2
+      name: rauto-ng1-594781243
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      version: "1.28"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng2-594781243
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      version: "1.28"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-648542484
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: "1.29"
+      volumeSize: 80
+      volumeType: gp2
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+  proxyConfig: {}
+  type: aws-eks

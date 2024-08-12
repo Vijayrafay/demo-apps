@@ -1,0 +1,77 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-cm-848405300
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default
+  cloudCredentials: rauto_27581
+  config:
+    addons:
+    - name: vpc-cni
+      version: v1.18.3-eksbuild.1
+    - name: coredns
+      version: v1.10.1-eksbuild.13
+    - name: kube-proxy
+      version: v1.28.8-eksbuild.5
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    - us-east-1c
+    - us-east-1d
+    - us-east-1f
+    managedNodeGroups:
+    - amiFamily: Bottlerocket
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng1-848405300
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      version: "1.28"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: Bottlerocket
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng2-848405300
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      version: "1.28"
+      volumeSize: 80
+      volumeType: gp2
+    metadata:
+      name: rauto-cm-848405300
+      region: us-east-1
+      tags:
+        DeleteBefore: "2024-08-12T23:40:27Z"
+        build_num: airgapped-eks-cluster-creation-fix-airgapped-11
+        creation_time: "2024-08-12T17:40:27Z"
+        email: automation@rafay.co
+        env: automation
+        squad: all
+      version: "1.28"
+    network:
+      cni:
+        name: aws-cni
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+  proxyConfig: {}
+  type: aws-eks
