@@ -3,6 +3,7 @@ kind: Cluster
 metadata:
   labels:
     rauto: label
+    rautons: gittest467
     workload: test8653
   name: automation-cluster-boot-eks-8966
   project: defaultproject
