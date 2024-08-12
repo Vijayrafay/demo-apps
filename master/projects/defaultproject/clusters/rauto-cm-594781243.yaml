@@ -96,7 +96,7 @@ spec:
       name: rauto-ng2-594781243
       overrideBootstrapCommand: null
       privateNetworking: true
-      version: "1.29"
+      version: "1.30"
       volumeSize: 80
       volumeType: gp2
     - amiFamily: AmazonLinux2
