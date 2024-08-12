@@ -5,25 +5,25 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: minimal
+    name: default-gke
     version: latest
+  cloudCredentials: varun-gke
   config:
-    controlPlaneVersion: "1.28"
+    controlPlaneVersion: "1.29"
     features:
       enableComputeEnginePersistentDiskCSIDriver: true
-    gcpProject: $__gcpproject
+    gcpProject: on-prem-382813
     location:
       config:
         zone: us-west1-c
       type: zonal
     network:
       access:
-        config:
-          controlPlaneIPRange: 172.16.0.0/28
-          disableSNAT: true
-          enableAccessControlPlaneExternalIP: true
-          enableAccessControlPlaneGlobal: true
-        type: private
+        config: null
+        type: public
+      dataPlaneV2: ADVANCED_DATAPATH
+      enableDataPlaneV2Metrics: true
+      enableDataPlaneV2Observability: true
       enableVPCNativetraffic: true
       maxPodsPerNode: 110
       name: default
@@ -36,9 +36,19 @@ spec:
         machineType: e2-standard-4
       name: default-nodepool
       nodeVersion: "1.28"
-      size: 3
+      size: 1
       upgradeSettings:
         config:
           maxSurge: 1
         strategy: SURGE
+    preBootstrapCommands:
+    - echo "cHJpbnRmICclcycgJ3NlZCAgLWkgJ1wnJ3MvXFtwbHVnaW5zLlwiaW8uY29udGFpbmVyZC5ncnBjLnYxLmNyaVwiLnJlZ2lzdHJ5LmNvbmZpZ3MuXCJvcHMtY29uc29sZS52YXJ1bi5kZXYucmFmYXktZWRnZS5uZXRcIi50bHNcXS8vZyAnXCcnIC9yb290L2V0Yy9jb250YWluZXJkL2NvbmZpZy50b21sJw=="
+      | base64 -d | bash
+    - echo "cHJpbnRmICclcycgICdzZWQgLWkgJ1wnJ3MvaW5zZWN1cmVfc2tpcF92ZXJpZnkgPSB0cnVlLy9nJ1wnJyAgL3Jvb3QvZXRjL2NvbnRhaW5lcmQvY29uZmlnLnRvbWwn"
+      | base64 -d | bash
+    - echo "cHJpbnRmICclc1xuICVzXG4gJXNcbiAlc1xuJyAnW3BsdWdpbnMuImlvLmNvbnRhaW5lcmQuZ3JwYy52MS5jcmkiLnJlZ2lzdHJ5LmNvbmZpZ3MuIm9wcy1jb25zb2xlLnZhcnVuLmRldi5yYWZheS1lZGdlLm5ldCIudGxzXScgJyAgICAgICAgIGluc2VjdXJlX3NraXBfdmVyaWZ5ID0gdHJ1ZScgPj4gL3Jvb3QvZXRjL2NvbnRhaW5lcmQvY29uZmlnLnRvbWw="  |
+      base64 -d | bash
+    - nsenter --target 1 --mount systemctl restart containerd
+    security:
+      enableWorkloadIdentity: true
   type: gke
