@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  labels:
+    rauto: rauto-hacluster-233065305
   name: rauto-hacluster-233065305
   project: defaultproject
 spec:
@@ -16,6 +18,14 @@ spec:
       podSubnet: 10.20.0.0/16
       serviceSubnet: 10.21.0.0/20
     nodes:
+    - arch: amd64
+      hostname: ip-172-31-25-167
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.25.167
+      roles:
+      - Storage
+      - Worker
+      - ControlPlane
     - arch: amd64
       hostname: ip-172-31-29-133
       operatingSystem: Ubuntu22.04
@@ -39,14 +49,6 @@ spec:
       - Worker
       - ControlPlane
       - Storage
-    - arch: amd64
-      hostname: ip-172-31-25-167
-      operatingSystem: Ubuntu22.04
-      privateIP: 172.31.25.167
-      roles:
-      - Storage
-      - Worker
-      - ControlPlane
     - arch: amd64
       hostname: ip-172-31-16-185
       operatingSystem: Ubuntu22.04
