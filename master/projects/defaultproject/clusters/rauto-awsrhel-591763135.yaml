@@ -6,7 +6,7 @@ metadata:
 spec:
   blueprint:
     name: rauto-blueprint-open-591763135
-    version: v1
+    version: v2
   config:
     kubernetesVersion: v1.29.4
     network:
