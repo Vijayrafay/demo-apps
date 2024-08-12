@@ -109,7 +109,7 @@ spec:
       tags:
         email: automation@rafay.co
         env: automation
-      version: "1.30"
+      version: "1.29"
       volumeSize: 80
       volumeType: gp2
     vpc:
