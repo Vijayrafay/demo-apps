@@ -20,6 +20,7 @@ spec:
       hostname: simha-rook-ceph
       labels:
         node-role: seedmaster
+        name: vijaysimha
       operatingSystem: AlmaLinux9.3
       privateIP: 10.0.0.40
       roles:
