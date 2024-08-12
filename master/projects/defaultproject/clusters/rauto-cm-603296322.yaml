@@ -40,6 +40,12 @@ spec:
         tags:
           irsatag: rauto-irsatag
       withOIDC: true
+    identityMappings:
+      arns:
+      - arn: arn:aws:iam::679196758854:user/automation-qa
+        group:
+        - system:masters
+        username: automation
     metadata:
       name: rauto-cm-603296322
       region: us-east-1
