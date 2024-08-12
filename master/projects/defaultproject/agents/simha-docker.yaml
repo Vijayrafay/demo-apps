@@ -1,9 +1,0 @@
-apiVersion: gitops.k8smgmt.io/v3
-kind: Agent
-metadata:
-  name: simha-docker
-  project: defaultproject
-spec:
-  active: true
-  type: Docker
-  version: r2.6.0
