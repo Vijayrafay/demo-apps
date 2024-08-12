@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-cm-408817668
+  name: rauto-cm-125282225
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rauto_18233
+  cloudCredentials: rauto_86849
   config:
     addons:
     - name: vpc-cni
@@ -15,57 +15,55 @@ spec:
       version: v1.11.1-eksbuild.11
     - name: kube-proxy
       version: v1.29.3-eksbuild.5
-    - name: aws-ebs-csi-driver
-      version: latest
     availabilityZones:
     - us-east-1a
     - us-east-1b
     - us-east-1c
     - us-east-1d
     - us-east-1f
-    managedNodeGroups:
-    - ami: ami-0fc370be4e6093918
-      desiredCapacity: 2
-      iam:
-        withAddonPolicies:
-          autoScaler: true
-          imageBuilder: true
-      instanceType: t3a.xlarge
-      maxSize: 2
-      minSize: 2
-      name: rauto-ng1-408817668
-      overrideBootstrapCommand: null
-      privateNetworking: true
-      volumeSize: 80
-      volumeType: gp2
-    - ami: ami-0b9e545aa4c20aac6
-      desiredCapacity: 2
-      iam:
-        withAddonPolicies:
-          autoScaler: true
-          imageBuilder: true
-      instanceType: t3a.xlarge
-      maxSize: 2
-      minSize: 2
-      name: rauto-ng2-408817668
-      overrideBootstrapCommand: null
-      privateNetworking: true
-      volumeSize: 80
-      volumeType: gp2
     metadata:
-      name: rauto-cm-408817668
+      name: rauto-cm-125282225
       region: us-east-1
       tags:
-        DeleteBefore: "2024-08-12T23:56:53Z"
+        DeleteBefore: "2024-08-13T01:24:39Z"
         build_num: airgapped-eks-cluster-creation-fix-airgapped-11
-        creation_time: "2024-08-12T17:56:53Z"
+        creation_time: "2024-08-12T19:24:39Z"
         email: automation@rafay.co
         env: automation
         squad: all
-      version: "1.30"
+      version: "1.29"
     network:
       cni:
         name: aws-cni
+    nodeGroups:
+    - ami: ami-0051607a416876cec
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng1-125282225
+      overrideBootstrapCommand: '| [Ubuntu]'
+      privateNetworking: true
+      volumeSize: 80
+      volumeType: gp2
+    - ami: ami-0051607a416876cec
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng2-125282225
+      overrideBootstrapCommand: '| [Ubuntu]'
+      privateNetworking: true
+      volumeSize: 80
+      volumeType: gp2
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
