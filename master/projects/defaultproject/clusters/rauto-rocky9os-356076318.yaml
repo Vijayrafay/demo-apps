@@ -19,6 +19,14 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: x86_64
+      hostname: rauto-sdk-1723499087-120226
+      operatingSystem: Rocky9.4
+      privateIP: 10.0.0.96
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+    - arch: x86_64
       hostname: rauto-sdk-1723496425-70123
       operatingSystem: Rocky9.4
       privateIP: 10.0.0.235
@@ -26,18 +34,18 @@ spec:
       - Storage
       - Worker
     - arch: x86_64
+      hostname: rauto-sdk-1723496339-801872
+      operatingSystem: Rocky9.4
+      privateIP: 10.0.0.146
+      roles:
+      - Worker
+      - Storage
+    - arch: x86_64
       hostname: rauto-sdk-1723496270-541589
       operatingSystem: Rocky9.4
       privateIP: 10.0.0.237
       roles:
       - Worker
       - ControlPlane
-      - Storage
-    - arch: x86_64
-      hostname: rauto-sdk-1723496339-801872
-      operatingSystem: Rocky9.4
-      privateIP: 10.0.0.146
-      roles:
-      - Worker
       - Storage
   type: mks
