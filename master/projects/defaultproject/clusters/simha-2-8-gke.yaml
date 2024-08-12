@@ -22,7 +22,6 @@ spec:
         config: null
         type: public
       dataPlaneV2: ADVANCED_DATAPATH
-      enableDataPlaneV2Observability: true
       enableVPCNativetraffic: true
       maxPodsPerNode: 110
       name: default
