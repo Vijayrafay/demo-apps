@@ -7,7 +7,7 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: rauto-blueprint-339583
+    name: default-upstream
     version: v1
   config:
     highAvailability: true
@@ -19,6 +19,14 @@ spec:
       podSubnet: 10.20.0.0/16
       serviceSubnet: 10.21.0.0/20
     nodes:
+    - arch: amd64
+      hostname: ip-172-31-25-167
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.25.167
+      roles:
+      - Storage
+      - Worker
+      - ControlPlane
     - arch: amd64
       hostname: ip-172-31-29-133
       operatingSystem: Ubuntu22.04
@@ -43,14 +51,6 @@ spec:
       - Worker
       - ControlPlane
       - Storage
-    - arch: amd64
-      hostname: ip-172-31-25-167
-      operatingSystem: Ubuntu22.04
-      privateIP: 172.31.25.167
-      roles:
-      - Storage
-      - Worker
-      - ControlPlane
     - arch: amd64
       hostname: ip-172-31-22-255
       operatingSystem: Ubuntu22.04
