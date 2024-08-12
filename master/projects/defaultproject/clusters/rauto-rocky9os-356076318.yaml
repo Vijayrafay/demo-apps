@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  labels:
+    rauto: rauto-rocky9os-356076318
   name: rauto-rocky9os-356076318
   project: defaultproject
 spec:
@@ -24,18 +26,18 @@ spec:
       - Storage
       - Worker
     - arch: x86_64
-      hostname: rauto-sdk-1723496339-801872
-      operatingSystem: Rocky9.4
-      privateIP: 10.0.0.146
-      roles:
-      - Worker
-      - Storage
-    - arch: x86_64
       hostname: rauto-sdk-1723496270-541589
       operatingSystem: Rocky9.4
       privateIP: 10.0.0.237
       roles:
       - Worker
       - ControlPlane
+      - Storage
+    - arch: x86_64
+      hostname: rauto-sdk-1723496339-801872
+      operatingSystem: Rocky9.4
+      privateIP: 10.0.0.146
+      roles:
+      - Worker
       - Storage
   type: mks
