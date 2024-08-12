@@ -11,7 +11,7 @@ spec:
     version: v1
   config:
     highAvailability: true
-    kubernetesVersion: v1.29.4
+    kubernetesVersion: v1.30.2
     network:
       cni:
         name: Calico
@@ -42,12 +42,6 @@ spec:
       - Worker
       - ControlPlane
       - Storage
-    - arch: amd64
-      hostname: ip-172-31-18-36
-      operatingSystem: Ubuntu22.04
-      privateIP: 172.31.18.36
-      roles:
-      - Worker
     - arch: amd64
       hostname: ip-172-31-16-129
       operatingSystem: Ubuntu22.04
