@@ -50,7 +50,7 @@ spec:
       name: rauto-ng1-541562437
       overrideBootstrapCommand: null
       privateNetworking: true
-      version: "1.28"
+      version: "1.29"
       volumeSize: 80
       volumeType: gp2
     - amiFamily: Ubuntu2004
