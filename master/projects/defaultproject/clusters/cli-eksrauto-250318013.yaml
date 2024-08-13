@@ -1,0 +1,68 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: cli-eksrauto-250318013
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: minimal
+  cloudCredentials: cli-cprauto-250318013
+  config:
+    addons:
+    - name: vpc-cni
+      version: latest
+    - name: coredns
+      version: latest
+    - name: kube-proxy
+      version: latest
+    - name: aws-ebs-csi-driver
+      version: latest
+    iam:
+      withOIDC: true
+    kubernetesNetworkConfig:
+      ipFamily: IPv6
+    managedNodeGroups:
+    - desiredCapacity: 1
+      instanceType: t3.xlarge
+      maxSize: 1
+      minSize: 1
+      name: cli-ngrauto-first-250318013
+      privateNetworking: true
+      version: "1.28"
+    - desiredCapacity: 1
+      instanceType: t3.xlarge
+      maxSize: 1
+      minSize: 1
+      name: cli-ngrauto-second-250318013
+      privateNetworking: true
+      version: "1.28"
+    metadata:
+      name: cli-eksrauto-250318013
+      region: us-east-1
+      tags:
+        build_num: airgapped-eks-cluster-creation-fix-airgapped-11
+        creation_time: "2024-08-13T02:02:41Z"
+        email: automation@rafay.co
+        env: automation
+        squad: all
+      version: "1.28"
+    network:
+      cni:
+        name: aws-cni
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      subnets:
+        private:
+          subnet-02c7c50c3feeb7bec:
+            id: subnet-02c7c50c3feeb7bec
+          subnet-0ae814120b55cab64:
+            id: subnet-0ae814120b55cab64
+        public:
+          subnet-01fef8698af49bac3:
+            id: subnet-01fef8698af49bac3
+          subnet-02df203bffe16fc97:
+            id: subnet-02df203bffe16fc97
+  type: aws-eks
