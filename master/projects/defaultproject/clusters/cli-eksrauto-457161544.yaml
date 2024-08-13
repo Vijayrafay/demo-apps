@@ -50,6 +50,18 @@ spec:
           namespace: namespace-664790187
         tags:
           awstag: rauto-irsa-664790187
+      - attachPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        metadata:
+          annotations:
+            irsa: rauto-355640811
+          labels:
+            irsalabel: rauto-355640811
+          name: rauto-irsa-7903
+          namespace: namespace-355640811
+        roleOnly: true
+        tags:
+          irsatag: rauto-355640811
       withOIDC: true
     metadata:
       name: cli-eksrauto-457161544
