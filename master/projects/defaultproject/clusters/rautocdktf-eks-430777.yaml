@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rautocdktf-eks-241063
+  name: rautocdktf-eks-430777
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rautocdktf-cloudp-241063
+  cloudCredentials: rautocdktf-cloudp-430777
   config:
     addons:
     - name: coredns
@@ -24,23 +24,8 @@ spec:
     - us-east-1d
     - us-east-1f
     cloudWatch: {}
-    iam:
-      serviceAccounts:
-      - metadata:
-          name: rauto-test-sa
-          namespace: rafay-system
-        roleOnly: false
-        wellKnownPolicies:
-          autoScaler: false
-          awsLoadBalancerController: true
-          certManager: false
-          ebsCSIController: false
-          efsCSIController: false
-          externalDNS: false
-          imageBuilder: false
-      withOIDC: true
     metadata:
-      name: rautocdktf-eks-241063
+      name: rautocdktf-eks-430777
       region: us-east-1
       tags:
         email: automation@rafay.co
@@ -50,7 +35,7 @@ spec:
       cni:
         name: aws-cni
     nodeGroups:
-    - amiFamily: AmazonLinux2
+    - ami: ami-070f54df448b5ba72
       desiredCapacity: 1
       disableIMDSv1: false
       disablePodIMDS: false
@@ -61,14 +46,14 @@ spec:
       maxSize: 2
       minSize: 1
       name: rauto-ng0
+      overrideBootstrapCommand: '[Bottlerocket]'
       privateNetworking: true
-      version: "1.29"
       volumeEncrypted: false
       volumeIOPS: 3000
       volumeSize: 80
       volumeThroughput: 125
       volumeType: gp3
-    - amiFamily: AmazonLinux2
+    - ami: ami-070f54df448b5ba72
       desiredCapacity: 1
       disableIMDSv1: false
       disablePodIMDS: false
@@ -79,8 +64,8 @@ spec:
       maxSize: 2
       minSize: 1
       name: rauto-ng01
+      overrideBootstrapCommand: '[Bottlerocket]'
       privateNetworking: true
-      version: "1.29"
       volumeEncrypted: false
       volumeIOPS: 3000
       volumeSize: 80
@@ -94,8 +79,4 @@ spec:
         publicAccess: false
       nat:
         gateway: Single
-  sharing:
-    enabled: true
-    projects:
-    - name: project-share-936749
   type: aws-eks
