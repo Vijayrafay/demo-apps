@@ -17,25 +17,11 @@ spec:
       serviceSubnet: 10.21.0.0/20
     nodes:
     - arch: x86_64
-      hostname: rauto-sdk-1723530152-031425
-      operatingSystem: Rocky9.4
-      privateIP: 10.0.0.245
-      roles:
-      - Storage
-      - Worker
-      - ControlPlane
-    - arch: x86_64
       hostname: rauto-sdk-1723530035-560242
+      labels:
+        node-role: seedmaster
       operatingSystem: Rocky9.4
       privateIP: 10.0.0.177
-      roles:
-      - Worker
-      - ControlPlane
-      - Storage
-    - arch: x86_64
-      hostname: rauto-sdk-1723530221-311748
-      operatingSystem: Rocky9.4
-      privateIP: 10.0.0.59
       roles:
       - Worker
       - ControlPlane
@@ -54,4 +40,20 @@ spec:
       roles:
       - Worker
       - Storage
+    - arch: x86_64
+      hostname: rauto-sdk-1723530221-311748
+      operatingSystem: Rocky9.4
+      privateIP: 10.0.0.59
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+    - arch: x86_64
+      hostname: rauto-sdk-1723530152-031425
+      operatingSystem: Rocky9.4
+      privateIP: 10.0.0.245
+      roles:
+      - Storage
+      - Worker
+      - ControlPlane
   type: mks
