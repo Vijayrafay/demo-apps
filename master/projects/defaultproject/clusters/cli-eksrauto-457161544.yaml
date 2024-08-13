@@ -39,6 +39,17 @@ spec:
           namespace: rafay-system
         tags:
           irsatag: rauto-irsatag
+      - attachPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        metadata:
+          annotations:
+            irsa: rauto-664790187
+          labels:
+            irsalabel: rauto-664790187
+          name: rauto-irsa-4550
+          namespace: namespace-664790187
+        tags:
+          irsatag: rauto-664790187
       withOIDC: true
     metadata:
       name: cli-eksrauto-457161544
