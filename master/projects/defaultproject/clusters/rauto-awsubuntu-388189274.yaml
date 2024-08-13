@@ -23,19 +23,19 @@ spec:
       - Storage
       - Worker
     - arch: amd64
-      hostname: ip-172-31-10-106
-      operatingSystem: Ubuntu20.04
-      privateIP: 172.31.10.106
-      roles:
-      - Worker
-      - Storage
-    - arch: amd64
       hostname: ip-172-31-1-80
       operatingSystem: Ubuntu20.04
       privateIP: 172.31.1.80
       roles:
       - Worker
       - ControlPlane
+      - Storage
+    - arch: amd64
+      hostname: ip-172-31-10-106
+      operatingSystem: Ubuntu20.04
+      privateIP: 172.31.10.106
+      roles:
+      - Worker
       - Storage
     - arch: amd64
       hostname: ip-172-31-10-173
