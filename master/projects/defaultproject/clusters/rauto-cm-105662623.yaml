@@ -38,13 +38,13 @@ spec:
       volumeSize: 80
       volumeType: gp2
     - amiFamily: Ubuntu2004
-      desiredCapacity: 2
+      desiredCapacity: 3
       iam:
         withAddonPolicies:
           autoScaler: true
           imageBuilder: true
       instanceType: t3a.xlarge
-      maxSize: 2
+      maxSize: 3
       minSize: 2
       name: rauto-ng2-105662623
       overrideBootstrapCommand: null
