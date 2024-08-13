@@ -40,17 +40,6 @@ spec:
         tags:
           irsatag: rauto-irsatag
       - attachPolicyARNs:
-        - arn:aws:iam::aws:policy/AmazonS3FullAccess
-        metadata:
-          annotations:
-            irsa: rauto-664790187
-          labels:
-            irsalabel: rauto-664790187
-          name: rauto-irsa-4550
-          namespace: namespace-664790187
-        tags:
-          awstag: rauto-irsa-664790187
-      - attachPolicyARNs:
         - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
         metadata:
           annotations:
