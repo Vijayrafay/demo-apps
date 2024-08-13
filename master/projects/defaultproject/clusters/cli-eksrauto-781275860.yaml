@@ -60,6 +60,6 @@ spec:
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
-        privateAccess: true
-        publicAccess: false
+        privateAccess: false
+        publicAccess: true
   type: aws-eks
