@@ -49,10 +49,10 @@ spec:
         squad: all
       version: "1.30"
     nodeGroups:
-    - desiredCapacity: 2
+    - desiredCapacity: 1
       instanceType: t3.xlarge
-      maxSize: 2
-      minSize: 2
+      maxSize: 1
+      minSize: 1
       name: cli-ngrauto-first-457161544
       privateNetworking: true
       version: "1.30"
