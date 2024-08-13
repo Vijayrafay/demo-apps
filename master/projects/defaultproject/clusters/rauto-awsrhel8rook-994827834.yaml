@@ -7,7 +7,7 @@ spec:
   blueprint:
     name: default-upstream
   config:
-    kubernetesVersion: v1.29.4
+    kubernetesVersion: v1.30.2
     network:
       cni:
         name: Cilium
@@ -22,13 +22,9 @@ spec:
       roles:
       - Worker
       - Storage
-    - arch: x86_64
-      hostname: ip-172-31-26-27.ec2.internal
-      operatingSystem: RedHat8.10
-      privateIP: 172.31.26.27
-      roles:
-      - Storage
-      - Worker
+      taints:
+      - effect: NoSchedule
+        key: node.cilium.io/agent-not-ready
     - arch: x86_64
       hostname: ip-172-31-27-99.ec2.internal
       operatingSystem: RedHat8.10
@@ -38,10 +34,10 @@ spec:
       - ControlPlane
       - Storage
     - arch: x86_64
-      hostname: ip-172-31-17-6.ec2.internal
+      hostname: ip-172-31-26-27.ec2.internal
       operatingSystem: RedHat8.10
-      privateIP: 172.31.17.6
+      privateIP: 172.31.26.27
       roles:
-      - Worker
       - Storage
+      - Worker
   type: mks
