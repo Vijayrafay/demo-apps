@@ -20,7 +20,13 @@ spec:
       podSubnet: 10.244.0.0/16
       serviceSubnet: 10.96.0.0/12
     nodes:
-    - roles:
+    - arch: x86_64
+      hostname: simha-test-rook-ceph
+      operatingSystem: AlmaLinux9.3
+      privateIP: 10.0.0.43
+      roles:
+      - ControlPlane
+      - Storage
       - Worker
   proxy: {}
   type: mks
