@@ -1,18 +1,18 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-hacluster-64477308
+  name: rauto-ocirocky-114969959
   project: defaultproject
 spec:
   blueprint:
     name: default
   config:
     highAvailability: true
-    kubernetesVersion: v1.28.9
+    kubernetesVersion: v1.30.2
     network:
       cni:
-        name: Cilium
-        version: 1.14.1
-      podSubnet: 10.244.0.0/16
-      serviceSubnet: 10.96.0.0/12
+        name: Calico
+        version: 3.26.1
+      podSubnet: 10.20.0.0/16
+      serviceSubnet: 10.21.0.0/20
   type: mks
