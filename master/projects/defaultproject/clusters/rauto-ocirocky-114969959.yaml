@@ -15,4 +15,43 @@ spec:
         version: 3.26.1
       podSubnet: 10.20.0.0/16
       serviceSubnet: 10.21.0.0/20
+    nodes:
+    - arch: x86_64
+      hostname: rauto-sdk-1723530152-031425
+      operatingSystem: Rocky9.4
+      privateIP: 10.0.0.245
+      roles:
+      - Storage
+      - Worker
+      - ControlPlane
+    - arch: x86_64
+      hostname: rauto-sdk-1723530035-560242
+      operatingSystem: Rocky9.4
+      privateIP: 10.0.0.177
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+    - arch: x86_64
+      hostname: rauto-sdk-1723530221-311748
+      operatingSystem: Rocky9.4
+      privateIP: 10.0.0.59
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+    - arch: x86_64
+      hostname: rauto-sdk-1723530291-099387
+      operatingSystem: Rocky9.4
+      privateIP: 10.0.0.36
+      roles:
+      - Worker
+      - Storage
+    - arch: x86_64
+      hostname: rauto-sdk-1723530360-186895
+      operatingSystem: Rocky9.4
+      privateIP: 10.0.0.8
+      roles:
+      - Worker
+      - Storage
   type: mks
