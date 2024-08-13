@@ -26,7 +26,8 @@ spec:
     cloudWatch:
       clusterLogging:
         enableTypes:
-        - audit
+        - all
+        logRetentionInDays: 7
     iam:
       serviceAccounts:
       - metadata:
