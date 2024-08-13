@@ -125,4 +125,15 @@ spec:
         publicAccess: false
       nat:
         gateway: Single
+  systemComponentsPlacement:
+    daemonSetOverride:
+      tolerations:
+      - operator: Exists
+    nodeSelector:
+      key: rauto
+    tolerations:
+    - effect: NoSchedule
+      key: nodetaint
+      operator: Equal
+      value: rauto
   type: aws-eks
