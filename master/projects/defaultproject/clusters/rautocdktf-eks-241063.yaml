@@ -94,8 +94,4 @@ spec:
         publicAccess: false
       nat:
         gateway: Single
-  sharing:
-    enabled: true
-    projects:
-    - name: project-share-936749
   type: aws-eks
