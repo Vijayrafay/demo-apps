@@ -1,18 +1,17 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rautocdktf-eks-995361
+  name: rautocdktf-eks-824881
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rautocdktf-cloudp-995361
+  cloudCredentials: rautocdktf-cloudp-824881
   config:
     addons:
     - name: coredns
       version: latest
-    - configurationValues: '{"enableWindowsIpam":"true"}'
-      name: vpc-cni
+    - name: vpc-cni
       version: latest
     - name: kube-proxy
       version: latest
@@ -26,26 +25,6 @@ spec:
     - us-east-1f
     cloudWatch: {}
     managedNodeGroups:
-    - ami: ami-007b14959df3a12c5
-      desiredCapacity: 1
-      disableIMDSv1: false
-      disablePodIMDS: false
-      ebsOptimized: false
-      efaEnabled: false
-      enableDetailedMonitoring: false
-      instanceType: t3a.xlarge
-      maxPodsPerNode: 0
-      maxSize: 2
-      minSize: 1
-      name: rauto-ng-windows
-      overrideBootstrapCommand: '[Windows]'
-      privateNetworking: true
-      spot: false
-      volumeEncrypted: false
-      volumeIOPS: 3000
-      volumeSize: 80
-      volumeThroughput: 125
-      volumeType: gp3
     - amiFamily: AmazonLinux2
       desiredCapacity: 1
       disableIMDSv1: false
@@ -54,13 +33,19 @@ spec:
       efaEnabled: false
       enableDetailedMonitoring: false
       instanceType: t3a.xlarge
+      labels:
+        key: rauto
       maxPodsPerNode: 0
       maxSize: 2
       minSize: 1
       name: rauto-ngmanaged0
       privateNetworking: true
       spot: false
-      version: "1.29"
+      taints:
+      - effect: NoSchedule
+        key: nodetaint
+        value: rauto
+      version: "1.28"
       volumeEncrypted: false
       volumeIOPS: 3000
       volumeSize: 80
@@ -80,19 +65,19 @@ spec:
       name: rauto-ngmanaged01
       privateNetworking: true
       spot: false
-      version: "1.29"
+      version: "1.28"
       volumeEncrypted: false
       volumeIOPS: 3000
       volumeSize: 80
       volumeThroughput: 125
       volumeType: gp3
     metadata:
-      name: rautocdktf-eks-995361
+      name: rautocdktf-eks-824881
       region: us-east-1
       tags:
         email: automation@rafay.co
         env: automation
-      version: "1.30"
+      version: "1.28"
     network:
       cni:
         name: aws-cni
@@ -104,4 +89,15 @@ spec:
         publicAccess: false
       nat:
         gateway: Single
+  systemComponentsPlacement:
+    daemonSetOverride:
+      tolerations:
+      - operator: Exists
+    nodeSelector:
+      key: rauto
+    tolerations:
+    - effect: NoSchedule
+      key: nodetaint
+      operator: Equal
+      value: rauto
   type: aws-eks
