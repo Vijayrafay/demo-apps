@@ -49,6 +49,32 @@ spec:
       efaEnabled: false
       enableDetailedMonitoring: false
       instanceType: t3a.xlarge
+      labels:
+        key: rauto
+      maxPodsPerNode: 0
+      maxSize: 2
+      minSize: 1
+      name: rauto-ng-new-805050
+      privateNetworking: true
+      spot: false
+      taints:
+      - effect: NoSchedule
+        key: nodetaint
+        value: rauto
+      version: "1.29"
+      volumeEncrypted: false
+      volumeIOPS: 3000
+      volumeSize: 80
+      volumeThroughput: 125
+      volumeType: gp3
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3a.xlarge
       maxPodsPerNode: 0
       maxSize: 2
       minSize: 1
