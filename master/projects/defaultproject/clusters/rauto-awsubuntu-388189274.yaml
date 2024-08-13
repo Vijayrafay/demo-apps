@@ -16,6 +16,13 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
+      hostname: ip-172-31-9-40
+      operatingSystem: Ubuntu20.04
+      privateIP: 172.31.9.40
+      roles:
+      - Storage
+      - Worker
+    - arch: amd64
       hostname: ip-172-31-10-106
       operatingSystem: Ubuntu20.04
       privateIP: 172.31.10.106
@@ -31,10 +38,9 @@ spec:
       - ControlPlane
       - Storage
     - arch: amd64
-      hostname: ip-172-31-9-40
+      hostname: ip-172-31-10-173
       operatingSystem: Ubuntu20.04
-      privateIP: 172.31.9.40
+      privateIP: 172.31.10.173
       roles:
-      - Storage
       - Worker
   type: mks
