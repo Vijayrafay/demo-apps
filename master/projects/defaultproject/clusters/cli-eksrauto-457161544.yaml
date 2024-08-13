@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  labels:
+    cli: eks
   name: cli-eksrauto-457161544
   project: defaultproject
 spec:
