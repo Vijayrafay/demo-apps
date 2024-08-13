@@ -24,10 +24,7 @@ spec:
     - us-east-1d
     - us-east-1f
     cloudWatch:
-      clusterLogging:
-        enableTypes:
-        - all
-        logRetentionInDays: 7
+      clusterLogging: {}
     iam:
       serviceAccounts:
       - metadata:
