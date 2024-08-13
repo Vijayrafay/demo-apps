@@ -11,7 +11,8 @@ spec:
     addons:
     - name: coredns
       version: latest
-    - name: vpc-cni
+    - configurationValues: '{"enableWindowsIpam":"true"}'
+      name: vpc-cni
       version: latest
     - name: kube-proxy
       version: latest
