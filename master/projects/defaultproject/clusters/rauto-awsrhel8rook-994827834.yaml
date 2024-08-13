@@ -23,6 +23,13 @@ spec:
       - Worker
       - Storage
     - arch: x86_64
+      hostname: ip-172-31-26-27.ec2.internal
+      operatingSystem: RedHat8.10
+      privateIP: 172.31.26.27
+      roles:
+      - Storage
+      - Worker
+    - arch: x86_64
       hostname: ip-172-31-27-99.ec2.internal
       operatingSystem: RedHat8.10
       privateIP: 172.31.27.99
@@ -31,10 +38,10 @@ spec:
       - ControlPlane
       - Storage
     - arch: x86_64
-      hostname: ip-172-31-26-27.ec2.internal
+      hostname: ip-172-31-17-6.ec2.internal
       operatingSystem: RedHat8.10
-      privateIP: 172.31.26.27
+      privateIP: 172.31.17.6
       roles:
-      - Storage
       - Worker
+      - Storage
   type: mks
