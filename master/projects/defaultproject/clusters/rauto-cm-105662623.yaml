@@ -24,7 +24,7 @@ spec:
     - us-east-1f
     managedNodeGroups:
     - amiFamily: Ubuntu2004
-      desiredCapacity: 2
+      desiredCapacity: 0
       iam:
         withAddonPolicies:
           autoScaler: true
