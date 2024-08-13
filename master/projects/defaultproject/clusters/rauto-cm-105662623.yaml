@@ -24,14 +24,14 @@ spec:
     - us-east-1f
     managedNodeGroups:
     - amiFamily: Ubuntu2004
-      desiredCapacity: 3
+      desiredCapacity: 0
       iam:
         withAddonPolicies:
           autoScaler: true
           imageBuilder: true
       instanceType: t3a.xlarge
       maxSize: 3
-      minSize: 2
+      minSize: 0
       name: rauto-ng2-105662623
       overrideBootstrapCommand: null
       version: "1.29"
