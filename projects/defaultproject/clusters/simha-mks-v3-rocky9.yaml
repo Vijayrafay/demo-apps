@@ -3,7 +3,6 @@ kind: Cluster
 metadata:
   labels:
     name: vijaynarasimha
-    age: 27
   name: simha-mks-v3-rocky9
   project: defaultproject
 spec:
