@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  labels:
+    name: vijaynarasimha
   name: simha-mks-v3-rocky9
   project: defaultproject
 spec:
