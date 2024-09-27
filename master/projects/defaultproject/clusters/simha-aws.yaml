@@ -5,7 +5,7 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: simha-bp
+    name: ss
     version: v1
   cloudCredentials: simha-aws
   config:
