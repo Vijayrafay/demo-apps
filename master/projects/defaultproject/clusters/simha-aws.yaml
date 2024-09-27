@@ -16,6 +16,8 @@ spec:
       version: v1.16.0-eksbuild.1
     - name: kube-proxy
       version: v1.29.0-eksbuild.1
+    - name: aws-ebs-csi-driver
+      version: latest
     metadata:
       name: simha-aws
       region: us-west-2
