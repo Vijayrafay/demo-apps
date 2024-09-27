@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rautocdktf-eks-212512
+  name: rautocdktf-eks-662171
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rautocdktf-cloudp-212512
+  cloudCredentials: rautocdktf-cloudp-662171
   config:
     addons:
     - name: coredns
@@ -25,7 +25,7 @@ spec:
     - us-east-1f
     cloudWatch: {}
     metadata:
-      name: rautocdktf-eks-212512
+      name: rautocdktf-eks-662171
       region: us-east-1
       tags:
         email: automation@rafay.co
@@ -35,7 +35,7 @@ spec:
       cni:
         name: aws-cni
     nodeGroups:
-    - ami: ami-0fc370be4e6093918
+    - ami: ami-0051607a416876cec
       desiredCapacity: 1
       disableIMDSv1: false
       disablePodIMDS: false
@@ -46,13 +46,14 @@ spec:
       maxSize: 2
       minSize: 1
       name: rauto-ng0
+      overrideBootstrapCommand: '[Ubuntu]'
       privateNetworking: true
       volumeEncrypted: false
       volumeIOPS: 3000
       volumeSize: 80
       volumeThroughput: 125
       volumeType: gp3
-    - ami: ami-0fc370be4e6093918
+    - ami: ami-0051607a416876cec
       desiredCapacity: 1
       disableIMDSv1: false
       disablePodIMDS: false
@@ -63,6 +64,7 @@ spec:
       maxSize: 2
       minSize: 1
       name: rauto-ng01
+      overrideBootstrapCommand: '[Ubuntu]'
       privateNetworking: true
       volumeEncrypted: false
       volumeIOPS: 3000
