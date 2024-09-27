@@ -4,7 +4,6 @@ metadata:
   name: two-way
   project: defaultproject
 spec:
-  active: true
   stages:
   - config:
       destinationRepo: {}
