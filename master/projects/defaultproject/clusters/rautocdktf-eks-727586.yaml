@@ -33,18 +33,12 @@ spec:
       efaEnabled: false
       enableDetailedMonitoring: false
       instanceType: t3a.xlarge
-      labels:
-        key: rauto
       maxPodsPerNode: 0
       maxSize: 2
       minSize: 1
       name: rauto-ngmanaged0
       privateNetworking: true
       spot: false
-      taints:
-      - effect: NoSchedule
-        key: nodetaint
-        value: rauto
       version: "1.28"
       volumeEncrypted: false
       volumeIOPS: 3000
@@ -89,15 +83,4 @@ spec:
         publicAccess: false
       nat:
         gateway: Single
-  systemComponentsPlacement:
-    daemonSetOverride:
-      tolerations:
-      - operator: Exists
-    nodeSelector:
-      key: rauto
-    tolerations:
-    - effect: NoSchedule
-      key: nodetaint
-      operator: Equal
-      value: rauto
   type: aws-eks
