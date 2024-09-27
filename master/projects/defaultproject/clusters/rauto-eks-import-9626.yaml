@@ -59,6 +59,7 @@ spec:
       - effect: NoSchedule
         key: nodetaint
         value: rauto
+      version: "1.29"
       volumeSize: 80
       volumeType: gp3
     - amiFamily: AmazonLinux2
@@ -96,20 +97,21 @@ spec:
       - effect: NoSchedule
         key: nodetaint
         value: rauto
+      version: "1.29"
       volumeSize: 80
       volumeType: gp3
     - amiFamily: AmazonLinux2
       availabilityZones:
       - us-east-1a
       - us-east-1b
-      desiredCapacity: 1
+      desiredCapacity: 3
       iam:
         instanceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-9626-nodeg-NodeInstanceRole-8OiWHxqdW9OZ
       instanceType: t3.xlarge
       labels:
         alpha.eksctl.io/cluster-name: rauto-eks-import-9626
         alpha.eksctl.io/nodegroup-name: ng4
-      maxSize: 1
+      maxSize: 3
       minSize: 1
       name: ng4
       securityGroups:
@@ -128,6 +130,7 @@ spec:
         eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-9626
         email: automation@rafay.co
         env: automation
+      version: "1.29"
       volumeSize: 80
       volumeType: gp3
     - amiFamily: AmazonLinux2
@@ -139,6 +142,7 @@ spec:
       tags:
         email: automation@rafay.co
         env: automation
+      version: "1.29"
       volumeSize: 80
       volumeType: gp2
     metadata:
@@ -152,7 +156,7 @@ spec:
         eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-9626
         email: automation@rafay.co
         env: automation
-      version: "1.28"
+      version: "1.29"
     network:
       cni:
         name: aws-cni
@@ -163,6 +167,17 @@ spec:
       maxSize: 1
       minSize: 1
       name: rauto-ng-win-74101526
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: WindowsServer2019FullContainer
+      desiredCapacity: 1
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-win-68866416
       tags:
         email: automation@rafay.co
         env: automation
