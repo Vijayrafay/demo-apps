@@ -4,6 +4,18 @@ metadata:
   name: ss
   project: defaultproject
 spec:
-  driftWebhook:
-    enabled: true
+  base:
+    name: default
+    version: 2.8.0
+  componentsCriticality:
+  - name: secrets-store-csi-driver
+  defaultAddons:
+    csiSecretStoreConfig:
+      providers:
+        aws: true
+    enableCsiSecretStore: true
+    enableIngress: true
+    enableMonitoring: true
+  driftWebhook: {}
   type: custom
+  version: v1
