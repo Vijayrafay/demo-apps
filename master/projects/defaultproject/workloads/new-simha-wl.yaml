@@ -1,0 +1,19 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: new-simha-wl
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      catalog: default-bitnami
+      chartName: wordpress
+      chartVersion: 23.1.17
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: vijay-ns
+  placement:
+    selector: rafay.dev/clusterName=simha-aws
+  version: new-simha-wl-v1-202409271107370000
