@@ -1,0 +1,22 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: rauto-workload-496640-b4ee7c56
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: workloads/helm3/nginx/nginx-9.4.2.tgz
+      repository: rauto-git-repo
+      revision: master
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: rauto-namespace-496640
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: automation-cluster-boot-eks-8455
+  version: rauto-workload-496640-b4ee7c56-v1-202409261917410000

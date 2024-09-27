@@ -1,0 +1,14 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: rauto-successful-addon-3044
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/rauto-successful-addon-3044/rauto-successful-addon-3044.yaml
+    type: Yaml
+  namespace: default-rafay-fips
+  sharing: {}
+  version: v1

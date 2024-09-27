@@ -1,0 +1,13 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: addon-rauto-237131521
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/addon-rauto-237131521/addon-rauto-237131521.yaml
+    type: Yaml
+  namespace: new-ns2-237131521
+  sharing: {}

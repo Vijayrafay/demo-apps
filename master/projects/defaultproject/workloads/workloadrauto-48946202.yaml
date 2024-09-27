@@ -1,0 +1,17 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: workloadrauto-48946202
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/workloadrauto-48946202/wordpress-17.1.15.tgz
+      valuesPaths:
+      - name: file://artifacts/workloadrauto-48946202/helmworkload_8622
+    type: Helm
+  namespace: namespace-48946202
+  placement:
+    selector: rafay.dev/clusterName=rauto-cm-421549225
+  version: workloadrauto-48946202-v1-202409270120080000

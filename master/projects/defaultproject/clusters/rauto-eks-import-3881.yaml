@@ -1,0 +1,91 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-eks-import-3881
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default
+    version: v1
+  cloudCredentials: rauto_81419
+  config:
+    addons:
+    - name: coredns
+      version: v1.10.1-eksbuild.4
+    - name: kube-proxy
+      version: v1.28.2-eksbuild.2
+    - name: vpc-cni
+      version: v1.15.1-eksbuild.1
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    iam:
+      serviceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-3881-cluster-ServiceRole-REI5TkwGBUMv
+    metadata:
+      name: rauto-eks-import-3881
+      region: us-east-1
+      tags:
+        Name: eksctl-rauto-eks-import-3881-cluster/ControlPlane
+        alpha.eksctl.io/cluster-name: rauto-eks-import-3881
+        alpha.eksctl.io/cluster-oidc-enabled: "false"
+        alpha.eksctl.io/eksctl-version: 0.187.0
+        eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-3881
+        email: automation@rafay.co
+        env: automation
+      version: "1.28"
+    network:
+      cni:
+        name: aws-cni
+    nodeGroups:
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-124926258
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: WindowsServer2019CoreContainer
+      desiredCapacity: 1
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-368425633
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: false
+        publicAccess: true
+      id: vpc-00378629c233f780e
+      securityGroup: sg-080f57eacdf392824
+      subnets:
+        private:
+          subnet-0358d93f91d87b40b:
+            id: subnet-0358d93f91d87b40b
+          subnet-0c2231a0e256fe083:
+            id: subnet-0c2231a0e256fe083
+        public:
+          subnet-008b8025cbaac8aed:
+            id: subnet-008b8025cbaac8aed
+          subnet-07708cacd89713543:
+            id: subnet-07708cacd89713543
+  systemComponentsPlacement:
+    daemonSetOverride:
+      tolerations:
+      - operator: Exists
+    nodeSelector:
+      key: rauto
+    tolerations:
+    - effect: NoSchedule
+      key: nodetaint
+      operator: Equal
+      value: rauto
+  type: aws-eks

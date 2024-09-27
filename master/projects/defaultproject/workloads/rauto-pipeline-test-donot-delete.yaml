@@ -1,0 +1,19 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: rauto-pipeline-test-donot-delete
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: workloads/helm3/nginx/nginx-9.4.2.tgz
+      repository: rauto-git-repo
+      revision: rauto-pipeline-test
+      valuesPaths:
+      - name: workloads/helm3/nginx/nginx-values-pipeline.yaml
+    type: Helm
+  namespace: rauto-bootstrap-ns-846
+  placement:
+    selector: rafay.dev/clusterName=automation-cluster-boot-eks-8455
+  version: rauto-pipeline-test-donot-delete-v1-202409261558050000

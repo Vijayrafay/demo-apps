@@ -1,0 +1,27 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: simha-git
+  project: defaultproject
+spec:
+  agents:
+  - name: simha-docker
+  credentials:
+    password: sealed://credentials.password
+    username: vijay@rafay.co
+  endpoint: https://github.com/Vijayrafay/demo-apps.git
+  options:
+    provider: Github
+  secret:
+    name: file://artifacts/simha-git/sealed-secret.yaml
+  type: Git
+status:
+  agents:
+  - id: x1kygkz
+    name: simha-docker
+  projects:
+  - projectId: rx28oml
+    repositoryId: x287gkl
+  webhookConfig:
+    webhookSecret: 3c9f51d01200f55a673253883a5d5ebce670d2c2b37676393dc23589f44d0d2d
+    webhookURL: https://console.abishek.fips-controller.dev.rafay-edge.net/v2/config/webhook/repository/x287gkl
