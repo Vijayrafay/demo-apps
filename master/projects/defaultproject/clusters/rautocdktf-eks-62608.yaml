@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rautocdktf-eks-379018
+  name: rautocdktf-eks-62608
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rautocdktf-cloudp-379018
+  cloudCredentials: rautocdktf-cloudp-62608
   config:
     addons:
     - name: coredns
@@ -24,13 +24,28 @@ spec:
     - us-east-1d
     - us-east-1f
     cloudWatch: {}
+    iam:
+      serviceAccounts:
+      - metadata:
+          name: rauto-test-sa
+          namespace: rafay-system
+        roleOnly: false
+        wellKnownPolicies:
+          autoScaler: false
+          awsLoadBalancerController: true
+          certManager: false
+          ebsCSIController: false
+          efsCSIController: false
+          externalDNS: false
+          imageBuilder: false
+      withOIDC: true
     metadata:
-      name: rautocdktf-eks-379018
+      name: rautocdktf-eks-62608
       region: us-east-1
       tags:
         email: automation@rafay.co
         env: automation
-      version: "1.28"
+      version: "1.30"
     network:
       cni:
         name: aws-cni
@@ -47,7 +62,7 @@ spec:
       minSize: 1
       name: rauto-ng0
       privateNetworking: true
-      version: "1.28"
+      version: "1.30"
       volumeEncrypted: false
       volumeIOPS: 3000
       volumeSize: 80
@@ -65,7 +80,7 @@ spec:
       minSize: 1
       name: rauto-ng01
       privateNetworking: true
-      version: "1.28"
+      version: "1.29"
       volumeEncrypted: false
       volumeIOPS: 3000
       volumeSize: 80

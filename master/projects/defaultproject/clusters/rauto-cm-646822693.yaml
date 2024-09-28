@@ -1,0 +1,75 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-cm-646822693
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: minimal
+  cloudCredentials: rauto_36520
+  config:
+    addons:
+    - name: coredns
+      version: v1.10.1-eksbuild.13
+    - name: kube-proxy
+      version: v1.28.12-eksbuild.9
+    - name: aws-ebs-csi-driver
+      version: latest
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    - us-east-1c
+    - us-east-1d
+    - us-east-1f
+    managedNodeGroups:
+    - amiFamily: Ubuntu2004
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng1-646822693
+      overrideBootstrapCommand: null
+      version: "1.28"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: Ubuntu2004
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng2-646822693
+      overrideBootstrapCommand: null
+      version: "1.28"
+      volumeSize: 80
+      volumeType: gp2
+    metadata:
+      name: rauto-cm-646822693
+      region: us-east-1
+      tags:
+        DeleteBefore: "2024-09-28T06:02:00Z"
+        build_num: airgapped-eks-cluster-creation-fix-airgapped-52
+        creation_time: "2024-09-28T00:02:00Z"
+        email: automation@rafay.co
+        env: automation
+        squad: all
+      version: "1.28"
+    network:
+      cni:
+        name: Calico-v3.24.5
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+  proxyConfig: {}
+  type: aws-eks
