@@ -41,7 +41,7 @@ spec:
         email: vijay@rafay.co
         env: qa
         squad: all
-      version: "1.28"
+      version: "1.29"
     nodeGroups:
     - desiredCapacity: 1
       instanceType: t3.xlarge
