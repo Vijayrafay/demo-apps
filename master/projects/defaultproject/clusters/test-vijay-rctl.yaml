@@ -49,7 +49,7 @@ spec:
       minSize: 1
       name: test-vijay-rctl-ng
       privateNetworking: true
-      version: "1.28"
+      version: "1.29"
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
