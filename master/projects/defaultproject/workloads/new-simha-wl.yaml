@@ -16,4 +16,3 @@ spec:
   namespace: vijay-ns
   placement:
     selector: rafay.dev/clusterName=sept29-vijay-rctl
-  version: new-simha-wl-v3-202409300655050000
