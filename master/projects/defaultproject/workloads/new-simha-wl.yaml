@@ -16,4 +16,3 @@ spec:
   namespace: vijay-ns
   placement:
     selector: rafay.dev/clusterName=simha-aws
-  version: new-simha-wl-v1-202409271107370000
