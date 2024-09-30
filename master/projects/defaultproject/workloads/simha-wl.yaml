@@ -16,3 +16,4 @@ spec:
   namespace: vijay-ns
   placement:
     selector: rafay.dev/clusterName=test-vijay-rctl
+  version: simha-wl-v3-202409301129180000
