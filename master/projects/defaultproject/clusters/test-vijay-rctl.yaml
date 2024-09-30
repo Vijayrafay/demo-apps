@@ -1,12 +1,11 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: sept29-vijay-rctl
+  name: test-vijay-rctl
   project: defaultproject
 spec:
   blueprintConfig:
-    name: simha-bp
-    version: v1
+    name: default
   cloudCredentials: simha-aws
   config:
     addons:
@@ -34,7 +33,7 @@ spec:
           irsatag: rauto-irsatag
       withOIDC: true
     metadata:
-      name: sept29-vijay-rctl
+      name: test-vijay-rctl
       region: us-west-2
       tags:
         build_num: airgapped-eks-cluster-creation-fix-airgapped-31
@@ -42,15 +41,15 @@ spec:
         email: vijay@rafay.co
         env: qa
         squad: all
-      version: "1.29"
+      version: "1.28"
     nodeGroups:
     - desiredCapacity: 1
       instanceType: t3.xlarge
       maxSize: 1
-      minSize: 0
-      name: sept29-vijay-rctl-ng
+      minSize: 1
+      name: test-vijay-rctl-ng
       privateNetworking: true
-      version: "1.29"
+      version: "1.28"
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
