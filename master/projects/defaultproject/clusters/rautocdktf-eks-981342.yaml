@@ -25,7 +25,11 @@ spec:
     - us-east-1f
     cloudWatch: {}
     identityMappings:
-      arns: []
+      arns:
+      - arn: arn:aws:iam::211125364662:user/automation-user
+        group:
+        - system:masters
+        username: automation
     managedNodeGroups:
     - ami: ami-0051607a416876cec
       desiredCapacity: 1
