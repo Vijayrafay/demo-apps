@@ -1,7 +1,7 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: test-eks-simha
+  name: oct1-test-eks-simha
   project: defaultproject
 spec:
   blueprintConfig:
@@ -31,13 +31,27 @@ spec:
       instanceType: t3a.xlarge
       maxSize: 2
       minSize: 2
-      name: test-eks-simha-ng
+      name: oct1-test-eks-simha-ng
+      overrideBootstrapCommand: null
+      version: "1.28"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: Ubuntu2004
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 2
+      name: oct1-ng-2-test-eks-simha
       overrideBootstrapCommand: null
       version: "1.28"
       volumeSize: 80
       volumeType: gp2
     metadata:
-      name: test-eks-simha
+      name: oct1-test-eks-simha
       region: us-east-1
       tags:
         DeleteBefore: "2024-09-28T06:02:00Z"
