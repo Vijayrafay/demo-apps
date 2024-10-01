@@ -23,14 +23,14 @@ spec:
     - us-east-1f
     managedNodeGroups:
     - amiFamily: Ubuntu2004
-      desiredCapacity: 2
+      desiredCapacity: 0
       iam:
         withAddonPolicies:
           autoScaler: true
           imageBuilder: true
       instanceType: t3a.xlarge
       maxSize: 2
-      minSize: 2
+      minSize: 0
       name: oct1-test-eks-simha-ng
       overrideBootstrapCommand: null
       version: "1.28"
