@@ -1,0 +1,9 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: test
+  project: defaultproject
+spec:
+  driftWebhook:
+    enabled: true
+  type: custom
