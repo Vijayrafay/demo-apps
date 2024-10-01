@@ -36,7 +36,7 @@ spec:
       cni:
         name: aws-cni
     nodeGroups:
-    - ami: ami-057eb6da5a208bfb0
+    - ami: ami-019db8fff6017ebae
       desiredCapacity: 1
       disableIMDSv1: false
       disablePodIMDS: false
