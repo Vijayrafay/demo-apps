@@ -1,0 +1,16 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: rauto-addon-6715786
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/rauto-addon-6715786/chartmuseum-3.4.0.tgz
+      valuesPaths:
+      - name: file://artifacts/rauto-addon-6715786/chartmuseum-values.yaml
+    type: Helm
+  namespace: default-rafay-fips
+  sharing: {}
+  version: v1

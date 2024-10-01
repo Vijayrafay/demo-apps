@@ -1,0 +1,14 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: rauto-addon-8760574
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/rauto-addon-8760574/rauto-addon-8760574.yaml
+    type: Yaml
+  namespace: default-rafay-fips
+  sharing: {}
+  version: v1
