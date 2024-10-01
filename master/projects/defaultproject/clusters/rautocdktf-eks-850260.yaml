@@ -48,7 +48,7 @@ spec:
       minSize: 1
       name: rauto-ng-windows-850260
       privateNetworking: true
-      version: "1.28"
+      version: "1.29"
       volumeEncrypted: false
       volumeIOPS: 3000
       volumeSize: 80
