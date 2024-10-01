@@ -47,7 +47,7 @@ spec:
       minSize: 2
       name: oct1-ng-2-test-eks-simha
       overrideBootstrapCommand: null
-      version: "1.28"
+      version: "1.29"
       volumeSize: 80
       volumeType: gp2
     metadata:
