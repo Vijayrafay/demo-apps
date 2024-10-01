@@ -33,7 +33,7 @@ spec:
       minSize: 0
       name: oct1-test-eks-simha-ng
       overrideBootstrapCommand: null
-      version: "1.28"
+      version: "1.29"
       volumeSize: 80
       volumeType: gp2
     - amiFamily: Ubuntu2004
