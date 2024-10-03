@@ -38,7 +38,7 @@ spec:
       ssh:
         allow: true
         publicKeyName: aws-abi-key
-      volumeSize: 80
+      volumeSize: 100
       volumeType: gp3
     vpc:
       cidr: 192.168.0.0/16
