@@ -13,5 +13,5 @@ spec:
   placement:
     labels:
     - key: rafay.dev/clusterName
-      value: fips-simha-eks
+      value: abishek-eks-cluster-ha-oct-3-0
   resourceQuotas: {}
