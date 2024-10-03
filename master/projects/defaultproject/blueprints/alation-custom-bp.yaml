@@ -1,0 +1,9 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: alation-custom-bp
+  project: defaultproject
+spec:
+  driftWebhook:
+    enabled: true
+  type: custom

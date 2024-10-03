@@ -1,0 +1,15 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: alation-addon-3
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      catalog: default-helm
+      chartName: loki-simple-scalable
+      chartVersion: 1.8.11
+    type: Helm
+  namespace: alation-ns
+  sharing: {}
+  version: v1

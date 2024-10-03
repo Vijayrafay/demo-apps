@@ -1,0 +1,15 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: alation-addon-2
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      catalog: default-bitnami
+      chartName: wordpress
+      chartVersion: 23.1.19
+    type: Helm
+  namespace: alation-ns
+  sharing: {}
+  version: v1
