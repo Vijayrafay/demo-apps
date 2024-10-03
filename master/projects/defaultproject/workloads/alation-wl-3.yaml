@@ -16,4 +16,3 @@ spec:
   namespace: alation-ns-1
   placement:
     selector: rafay.dev/clusterName=abishek-eks-cluster-ha-oct-3-0
-  version: alation-wl-3-v1-202410030940230000
