@@ -1,9 +1,0 @@
-apiVersion: infra.k8smgmt.io/v3
-kind: Blueprint
-metadata:
-  name: rauto-spc-blueprint-984553
-  project: defaultproject
-spec:
-  driftWebhook:
-    enabled: true
-  type: custom
