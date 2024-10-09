@@ -1,6 +1,10 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Addon
 metadata:
+  annotations:
+    rafay.dev/audit_type: GIT||GitSync
+    rafay.dev/audit_user: vijay@rafay.co
+    rafay.dev/audit_user_group: ""
   name: test
   project: vijay-project
 spec:

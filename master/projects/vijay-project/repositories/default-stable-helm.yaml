@@ -11,3 +11,6 @@ status:
   projects:
   - projectId: dkgj88k
     repositoryId: qkoqvnm
+  webhookConfig:
+    webhookSecret: 480ea73eb97388dab093b3198258c0de4ac62bbf6f9a8c6d395ec8fe2668b10c
+    webhookURL: https://qc-console.stage.rafay.dev/v2/config/webhook/repository/qkoqvnm

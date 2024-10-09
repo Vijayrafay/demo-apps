@@ -11,3 +11,6 @@ status:
   projects:
   - projectId: dkgj88k
     repositoryId: w2lqy7k
+  webhookConfig:
+    webhookSecret: 6f20846415c5863d09ffef7bfd4d380d39ff51d54c95d51c450f33392540ab83
+    webhookURL: https://qc-console.stage.rafay.dev/v2/config/webhook/repository/w2lqy7k
