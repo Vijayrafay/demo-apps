@@ -1,9 +1,0 @@
-apiVersion: integrations.k8smgmt.io/v3
-kind: SecretStore
-metadata:
-  name: vijay
-  project: vijay-project
-spec:
-  config:
-    vault: {}
-  provider: Vault

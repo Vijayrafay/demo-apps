@@ -1,9 +1,0 @@
-apiVersion: gitops.k8smgmt.io/v3
-kind: Agent
-metadata:
-  name: vijay-dcoker
-  project: vijay-project
-spec:
-  active: true
-  type: Docker
-  version: r1.27.0

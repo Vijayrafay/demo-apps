@@ -1,8 +1,0 @@
-apiVersion: integrations.k8smgmt.io/v3
-kind: SecretProviderClass
-metadata:
-  name: test-ankit
-  project: vijay-project
-spec:
-  provider: AWS
-  sharing: {}
