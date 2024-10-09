@@ -19,11 +19,3 @@ spec:
       systemToGitSync: true
     name: sync
     type: SystemSync
-  triggers:
-  - config:
-      repo:
-        provider: Github
-        repository: simha-repo
-        revision: master
-    name: trigger
-    type: Webhook
