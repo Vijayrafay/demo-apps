@@ -51,3 +51,11 @@ spec:
       systemToGitSync: true
     name: pipe
     type: SystemSync
+  triggers:
+  - config:
+      repo:
+        provider: Github
+        repository: simha-repo
+        revision: master
+    name: trigger
+    type: Webhook
