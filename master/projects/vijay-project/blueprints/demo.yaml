@@ -11,6 +11,6 @@ spec:
     enableIngress: true
     enableMonitoring: true
   driftWebhook:
-    enabled: true
+    enabled: false
   type: custom
-  version: v1
+  version: v2
