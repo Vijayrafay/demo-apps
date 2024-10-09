@@ -1,0 +1,15 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: test-pvc
+  project: vijay-project
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/test-pvc/test-pvc.yaml
+    type: Yaml
+  namespace: default
+  placement:
+    selector: rafay.dev/clusterName=vijay-vmware
+  version: test-pvc-v3-202305080633220000
