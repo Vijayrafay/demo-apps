@@ -8,9 +8,11 @@ spec:
   stages:
   - config:
       destinationRepo: {}
+      excludedResources:
+      - name: Addon
+      - name: Workload
       gitToSystemSync: true
       includedResources:
-      - name: Addon
       - name: AddonOverride
       - name: Blueprint
       - name: Catalog
@@ -41,7 +43,6 @@ spec:
       - name: SecretProviderClass
       - name: SecretSealer
       - name: SecretStore
-      - name: Workload
       - name: WorkloadTemplate
       sourceAsDestination: true
       sourceRepo:
