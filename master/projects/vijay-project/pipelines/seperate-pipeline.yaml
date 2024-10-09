@@ -4,6 +4,7 @@ metadata:
   name: seperate-pipeline
   project: vijay-project
 spec:
+  active: true
   stages:
   - config:
       destinationRepo: {}
