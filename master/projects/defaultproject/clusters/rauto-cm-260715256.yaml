@@ -54,6 +54,18 @@ spec:
       version: "1.28"
       volumeSize: 80
       volumeType: gp2
+    - amiFamily: WindowsServer2019FullContainer
+      desiredCapacity: 1
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-win-741217885
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     metadata:
       name: rauto-cm-260715256
       region: us-east-1
