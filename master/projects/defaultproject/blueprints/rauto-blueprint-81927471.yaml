@@ -1,0 +1,18 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: rauto-blueprint-81927471
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 2.8.0
+  customAddons:
+  - name: rauto-addon-81927471
+    version: v1
+  defaultAddons:
+    enableMonitoring: true
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v1
