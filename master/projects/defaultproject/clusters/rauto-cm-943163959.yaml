@@ -66,6 +66,19 @@ spec:
       privateNetworking: true
       volumeSize: 80
       volumeType: gp2
+    - ami: ami-094b588eefd29ec42
+      desiredCapacity: 1
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng1-win-855315415
+      overrideBootstrapCommand: '| [Windows]'
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
