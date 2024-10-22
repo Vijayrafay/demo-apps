@@ -41,11 +41,7 @@ spec:
           irsatag: rauto-irsatag
       withOIDC: true
     identityMappings:
-      arns:
-      - arn: arn:aws:iam::679196758854:user/automation-qa
-        group:
-        - system:masters
-        username: automation
+      arns: []
     metadata:
       name: rauto-cm-788979154
       region: us-east-1
