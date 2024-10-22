@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  labels:
+    rauto: rauto-cm-647907761
   name: rauto-cm-647907761
   project: defaultproject
 spec:
