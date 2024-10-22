@@ -24,11 +24,7 @@ spec:
     - us-east-1d
     - us-east-1f
     identityMappings:
-      arns:
-      - arn: arn:aws:iam::211125364662:role/automation_user_readonly_role
-        group:
-        - system:masters
-        username: rauto
+      arns: []
     metadata:
       name: rauto-cm-346634299
       region: us-east-1
