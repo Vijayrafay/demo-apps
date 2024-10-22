@@ -1,22 +1,20 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-cm-260715256
+  name: rauto-cm-64376540
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rauto_80985
+  cloudCredentials: rauto_86112
   config:
     addons:
     - name: vpc-cni
       version: v1.18.5-eksbuild.1
     - name: coredns
-      version: v1.10.1-eksbuild.13
+      version: v1.11.3-eksbuild.1
     - name: kube-proxy
-      version: v1.28.12-eksbuild.9
-    - name: aws-ebs-csi-driver
-      version: latest
+      version: v1.29.7-eksbuild.9
     availabilityZones:
     - us-east-1a
     - us-east-1b
@@ -24,7 +22,7 @@ spec:
     - us-east-1d
     - us-east-1f
     managedNodeGroups:
-    - amiFamily: Bottlerocket
+    - ami: ami-0b9e545aa4c20aac6
       desiredCapacity: 2
       iam:
         withAddonPolicies:
@@ -33,13 +31,12 @@ spec:
       instanceType: t3a.xlarge
       maxSize: 2
       minSize: 2
-      name: rauto-ng1-260715256
+      name: rauto-ng1-64376540
       overrideBootstrapCommand: null
       privateNetworking: true
-      version: "1.28"
       volumeSize: 80
       volumeType: gp2
-    - amiFamily: Bottlerocket
+    - ami: ami-0b9e545aa4c20aac6
       desiredCapacity: 2
       iam:
         withAddonPolicies:
@@ -48,23 +45,22 @@ spec:
       instanceType: t3a.xlarge
       maxSize: 2
       minSize: 2
-      name: rauto-ng2-260715256
+      name: rauto-ng2-64376540
       overrideBootstrapCommand: null
       privateNetworking: true
-      version: "1.28"
       volumeSize: 80
       volumeType: gp2
     metadata:
-      name: rauto-cm-260715256
+      name: rauto-cm-64376540
       region: us-east-1
       tags:
-        DeleteBefore: "2024-10-23T02:56:14Z"
+        DeleteBefore: "2024-10-23T03:00:22Z"
         build_num: airgapped-eks-cluster-creation-fix-airgapped-76
-        creation_time: "2024-10-22T20:56:14Z"
+        creation_time: "2024-10-22T21:00:22Z"
         email: automation@rafay.co
         env: automation
         squad: all
-      version: "1.28"
+      version: "1.29"
     network:
       cni:
         name: aws-cni
