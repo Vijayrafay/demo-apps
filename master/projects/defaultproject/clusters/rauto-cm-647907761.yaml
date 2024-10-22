@@ -20,6 +20,8 @@ spec:
       version: v1.28.12-eksbuild.9
     - name: aws-ebs-csi-driver
       version: latest
+    - name: adot
+      version: v0.102.1-eksbuild.1
     availabilityZones:
     - us-east-1a
     - us-east-1b
