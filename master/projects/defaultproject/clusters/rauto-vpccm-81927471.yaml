@@ -27,6 +27,8 @@ spec:
       version: v0.102.1-eksbuild.1
     - name: aws-guardduty-agent
       version: v1.7.1-eksbuild.2
+    - name: aws-ebs-csi-driver
+      version: latest
     managedNodeGroups:
     - ami: ami-09983cfa96c24a7e3
       desiredCapacity: 2
