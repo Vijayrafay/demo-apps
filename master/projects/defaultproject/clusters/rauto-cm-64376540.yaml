@@ -52,6 +52,18 @@ spec:
       privateNetworking: true
       volumeSize: 80
       volumeType: gp2
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-165828189
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     metadata:
       name: rauto-cm-64376540
       region: us-east-1
