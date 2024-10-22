@@ -76,4 +76,9 @@ spec:
       nat:
         gateway: Single
   proxyConfig: {}
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-project-557374
+    - name: rauto-project-one-557374
   type: aws-eks
