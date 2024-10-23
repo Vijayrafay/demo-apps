@@ -24,13 +24,13 @@ spec:
     - us-east-1f
     managedNodeGroups:
     - amiFamily: Ubuntu2004
-      desiredCapacity: 2
+      desiredCapacity: 3
       iam:
         withAddonPolicies:
           autoScaler: true
           imageBuilder: true
       instanceType: t3a.xlarge
-      maxSize: 2
+      maxSize: 3
       minSize: 2
       name: rauto-ng1-175785573
       overrideBootstrapCommand: null
@@ -61,7 +61,7 @@ spec:
         email: automation@rafay.co
         env: automation
         squad: all
-      version: "1.29"
+      version: "1.30"
     network:
       cni:
         name: Calico-v3.24.5
