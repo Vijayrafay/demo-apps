@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workloadrauto-571943365
+  labels:
+    app: awscli
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: awscli
+  template:
+    metadata:
+      labels:
+        app: awscli
+    spec:
+      serviceAccount: rauto-irsa-24
+      containers:
+        - name: awscli
+          image: amazon/aws-cli
+          command: ["sleep","infinity"]
