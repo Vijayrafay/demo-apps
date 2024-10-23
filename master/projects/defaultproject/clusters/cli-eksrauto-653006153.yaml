@@ -26,6 +26,18 @@ spec:
     - us-east-1d
     - us-east-1f
     iam:
+      serviceAccounts:
+      - attachPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        metadata:
+          annotations:
+            irsa: rauto-702055223
+          labels:
+            irsalabel: rauto-702055223
+          name: rauto-irsa-4305
+          namespace: namespace-702055223
+        tags:
+          irsatag: rauto-702055223
       withOIDC: true
     kubernetesNetworkConfig:
       ipFamily: IPv6
