@@ -1,6 +1,0 @@
-apiVersion: gitops.k8smgmt.io/v3
-kind: Pipeline
-metadata:
-  name: abishek-k8s-agent
-  project: defaultproject
-spec: {}
