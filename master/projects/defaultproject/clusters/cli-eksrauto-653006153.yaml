@@ -28,10 +28,10 @@ spec:
     kubernetesNetworkConfig:
       ipFamily: IPv6
     managedNodeGroups:
-    - desiredCapacity: 1
+    - desiredCapacity: 2
       instanceType: t3.xlarge
-      maxSize: 1
-      minSize: 1
+      maxSize: 2
+      minSize: 2
       name: cli-ngrauto-first-653006153
       privateNetworking: true
       version: "1.30"
