@@ -1,0 +1,16 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: default-bitnami
+  project: defaultproject
+spec:
+  endpoint: https://charts.bitnami.com/bitnami
+  options: {}
+  type: Helm
+status:
+  projects:
+  - projectId: rx28oml
+    repositoryId: 4qkolkn
+  webhookConfig:
+    webhookSecret: 46cced26a8237d82340a5dc9e0aeb46f8ed5cbf49a98f62ed85f47018aac6af8
+    webhookURL: https://console.varun.dev.rafay-edge.net/v2/config/webhook/repository/4qkolkn

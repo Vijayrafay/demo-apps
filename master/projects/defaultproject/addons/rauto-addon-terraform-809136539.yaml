@@ -1,0 +1,18 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  labels:
+    platform: terraform
+    rauto: ""
+  name: rauto-addon-terraform-809136539
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://addon-nginx.yaml
+    options: {}
+    type: Yaml
+  namespace: rauto-ns-809136539
+  sharing: {}
+  version: v1.0

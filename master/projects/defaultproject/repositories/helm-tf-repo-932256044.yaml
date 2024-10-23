@@ -1,0 +1,21 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: helm-tf-repo-932256044
+  project: defaultproject
+spec:
+  credentials:
+    password: sealed://credentials.password
+    username: admin
+  endpoint: https://regression-charts.run.dev.rafay-edge.net/charts
+  options: {}
+  secret:
+    name: file://artifacts/helm-tf-repo-932256044/sealed-secret.yaml
+  type: Helm
+status:
+  projects:
+  - projectId: rx28oml
+    repositoryId: d2wojm8
+  webhookConfig:
+    webhookSecret: aff1753ec754273fc171ed8265ebb902df94df83f408dec382c86fa442b9b64e
+    webhookURL: https://console.varun.dev.rafay-edge.net/v2/config/webhook/repository/d2wojm8

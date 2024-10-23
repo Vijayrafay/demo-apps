@@ -1,0 +1,13 @@
+apiVersion: security.k8smgmt.io/v3
+kind: ClusterNetworkPolicyRule
+metadata:
+  name: rauto-network-rule-23573140
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/rauto-network-rule-23573140/cluster-wide-network-policy.yaml
+    options: {}
+    type: Yaml
+  version: v1.1
