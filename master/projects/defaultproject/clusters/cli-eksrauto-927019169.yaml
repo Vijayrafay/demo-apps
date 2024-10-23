@@ -55,7 +55,7 @@ spec:
       minSize: 1
       name: cli-ngrauto-first-927019169
       privateNetworking: true
-      version: "1.29"
+      version: "1.30"
     - desiredCapacity: 1
       instanceType: t3.xlarge
       maxSize: 1
