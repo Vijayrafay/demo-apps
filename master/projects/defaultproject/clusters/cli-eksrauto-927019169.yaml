@@ -47,7 +47,7 @@ spec:
         email: automation@rafay.co
         env: automation
         squad: all
-      version: "1.29"
+      version: "1.30"
     nodeGroups:
     - desiredCapacity: 1
       instanceType: t3.xlarge
