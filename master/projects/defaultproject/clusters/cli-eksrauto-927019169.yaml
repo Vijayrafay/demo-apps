@@ -19,6 +19,18 @@ spec:
       version: latest
     - name: aws-ebs-csi-driver
       version: latest
+    - name: aws-efs-csi-driver
+      version: latest
+    - name: amazon-cloudwatch-observability
+      version: latest
+    - name: adot
+      version: latest
+    - name: aws-guardduty-agent
+      version: latest
+    - name: snapshot-controller
+      version: latest
+    - name: aws-mountpoint-s3-csi-driver
+      version: latest
     availabilityZones:
     - us-east-1a
     - us-east-1b
