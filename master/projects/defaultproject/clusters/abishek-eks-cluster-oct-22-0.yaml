@@ -27,7 +27,7 @@ spec:
       instanceTypes:
       - t3.xlarge
       maxSize: 1
-      minSize: 1
+      minSize: 0
       name: ng-1
       ssh:
         allow: true
