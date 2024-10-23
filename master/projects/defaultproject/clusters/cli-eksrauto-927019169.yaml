@@ -52,7 +52,7 @@ spec:
         tags:
           irsatag: rauto-irsatag
       - attachPolicyARNs:
-        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
         metadata:
           annotations:
             irsa: rauto-571943365
@@ -61,7 +61,7 @@ spec:
           name: rauto-irsa-24
           namespace: namespace-571943365
         tags:
-          irsatag: rauto-571943365
+          awstag: rauto-irsa-571943365
       withOIDC: true
     metadata:
       name: cli-eksrauto-927019169
