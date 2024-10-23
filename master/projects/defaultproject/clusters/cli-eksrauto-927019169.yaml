@@ -52,17 +52,6 @@ spec:
         tags:
           irsatag: rauto-irsatag
       - attachPolicyARNs:
-        - arn:aws:iam::aws:policy/AmazonS3FullAccess
-        metadata:
-          annotations:
-            irsa: rauto-571943365
-          labels:
-            irsalabel: rauto-571943365
-          name: rauto-irsa-24
-          namespace: namespace-571943365
-        tags:
-          awstag: rauto-irsa-571943365
-      - attachPolicyARNs:
         - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
         metadata:
           annotations:
