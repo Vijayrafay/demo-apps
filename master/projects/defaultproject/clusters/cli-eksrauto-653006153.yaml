@@ -44,6 +44,14 @@ spec:
       name: cli-ngrauto-second-653006153
       privateNetworking: true
       version: "1.30"
+    - desiredCapacity: 1
+      instanceType: t3.xlarge
+      name: eksngrauto-874578911
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: "1.30"
     metadata:
       name: cli-eksrauto-653006153
       region: us-east-1
