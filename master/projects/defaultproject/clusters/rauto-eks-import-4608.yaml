@@ -5,7 +5,7 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-nps-bp-8510
+    name: default
     version: v1
   cloudCredentials: rauto_17856
   config:
