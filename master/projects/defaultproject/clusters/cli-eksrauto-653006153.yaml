@@ -41,7 +41,7 @@ spec:
       minSize: 1
       name: cli-ngrauto-second-653006153
       privateNetworking: true
-      version: "1.29"
+      version: "1.30"
     metadata:
       name: cli-eksrauto-653006153
       region: us-east-1
