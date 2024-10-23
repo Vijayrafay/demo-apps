@@ -1,7 +1,7 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Blueprint
 metadata:
-  name: new-bp
+  name: opa-bp
   project: defaultproject
 spec:
   base:
@@ -18,9 +18,9 @@ spec:
   opaPolicy:
     opaPolicy:
     - name: policy-restricted
-      version: version-1729523933
+      version: version-1729658940
     - name: policy-privileged
-      version: version-1729523933
+      version: version-1729658940
     profile:
       name: default
       version: latest
