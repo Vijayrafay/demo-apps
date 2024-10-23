@@ -1,0 +1,22 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: rauto-nps-bp-8388
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 2.8.0
+  defaultAddons:
+    enableMonitoring: true
+  driftWebhook:
+    enabled: true
+  networkPolicy:
+    policies:
+    - name: rauto-network-policy-8388
+      version: v1.1
+    profile:
+      name: rauto-network-profile-8388
+      version: v1.1
+  type: custom
+  version: v1
