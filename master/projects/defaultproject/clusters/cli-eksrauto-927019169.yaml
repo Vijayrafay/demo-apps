@@ -65,14 +65,6 @@ spec:
       name: cli-ngrauto-second-927019169
       privateNetworking: true
       version: "1.30"
-    - desiredCapacity: 1
-      instanceType: t3.xlarge
-      name: eksngrauto-937181635
-      privateNetworking: true
-      tags:
-        email: automation@rafay.co
-        env: automation
-      version: "1.30"
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
