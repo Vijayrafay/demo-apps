@@ -5,4 +5,13 @@ metadata:
     rafay.dev/description: ""
   name: demo-ns
   project: defaultproject
-spec: {}
+spec:
+  limitRange:
+    container: {}
+    pod: {}
+  namespaceMeshPolicyParams: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: simha-mks
+  resourceQuotas: {}
