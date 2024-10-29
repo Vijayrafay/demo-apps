@@ -4,6 +4,7 @@ metadata:
   name: simha-pipe
   project: defaultproject
 spec:
+  active: true
   stages:
   - config:
       destinationRepo: {}
