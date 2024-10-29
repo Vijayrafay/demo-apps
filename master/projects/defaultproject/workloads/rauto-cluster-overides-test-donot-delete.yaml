@@ -1,0 +1,16 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: rauto-cluster-overides-test-donot-delete
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/rauto-cluster-overides-test-donot-delete/nginx-9.4.2.tgz
+      valuesPaths:
+      - name: file://artifacts/rauto-cluster-overides-test-donot-delete/helmworkload_8335
+    type: Helm
+  namespace: rauto-bootstrap-ns-854
+  placement:
+    selector: rafay.dev/clusterName=automation-cluster-boot-eks-5026

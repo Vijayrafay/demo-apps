@@ -1,0 +1,16 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: default-cert-manager
+  project: defaultproject
+spec:
+  endpoint: https://github.com/jetstack/cert-manager.git
+  options: {}
+  type: Git
+status:
+  projects:
+  - projectId: rx28oml
+    repositoryId: 7w2lnkp
+  webhookConfig:
+    webhookSecret: 4d55d4c2c73184bc057085a30c5181bcd02cb3f9e01d01ad3d9d1943bfe3a2cc
+    webhookURL: https://console.abishek-airgap.dev.rafay-edge.net/v2/config/webhook/repository/7w2lnkp

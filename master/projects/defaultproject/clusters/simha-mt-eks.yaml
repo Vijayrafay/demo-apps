@@ -1,0 +1,52 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: simha-mt-eks
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default
+  cloudCredentials: simha-aws
+  config:
+    addons:
+    - name: coredns
+      version: v1.11.1-eksbuild.4
+    - name: vpc-cni
+      version: v1.16.0-eksbuild.1
+    - name: kube-proxy
+      version: v1.29.0-eksbuild.1
+    - name: aws-ebs-csi-driver
+      version: latest
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      instanceTypes:
+      - t3.xlarge
+      maxSize: 2
+      minSize: 1
+      name: simha-mt-eks-ng
+      ssh:
+        allow: true
+        publicKeyName: aws-abi-key
+      version: "1.29"
+      volumeSize: 80
+      volumeType: gp3
+    metadata:
+      name: simha-mt-eks
+      region: us-west-2
+      tags:
+        email: vijay@rafay.co
+        env: qa
+      version: "1.29"
+    network:
+      cni:
+        name: aws-cni
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: true
+      nat:
+        gateway: Single
+  proxyConfig: {}
+  type: aws-eks
