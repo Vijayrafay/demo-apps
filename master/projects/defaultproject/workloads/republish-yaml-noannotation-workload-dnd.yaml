@@ -1,0 +1,15 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: republish-yaml-noannotation-workload-dnd
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/republish-yaml-noannotation-workload-dnd/republish-yaml-noannotation-workload-dnd.yaml
+    type: Yaml
+  namespace: rauto-bootstrap-ns-936
+  placement:
+    selector: rafay.dev/clusterName=automation-cluster-boot-eks-5026
+  version: republish-yaml-noannotation-workload-dnd-v2-202410251005150000

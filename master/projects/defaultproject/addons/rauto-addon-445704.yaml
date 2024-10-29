@@ -1,0 +1,16 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: rauto-addon-445704
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: workloads/native_yaml/nginx_webserver/nginx.yaml
+      repository: rauto-git-repo
+      revision: master
+    type: Yaml
+  namespace: rauto-ns-445704
+  sharing: {}
+  version: rautoV1
