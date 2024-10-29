@@ -1,0 +1,6 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: default-vijay-org
+  project: defaultproject
+spec: {}
