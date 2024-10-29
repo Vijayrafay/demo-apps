@@ -5,7 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: default
+    name: shiva-opa-bp
+    version: v1
   config:
     kubernetesVersion: v1.29.4
     network:
