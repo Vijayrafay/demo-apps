@@ -3,9 +3,7 @@ kind: Namespace
 metadata:
   annotations:
     rafay.dev/description: ""
-  name: rauto-ns-64527
+  name: default-vijay-org
   project: defaultproject
 spec:
-  limitRange: {}
-  namespaceMeshPolicyParams: {}
   resourceQuotas: {}
