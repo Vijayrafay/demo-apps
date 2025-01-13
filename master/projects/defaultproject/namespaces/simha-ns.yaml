@@ -3,10 +3,12 @@ kind: Namespace
 metadata:
   annotations:
     rafay.dev/description: ""
-  name: rauto-bootstrap-ns-500
+  name: simha-ns
   project: defaultproject
 spec:
-  limitRange: {}
+  limitRange:
+    container: {}
+    pod: {}
   namespaceMeshPolicyParams: {}
   placement:
     labels:
