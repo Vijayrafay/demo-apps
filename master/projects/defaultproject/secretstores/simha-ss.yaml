@@ -1,0 +1,9 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: SecretStore
+metadata:
+  name: simha-ss
+  project: defaultproject
+spec:
+  config:
+    vault: {}
+  provider: Vault
