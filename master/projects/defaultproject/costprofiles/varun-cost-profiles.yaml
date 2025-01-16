@@ -1,6 +1,8 @@
 apiVersion: cost.k8smgmt.io/v3
 kind: CostProfile
 metadata:
+  annotations:
+    rafay.dev/description: ""
   name: varun-cost-profiles
   project: defaultproject
 spec:

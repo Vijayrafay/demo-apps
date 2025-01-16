@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Namespace
 metadata:
+  annotations:
+    rafay.dev/description: ""
   labels:
     kubernetes.io/metadata.name: calico-system
     name: calico-system
@@ -8,4 +10,6 @@ metadata:
     pod-security.kubernetes.io/enforce-version: latest
   name: calico-system
   project: defaultproject
-spec: {}
+spec:
+  namespaceMeshPolicyParams: {}
+  resourceQuotas: {}
