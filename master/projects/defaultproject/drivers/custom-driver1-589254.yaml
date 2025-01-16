@@ -1,7 +1,7 @@
 apiVersion: eaas.envmgmt.io/v1
 kind: Driver
 metadata:
-  name: custom-driver1-458877
+  name: custom-driver1-589254
   project: defaultproject
 spec:
   config:
@@ -30,4 +30,4 @@ spec:
       - mountPath: /tmpcustomdriver
     type: container
   secret:
-    name: file://artifacts/custom-driver1-458877/sealed-secret.yaml
+    name: file://artifacts/custom-driver1-589254/sealed-secret.yaml
