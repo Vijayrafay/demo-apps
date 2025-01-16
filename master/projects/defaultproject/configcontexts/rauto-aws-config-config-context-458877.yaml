@@ -1,0 +1,28 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: rauto-aws-config-config-context-458877
+  project: defaultproject
+spec:
+  variables:
+  - name: aws_region
+    value: us-east-1
+    valueType: text
+  - name: ami_id
+    value: ami-055744c75048d8296
+    valueType: text
+  - name: instance_type
+    value: t3.micro
+    valueType: text
+  - name: name
+    value: rauto-infra-provisioner
+    valueType: text
+  - name: aws_region_az
+    value: us-east-1a
+    valueType: text
+  - name: name1
+    value: rauto-infra1-provisioner
+    valueType: text
+  - name: email
+    value: automation@rafay.co
+    valueType: text
