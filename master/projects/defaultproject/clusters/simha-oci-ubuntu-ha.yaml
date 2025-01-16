@@ -1,0 +1,43 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: simha-oci-ubuntu-ha
+  project: defaultproject
+spec:
+  blueprint:
+    name: default
+  config:
+    autoApproveNodes: true
+    highAvailability: true
+    installerTtl: 365
+    kubernetesVersion: v1.31.0
+    network:
+      cni:
+        name: Canal
+        version: Calico-3.27.3-Flannel-0.25.1
+      podSubnet: 10.244.0.0/16
+      serviceSubnet: 10.96.0.0/12
+    nodes:
+    - arch: amd64
+      hostname: simha-ubuntu22-ha-3
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.0.124
+      roles:
+      - Worker
+      - ControlPlane
+    - arch: amd64
+      hostname: simha-ubuntu22-ha-2
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.0.123
+      roles:
+      - Worker
+      - ControlPlane
+    - arch: amd64
+      hostname: simha-ubuntu22-ha-4
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.0.2
+      roles:
+      - ControlPlane
+      - Worker
+  proxy: {}
+  type: mks

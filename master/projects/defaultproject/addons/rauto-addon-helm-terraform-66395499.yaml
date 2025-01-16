@@ -1,0 +1,24 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  annotations:
+    rafay.dev/audit_type: CLI||RCTL/
+    rafay.dev/audit_user: onprem@rafay.co
+    rafay.dev/audit_user_group: Organization Admins,All Local Users
+  name: rauto-addon-helm-terraform-66395499
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartName: minio
+      chartVersion: 9.2.8
+      repository: rauto-helm-repo
+      valuesPaths:
+      - name: file://custom_values.yaml
+      - name: file://custom_values_ingress_false.yaml
+    options:
+      timeout: 0s
+    type: Helm
+  namespace: rauto-ns-134726486
+  sharing: {}
+  version: v1.0

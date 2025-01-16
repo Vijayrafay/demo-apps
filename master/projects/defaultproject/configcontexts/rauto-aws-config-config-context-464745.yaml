@@ -1,0 +1,15 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: rauto-aws-config-config-context-464745
+  project: defaultproject
+spec:
+  envs:
+  - key: AWS_ACCESS_KEY_ID
+    sensitive: true
+    value: sealed://AWS_ACCESS_KEY_ID
+  - key: AWS_SECRET_ACCESS_KEY
+    sensitive: true
+    value: sealed://AWS_SECRET_ACCESS_KEY
+  secret:
+    name: file://artifacts/rauto-aws-config-config-context-464745/sealed-secret.yaml

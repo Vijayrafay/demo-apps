@@ -1,0 +1,14 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: workload-rauto-551776544
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/workload-rauto-551776544/nginx-9.4.2.tgz
+    type: Helm
+  namespace: ns-551776544
+  placement:
+    selector: rafay.dev/clusterName=automation-cluster-boot-eks-1826

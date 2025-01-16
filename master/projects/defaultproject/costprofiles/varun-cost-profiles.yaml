@@ -1,0 +1,13 @@
+apiVersion: cost.k8smgmt.io/v3
+kind: CostProfile
+metadata:
+  name: varun-cost-profiles
+  project: defaultproject
+spec:
+  installationParams:
+    other:
+      cpu: "0.01"
+      gpu: "0.01"
+      memory: "0.01"
+  providerType: other
+  version: v1

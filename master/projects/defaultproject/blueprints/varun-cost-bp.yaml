@@ -1,0 +1,22 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: varun-cost-bp
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 2.12.0
+  costProfile:
+    name: varun-cost-profiles
+    version: v1
+  defaultAddons:
+    enableIngress: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator:
+        enabled: true
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v1

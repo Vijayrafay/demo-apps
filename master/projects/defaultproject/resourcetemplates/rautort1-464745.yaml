@@ -1,0 +1,76 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ResourceTemplate
+metadata:
+  name: rautort1-464745
+  project: defaultproject
+spec:
+  agents:
+  - name: dockeronprem
+  contexts:
+  - name: rauto-ec2-config-config-context-464745
+  - name: rauto-aws-config-config-context-464745
+  - name: rauto-infra-config-config-context-464745
+  hooks:
+    provider:
+      terraform:
+        deploy:
+          plan:
+            before:
+            - name: container
+              onFailure: continue
+              options:
+                container:
+                  envvars:
+                    DOWNLOAD_TOKEN: sealed://hook.terraform.deploy.plan.before.container.options.container.env_vars.DOWNLOAD_TOKEN
+                    DOWNLOAD_URL: sealed://hook.terraform.deploy.plan.before.container.options.container.env_vars.DOWNLOAD_URL
+                    REPO_PATH: sealed://hook.terraform.deploy.plan.before.container.options.container.env_vars.REPO_PATH
+                  image: registry.dev.rafay-edge.net/rafay/infracost:v1
+                  successCondition: "if #status.container.exitCode == 0 { success:
+                    true } \nif #status.container.exitCode != 0 { failed: true }"
+                  workingDirPath: /infracost/
+              timeoutSeconds: 500
+              type: container
+        destroy:
+          plan:
+            before:
+            - name: destroyhookhttp
+              onFailure: continue
+              options:
+                http:
+                  endpoint: https://httpbin.org/get
+                  headers:
+                    Accept-Language: sealed://hook.terraform.destroy.plan.before.destroyhookhttp.options.http.headers.Accept-Language
+                    accept: sealed://hook.terraform.destroy.plan.before.destroyhookhttp.options.http.headers.accept
+                    test1: sealed://hook.terraform.destroy.plan.before.destroyhookhttp.options.http.headers.test1
+                    test2: sealed://hook.terraform.destroy.plan.before.destroyhookhttp.options.http.headers.test2
+                  method: GET
+                  successCondition: |-
+                    if #status.http.statusCode == 200 {
+                      success: true
+                    }
+
+                    if #status.http.statusCode != 200 {
+                      failed: true
+                      reason: "url not reachable"
+                    }
+              timeoutSeconds: 500
+              type: http
+  provider: terraform
+  providerOptions:
+    terraform:
+      backendConfigs:
+      - tmp/inputs/one.tfvars
+      backendType: custom
+      lock: false
+  repositoryOptions:
+    branch: master
+    directoryPath: workloads/eaas/terraform-guides/infrastructure-as-code/aws-ec2-instance/
+    name: rauto-repo-464745
+  secret:
+    name: file://artifacts/rautort1-464745/sealed-secret.yaml
+  sharing:
+    enabled: true
+    projects:
+    - name: share-project1-464745
+  version: version1-464745
+  versionState: active

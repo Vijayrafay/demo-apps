@@ -1,0 +1,18 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  annotations:
+    rafay.dev/audit_type: -||-
+    rafay.dev/audit_user: onprem@rafay.co
+    rafay.dev/audit_user_group: ""
+  name: rauto-addon-3489680
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/rauto-addon-3489680/rauto-addon-3489680.yaml
+    type: Yaml
+  namespace: default-rafay-2-12-10jan
+  sharing: {}
+  version: v1

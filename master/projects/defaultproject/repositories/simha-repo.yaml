@@ -1,0 +1,27 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: simha-repo
+  project: defaultproject
+spec:
+  agents:
+  - name: varun-docker-agent
+  credentials:
+    password: sealed://credentials.password
+    username: vijay@rafay.co
+  endpoint: https://github.com/Vijayrafay/demo-apps.git
+  options:
+    provider: Github
+  secret:
+    name: file://artifacts/simha-repo/sealed-secret.yaml
+  type: Git
+status:
+  agents:
+  - id: pz24nmy
+    name: varun-docker-agent
+  projects:
+  - projectId: rx28oml
+    repositoryId: dk3xpkn
+  webhookConfig:
+    webhookSecret: 254c3ef5d6e840fd3162cd8d5cf9f3f9b1ef1f4224d521006d6b5bd129c859c0
+    webhookURL: https://console.varun.dev.rafay-edge.net/v2/config/webhook/repository/dk3xpkn

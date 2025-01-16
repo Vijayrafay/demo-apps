@@ -1,0 +1,33 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Pipeline
+metadata:
+  name: sync
+  project: defaultproject
+spec:
+  active: true
+  stages:
+  - config:
+      destinationRepo: {}
+      excludedResources:
+      - name: SecretProviderClass
+      - name: SecretSealer
+      gitToSystemSync: true
+      includedResources:
+      - name: '*'
+      sourceAsDestination: true
+      sourceRepo:
+        path:
+          name: master
+        repository: simha-repo
+        revision: master
+      systemToGitSync: true
+    name: deploy
+    type: SystemSync
+  triggers:
+  - config:
+      repo:
+        provider: Github
+        repository: simha-repo
+        revision: master
+    name: trigger
+    type: Webhook

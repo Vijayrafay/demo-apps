@@ -1,0 +1,22 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: rauto-terraform-alertmanager-896629613
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      configmap:
+        name: file://rauto-terraform-alertmanager-896629613/alertmanager-configMap.yaml
+      configuration:
+        name: file://rauto-terraform-alertmanager-896629613/alertmanager-configuration.yaml
+      secret:
+        name: file://rauto-terraform-alertmanager-896629613/alertmanager-secret.yaml
+      statefulset:
+        name: file://rauto-terraform-alertmanager-896629613/alertmanager-statefulSet.yaml
+    type: AlertManager
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-terraform-test-675104891
+  version: rautoV1

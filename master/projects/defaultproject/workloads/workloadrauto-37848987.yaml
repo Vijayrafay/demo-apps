@@ -1,0 +1,17 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: workloadrauto-37848987
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/workloadrauto-37848987/nginx-9.4.2.tgz
+      valuesPaths:
+      - name: file://artifacts/workloadrauto-37848987/nginx-values.yaml
+    type: Helm
+  namespace: namespacerauto-322918600
+  placement:
+    selector: rafay.dev/clusterName=rauto-cli-aws-hacluster-996325910
+  version: workloadrauto-37848987-v1-202501101451220000
