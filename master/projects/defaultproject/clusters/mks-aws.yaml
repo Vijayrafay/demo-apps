@@ -1,7 +1,7 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: simha-rocky-mks
+  name: mks-aws
   project: defaultproject
 spec:
   blueprint:
@@ -9,8 +9,6 @@ spec:
   config:
     autoApproveNodes: true
     installerTtl: 365
-    kubeletExtraArgs:
-      max-pods: "50"
     kubernetesVersion: v1.30.4
     network:
       cni:
@@ -19,12 +17,12 @@ spec:
       podSubnet: 10.244.0.0/16
       serviceSubnet: 10.96.0.0/12
     nodes:
-    - arch: x86_64
-      hostname: simha-mks
-      operatingSystem: Rocky9.3
-      privateIP: 10.0.0.5
+    - arch: amd64
+      hostname: ip-172-31-10-122
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.10.122
       roles:
-      - Worker
       - ControlPlane
+      - Worker
   proxy: {}
   type: mks
