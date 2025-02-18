@@ -1,9 +1,0 @@
-apiVersion: gitops.k8smgmt.io/v3
-kind: Agent
-metadata:
-  name: varun-docker-agent
-  project: defaultproject
-spec:
-  active: true
-  type: Docker
-  version: r2.12.0
