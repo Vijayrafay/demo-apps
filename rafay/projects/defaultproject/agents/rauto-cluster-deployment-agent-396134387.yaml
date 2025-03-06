@@ -1,0 +1,11 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: rauto-cluster-deployment-agent-396134387
+  project: defaultproject
+spec:
+  active: true
+  cluster:
+    name: rauto-k3d-44730
+  type: Cluster
+  version: r3.1.0
