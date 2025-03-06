@@ -22,6 +22,8 @@ spec:
   triggers:
   - config:
       repo:
+        paths:
+        - name: /rafay
         provider: Github
         repository: simha-git-repo
         revision: master
