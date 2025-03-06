@@ -1,0 +1,18 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  annotations:
+    rafay.dev/audit_type: -||-
+    rafay.dev/audit_user: harishcbp@gmail.com
+    rafay.dev/audit_user_group: ""
+  name: rauto-test-addon-289159051
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/rauto-test-addon-289159051/rauto-test-addon-289159051.yaml
+    type: Yaml
+  namespace: default-cbp-upg-testing
+  sharing: {}
+  version: v1

@@ -1,0 +1,82 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rautocdktf-aks-897659
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: rautocdktf-blueprint-897659
+    version: v1.0
+  cloudCredentials: rautocdktf-cloudp-897659
+  config:
+    kind: aksClusterConfig
+    metadata:
+      name: rautocdktf-aks-897659
+    spec:
+      maintenanceConfigurations:
+      - apiVersion: "2024-01-01"
+        name: aksManagedAutoUpgradeSchedule
+        properties:
+          maintenanceWindow:
+            durationHours: 4
+            schedule:
+              weekly:
+                dayOfWeek: Tuesday
+                intervalWeeks: 1
+            startDate: "2024-07-16"
+            startTime: "18:34"
+            utcOffset: "+05:30"
+        type: Microsoft.ContainerService/managedClusters/maintenanceConfigurations
+      - apiVersion: "2024-01-01"
+        name: aksManagedNodeOSUpgradeSchedule
+        properties:
+          maintenanceWindow:
+            durationHours: 4
+            schedule:
+              weekly:
+                dayOfWeek: Tuesday
+                intervalWeeks: 1
+            startDate: "2024-07-16"
+            startTime: "18:34"
+            utcOffset: "+05:30"
+        type: Microsoft.ContainerService/managedClusters/maintenanceConfigurations
+      managedCluster:
+        apiVersion: "2024-01-01"
+        identity:
+          type: SystemAssigned
+        location: centralindia
+        properties:
+          addonProfiles:
+            httpApplicationRouting:
+              enabled: true
+          autoUpgradeProfile:
+            nodeOsUpgradeChannel: NodeImage
+            upgradeChannel: patch
+          disableLocalAccounts: false
+          dnsPrefix: rautocdktf-aks-897659
+          enablePodSecurityPolicy: false
+          kubernetesVersion: 1.30.8
+          networkProfile:
+            loadBalancerSku: Standard
+            networkPlugin: kubenet
+            networkPolicy: calico
+          nodeResourceGroup: qa-automation-node-897659
+        type: Microsoft.ContainerService/managedClusters
+      nodePools:
+      - apiVersion: "2024-01-01"
+        name: primary
+        properties:
+          count: 2
+          enableAutoScaling: true
+          maxCount: 2
+          maxPods: 40
+          minCount: 1
+          mode: System
+          orchestratorVersion: 1.30.8
+          osType: Linux
+          type: VirtualMachineScaleSets
+          vmSize: Standard_DS2_v2
+        type: Microsoft.ContainerService/managedClusters/agentPools
+      resourceGroupName: qa-automation
+  sharing: {}
+  type: aks

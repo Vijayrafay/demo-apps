@@ -1,0 +1,13 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: rauto-terraform-docker-agent-248029556
+  project: defaultproject
+spec:
+  active: true
+  sharing:
+    enabled: true
+    projects:
+    - name: terraform-test-project-248029556
+  type: Docker
+  version: r3.1.0

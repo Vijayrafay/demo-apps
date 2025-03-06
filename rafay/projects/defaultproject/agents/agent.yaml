@@ -1,0 +1,11 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: agent
+  project: defaultproject
+spec:
+  active: true
+  cluster:
+    name: simha-mar9-eks
+  type: Cluster
+  version: r3.1.0

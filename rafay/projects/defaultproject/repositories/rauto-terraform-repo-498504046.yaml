@@ -1,0 +1,21 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: rauto-terraform-repo-498504046
+  project: defaultproject
+spec:
+  credentials:
+    password: sealed://credentials.password
+    username: automation-user@rafay.co
+  endpoint: https://github.com/RafaySystems/qa-automation-applications
+  options: {}
+  secret:
+    name: file://artifacts/rauto-terraform-repo-498504046/sealed-secret.yaml
+  type: Git
+status:
+  projects:
+  - projectId: rx28oml
+    repositoryId: 3mx6y7m
+  webhookConfig:
+    webhookSecret: 7ebd9d36c093410489edf2346a31df1aa883badbc3b92a81eeef0362df18f0f0
+    webhookURL: https://console.harish.dev.rafay-edge.net/v2/config/webhook/repository/3mx6y7m

@@ -1,0 +1,20 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  description: This is a terraform test addon for AlertManager
+  name: rauto-addon-alertmanager-256458134
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      configmap:
+        name: file://rauto-addon-alertmanager-256458134/alertmanager-configMap.yaml
+      configuration:
+        name: file://rauto-addon-alertmanager-256458134/alertmanager-configuration.yaml
+      secret:
+        name: file://rauto-addon-alertmanager-256458134/alertmanager-secret.yaml
+      statefulset:
+        name: file://rauto-addon-alertmanager-256458134/alertmanager-statefulSet.yaml
+    type: AlertManager
+  sharing: {}
+  version: v1.0
