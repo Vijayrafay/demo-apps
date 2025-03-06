@@ -1,0 +1,13 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: namespace-822275671
+  project: defaultproject
+spec:
+  limitRange: {}
+  namespaceMeshPolicyParams: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: automation-cluster-boot-eks-3117
+  resourceQuotas: {}
