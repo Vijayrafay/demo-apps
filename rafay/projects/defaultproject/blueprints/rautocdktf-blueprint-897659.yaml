@@ -9,7 +9,7 @@ spec:
     version: 3.1.0
   customAddons:
   - name: rautohelm-addon-897659
-    version: v1.0
+    version: v3.0
   defaultAddons:
     monitoring:
       gpuOperator:
@@ -17,4 +17,4 @@ spec:
   driftWebhook:
     enabled: true
   type: custom
-  version: v1.0
+  version: latest

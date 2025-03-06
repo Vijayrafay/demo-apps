@@ -10,12 +10,12 @@ metadata:
 spec:
   artifact:
     artifact:
-      chartName: nginx
-      chartVersion: 9.4.2
+      chartName: app
+      chartVersion: 0.1.0
       repository: rauto-helm-repo
     options:
       timeout: 0s
     type: Helm
   namespace: default-cbp-upg-testing
   sharing: {}
-  version: v1.0
+  version: v3.0
