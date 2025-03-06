@@ -1,0 +1,46 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  annotations:
+    logging: enabled
+    rafay.dev/description: ""
+  labels:
+    env: dev
+  name: rauto-terraform-namespace-371488760
+  project: defaultproject
+spec:
+  limitRange:
+    container:
+      default:
+        cpu: 250u
+        memory: 64Ki
+      defaultRequest:
+        cpu: 250u
+        memory: 64Ki
+      max:
+        cpu: 500u
+        memory: 128Ki
+      min:
+        cpu: 250u
+        memory: 64Ki
+      ratio:
+        cpu: 1
+        memory: 1
+    pod:
+      max:
+        cpu: 500u
+        memory: 128Ki
+      min:
+        cpu: 250u
+        memory: 64Ki
+      ratio:
+        cpu: 1
+        memory: 1
+  namespaceMeshPolicyParams: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: rauto-k3d-17020
+  resourceQuotas:
+    configMaps: "10"
+    pods: "10"
