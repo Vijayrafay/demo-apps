@@ -11,11 +11,11 @@ spec:
   artifact:
     artifact:
       paths:
-      - name: addons/yaml_workloads/cert-manager.yml
+      - name: addons/yaml_workloads/addon-kong.yaml
       repository: rauto-git-repo
       revision: master
     options: {}
     type: Yaml
   namespace: default-cbp-upg-testing
   sharing: {}
-  version: v1.0
+  version: v2.0

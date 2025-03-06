@@ -19,4 +19,4 @@ spec:
     type: Helm
   namespace: default-cbp-upg-testing
   sharing: {}
-  version: v1.0
+  version: v2.0

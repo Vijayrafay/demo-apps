@@ -9,9 +9,9 @@ spec:
     version: v1.0
   customAddons:
   - name: rautohelm-addon-874645
-    version: v1.0
+    version: v2.0
   - name: rautoyaml-addon-874645
-    version: v1.0
+    version: v2.0
   defaultAddons:
     enableIngress: true
     enableMonitoring: true
@@ -25,4 +25,4 @@ spec:
   driftWebhook:
     enabled: true
   type: custom
-  version: v1.0
+  version: v2.0
