@@ -1,0 +1,28 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  annotations:
+    rafay.dev/audit_type: BROWSER||terraform
+    rafay.dev/audit_user: harishcbp@gmail.com
+    rafay.dev/audit_user_group: Organization Admins,All Local Users
+  labels:
+    automation: ""
+    platform: terraform
+  name: rauto-addon-helm-terraform-591542649
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: addons/helm3_workloads/minio/minio-9.2.8.tgz
+      repository: rauto-git-repo
+      revision: master
+      valuesPaths:
+      - name: addons/helm3_workloads/minio/custom_values.yaml
+      - name: addons/helm3_workloads/minio/custom_values_ingress_false.yaml
+    options:
+      timeout: 0s
+    type: Helm
+  namespace: rauto-ns-797661347
+  sharing: {}
+  version: v1

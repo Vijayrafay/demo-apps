@@ -1,0 +1,12 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: rauto-bootstrap-namespace
+  project: defaultproject
+spec:
+  limitRange: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: automation-cluster-boot-eks-3117
+  resourceQuotas: {}
