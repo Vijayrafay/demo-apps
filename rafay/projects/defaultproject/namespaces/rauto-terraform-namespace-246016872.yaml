@@ -6,6 +6,4 @@ metadata:
 spec:
   limitRange: {}
   namespaceMeshPolicyParams: {}
-  placement:
-    selector: rafay.dev/clusterName=rauto-k3d-17020
   resourceQuotas: {}
