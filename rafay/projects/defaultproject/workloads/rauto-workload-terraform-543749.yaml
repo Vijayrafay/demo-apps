@@ -1,0 +1,23 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: rauto-workload-terraform-543749
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: workloads/native_yaml/nginx_webserver/nginx.yaml
+      repository: rauto-git-repo
+      revision: master
+    options: {}
+    type: Yaml
+  drift:
+    action: Deny
+    enabled: true
+  namespace: rauto-terraform-ns-964269
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: rauto-k3d-34144
+  version: v1.0
