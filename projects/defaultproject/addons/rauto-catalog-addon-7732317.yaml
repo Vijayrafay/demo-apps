@@ -1,0 +1,54 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  annotations:
+    rafay.dev/audit_type: BROWSER||terraform
+    rafay.dev/audit_user: harishcbp@gmail.com
+    rafay.dev/audit_user_group: Organization Admins,All Local Users
+  description: This is a automation addon for v3.0
+  labels:
+    day2: helm3
+    terraform: automation
+  name: rauto-catalog-addon-7732317
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      catalog: default-helm
+      chartName: opentelemetry-operator
+      chartVersion: 0.57.0
+      valuesPaths:
+      - name: file://values.yaml
+      - name: file://nginx.yaml
+      valuesRef:
+        repository: rauto-git-repo
+        revision: master
+        valuesPaths:
+        - name: addons/helm3_workloads/redis/values.yaml
+    options:
+      atomic: true
+      cleanUpOnFail: true
+      description: Default helm options1
+      disableOpenAPIValidation: true
+      force: true
+      keepHistory: true
+      maxHistory: 10
+      noHooks: true
+      renderSubChartNotes: true
+      resetValues: true
+      reuseValues: true
+      setString:
+      - str1
+      - str2
+      - str3
+      skipCRDs: true
+      timeout: 5m2s
+      wait: true
+      waitForJobs: true
+    type: Helm
+  namespace: rauto-namespace-7732317
+  sharing:
+    enabled: true
+    projects:
+    - name: '*'
+  version: v3.0
