@@ -1,0 +1,20 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: rautocdktf-blueprint-897659
+  project: defaultproject
+spec:
+  base:
+    name: minimal
+    version: 3.1.0
+  customAddons:
+  - name: rautohelm-addon-897659
+    version: v1.0
+  defaultAddons:
+    monitoring:
+      gpuOperator:
+        enabled: true
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v1.0
