@@ -1,0 +1,11 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: rauto-terraform-namespace-246016872
+  project: defaultproject
+spec:
+  limitRange: {}
+  namespaceMeshPolicyParams: {}
+  placement:
+    selector: rafay.dev/clusterName=rauto-k3d-17020
+  resourceQuotas: {}
