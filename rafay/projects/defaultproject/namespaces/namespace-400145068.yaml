@@ -1,9 +1,0 @@
-apiVersion: infra.k8smgmt.io/v3
-kind: Namespace
-metadata:
-  name: namespace-400145068
-  project: defaultproject
-spec:
-  limitRange: {}
-  namespaceMeshPolicyParams: {}
-  resourceQuotas: {}
