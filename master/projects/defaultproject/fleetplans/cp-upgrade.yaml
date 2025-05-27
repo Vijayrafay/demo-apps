@@ -1,0 +1,10 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: FleetPlan
+metadata:
+  name: cp-upgrade
+  project: defaultproject
+spec:
+  fleet:
+    kind: clusters
+    projects:
+    - name: defaultproject
