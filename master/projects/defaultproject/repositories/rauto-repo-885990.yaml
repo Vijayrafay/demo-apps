@@ -1,0 +1,26 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: rauto-repo-885990
+  project: defaultproject
+spec:
+  agents:
+  - name: fmac-agent
+  credentials:
+    password: sealed://credentials.password
+    username: automation-user@rafay.co
+  endpoint: https://github.com/RafaySystems/qa-automation-applications
+  options: {}
+  secret:
+    name: file://artifacts/rauto-repo-885990/sealed-secret.yaml
+  type: Git
+status:
+  agents:
+  - id: rx28oml
+    name: fmac-agent
+  projects:
+  - projectId: rx28oml
+    repositoryId: yj2qjk9
+  webhookConfig:
+    webhookSecret: 5e033ee057ed3c1f4e778158cc1d96782f6fee82f0f288924c8005b5397c0838
+    webhookURL: https://console.harish.dev.rafay-edge.net/v2/config/webhook/repository/yj2qjk9

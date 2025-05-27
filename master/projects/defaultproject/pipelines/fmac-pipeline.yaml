@@ -1,0 +1,29 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Pipeline
+metadata:
+  name: fmac-pipeline
+  project: defaultproject
+spec:
+  stages:
+  - config:
+      destinationRepo: {}
+      gitToSystemSync: true
+      includedResources:
+      - name: '*'
+      sourceAsDestination: true
+      sourceRepo:
+        path:
+          name: master
+        repository: fmac-git
+        revision: master
+      systemToGitSync: true
+    name: fmac
+    type: SystemSync
+  triggers:
+  - config:
+      repo:
+        provider: Github
+        repository: fmac-git
+        revision: master
+    name: fmac-trigger
+    type: Webhook

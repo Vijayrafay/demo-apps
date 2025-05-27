@@ -1,0 +1,25 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: Driver
+metadata:
+  description: this is custom driver
+  name: madhucustom
+  project: defaultproject
+spec:
+  config:
+    container:
+      cpuLimitMilli: "1024"
+      envVars:
+        DRIVER_DEBUG: sealed://driverconfig.container.envs.DRIVER_DEBUG
+        TF_VAR_rafay_config_file: sealed://driverconfig.container.envs.TF_VAR_rafay_config_file
+      files:
+        opt/rafay/rctl.conf: c2VhbGVkOi8vZHJpdmVyY29uZmlnLmNvbnRhaW5lci5maWxlcy5vcHQvcmFmYXkvcmN0bC5jb25m
+      image: registry.dev.rafay-edge.net/rafay/madhu/fm-tf-custom:v4
+      kubeOptions:
+        namespace: rafay-system
+        serviceAccountName: fmac3
+      memoryLimitMb: "512"
+    type: container
+  secret:
+    name: file://artifacts/madhucustom/sealed-secret.yaml
+status:
+  lastUpdateTime: null

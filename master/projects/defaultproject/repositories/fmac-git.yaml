@@ -1,0 +1,26 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: fmac-git
+  project: defaultproject
+spec:
+  agents:
+  - name: fmac-agent
+  credentials:
+    password: sealed://credentials.password
+    username: vijay@rafay.co
+  endpoint: https://github.com/Vijayrafay/demo-apps.git
+  options: {}
+  secret:
+    name: file://artifacts/fmac-git/sealed-secret.yaml
+  type: Git
+status:
+  agents:
+  - id: rx28oml
+    name: fmac-agent
+  projects:
+  - projectId: rx28oml
+    repositoryId: lk5xw2e
+  webhookConfig:
+    webhookSecret: 4b530739e43acac4327976dc2347c3cff76ab6b7b168c666f8867f3aa0117f8b
+    webhookURL: https://console.harish.dev.rafay-edge.net/v2/config/webhook/repository/lk5xw2e

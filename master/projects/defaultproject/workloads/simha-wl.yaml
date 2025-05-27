@@ -1,0 +1,19 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: simha-wl
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      catalog: default-bitnami
+      chartName: nginx-intel
+      chartVersion: 2.0.7
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: simha-ns
+  placement:
+    selector: rafay.dev/clusterName=automation-cluster-boot-eks-6907
+  version: simha-wl-v2-202505261425510000

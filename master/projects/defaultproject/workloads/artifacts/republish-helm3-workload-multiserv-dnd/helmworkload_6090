@@ -1,0 +1,23 @@
+affinity: {}
+fullnameOverride: ""
+image:
+  pullPolicy: IfNotPresent
+  repository: nginx
+hpaingress:
+  host1: bootstrap-6090.qasimplified.com
+  host2: bootstrap-6199.qasimplified.com
+ingress:
+  annotations: {}
+  enabled: false
+  hosts:
+  - host: cluster.local
+    paths: []
+  tls: []
+nameOverride: ""
+nodeSelector: {}
+replicaCount: 1
+resources: {}
+service:
+  port: 80
+  type: ClusterIP
+tolerations: []

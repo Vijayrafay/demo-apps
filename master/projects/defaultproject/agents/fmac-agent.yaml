@@ -1,0 +1,11 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: fmac-agent
+  project: defaultproject
+spec:
+  active: true
+  cluster:
+    name: madhu-k8s-agent-new
+  type: Cluster
+  version: r2.8.0
