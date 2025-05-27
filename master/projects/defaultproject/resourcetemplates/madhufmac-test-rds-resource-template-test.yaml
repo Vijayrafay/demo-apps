@@ -1,0 +1,40 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ResourceTemplate
+metadata:
+  labels:
+    resource: rds
+  name: madhufmac-test-rds-resource-template-test
+  project: defaultproject
+spec:
+  contexts:
+  - name: rauto-rds-config-config-context-885990
+  provider: terraform
+  providerOptions:
+    terraform:
+      backendConfigs:
+      - bucket="madhucur2"
+      - region="us-east-1"
+      - $(key=eaas/\(environment.project.name)/\(environment.name)/rauto-rds-resource-template.tfstate)$
+      backendType: custom
+      refresh: true
+  repositoryOptions:
+    branch: fmac-testing
+    directoryPath: workloads/eaas/terraform/aws/rds-private
+    name: rauto-repo-885990
+  variables:
+  - name: vpc_name
+    options:
+      description: test
+      override:
+        type: allowed
+    value: $(resource."madhufmac-test-eks-resource-template-test".output.eks_cluster_name.value)$
+    valueType: expression
+  - name: name
+    options:
+      description: name of the rds instance
+      override:
+        type: allowed
+    value: $(environment.name)$
+    valueType: expression
+  version: v22
+  versionState: active

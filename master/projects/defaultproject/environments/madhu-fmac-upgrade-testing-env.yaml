@@ -1,0 +1,44 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: Environment
+metadata:
+  name: madhu-fmac-upgrade-testing-env
+  project: defaultproject
+spec:
+  agents:
+  - name: fmac-agent
+  secret:
+    name: file://artifacts/madhu-fmac-upgrade-testing-env/sealed-secret.yaml
+  template:
+    name: madhufmac-test-environment-eks-ec-rds-template-name-test
+    version: v2
+    versionState: draft
+  variables:
+  - name: aws_cloud_provider_access_key
+    options:
+      description: aws_access_key
+      override:
+        type: allowed
+      required: true
+      sensitive: true
+    value: sealed://variables.0
+    valueType: text
+  - name: db_password
+    options:
+      description: db_password
+      override:
+        type: allowed
+      required: true
+      sensitive: true
+    value: sealed://variables.1
+    valueType: text
+  - name: aws_cloud_provider_secret_key
+    options:
+      description: aws_secret
+      override:
+        type: allowed
+      sensitive: true
+    value: sealed://variables.2
+    valueType: text
+  - name: eks_cluster_node_group_az
+    value: '["us-east-1a"]'
+    valueType: json

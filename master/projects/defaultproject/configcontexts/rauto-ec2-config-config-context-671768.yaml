@@ -1,0 +1,34 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: rauto-ec2-config-config-context-671768
+  project: defaultproject
+spec:
+  files:
+  - data: c2VhbGVkOi8vZmlsZXMuMA==
+    name: tmp/inputs/one.tfvars
+    sensitive: true
+  secret:
+    name: file://artifacts/rauto-ec2-config-config-context-671768/sealed-secret.yaml
+  variables:
+  - name: aws_region
+    value: us-east-1
+    valueType: text
+  - name: ami_id
+    value: ami-055744c75048d8296
+    valueType: text
+  - name: instance_type
+    value: t3.micro
+    valueType: text
+  - name: name
+    value: rauto-infra-provisioner
+    valueType: text
+  - name: aws_region_az
+    value: us-east-1a
+    valueType: text
+  - name: name1
+    value: rauto-infra1-provisioner
+    valueType: text
+  - name: email
+    value: automation@rafay.co
+    valueType: text

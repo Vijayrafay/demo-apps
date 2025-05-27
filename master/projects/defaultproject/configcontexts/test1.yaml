@@ -1,0 +1,10 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: test1
+  project: defaultproject
+spec:
+  variables:
+  - name: test1
+    value: test1
+    valueType: text

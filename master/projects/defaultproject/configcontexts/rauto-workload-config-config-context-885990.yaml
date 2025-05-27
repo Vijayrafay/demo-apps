@@ -1,0 +1,25 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: rauto-workload-config-config-context-885990
+  project: defaultproject
+spec:
+  envs:
+  - key: TF_VAR_postgres_port
+    value: $("\(resource."madhufmac-test-rds-resource-template-test".output.rds_port.value)")$
+  variables:
+  - name: workload_name
+    value: rauto-workload-name-885990
+    valueType: text
+  - name: workload_namespace
+    value: rauto-workload-namespace-885990
+    valueType: text
+  - name: workload_project
+    value: defaultproject
+    valueType: text
+  - name: cluster_name
+    value: rauto-eaas-eks-885990
+    valueType: text
+  - name: workload_env
+    value: rauto-workload-name-885990
+    valueType: text
