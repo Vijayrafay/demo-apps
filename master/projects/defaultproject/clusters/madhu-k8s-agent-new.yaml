@@ -99,4 +99,8 @@ spec:
       nat:
         gateway: Single
   proxyConfig: {}
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-sharing-test-project
   type: aws-eks
