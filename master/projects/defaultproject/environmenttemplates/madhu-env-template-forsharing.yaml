@@ -10,5 +10,9 @@ spec:
     resourceOptions:
       version: v2
     type: dynamic
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-sharing-test-project
   version: v1
   versionState: active
