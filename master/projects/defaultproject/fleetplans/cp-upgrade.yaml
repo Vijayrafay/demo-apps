@@ -9,7 +9,7 @@ spec:
   fleet:
     kind: clusters
     labels:
-      rafay.dev/clusterName: automation-cluster-boot-eks-6907
+      rafay.dev/clusterName: simha-fleet-eks
     projects:
     - name: defaultproject
   operationWorkflow:
