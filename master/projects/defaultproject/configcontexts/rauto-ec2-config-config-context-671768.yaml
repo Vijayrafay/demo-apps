@@ -4,6 +4,9 @@ metadata:
   name: rauto-ec2-config-config-context-671768
   project: defaultproject
 spec:
+  envs:
+  - key: TF_VAR_name
+    value: $("vpc\(environment.name)")$
   files:
   - data: c2VhbGVkOi8vZmlsZXMuMA==
     name: tmp/inputs/one.tfvars
@@ -19,9 +22,6 @@ spec:
     valueType: text
   - name: instance_type
     value: t3.micro
-    valueType: text
-  - name: name
-    value: rauto-infra-provisioner
     valueType: text
   - name: aws_region_az
     value: us-east-1a
