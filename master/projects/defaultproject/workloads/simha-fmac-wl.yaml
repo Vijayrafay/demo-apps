@@ -14,4 +14,3 @@ spec:
   namespace: simha-ns
   placement:
     selector: rafay.dev/clusterName=simha-may27-eks
-  version: simha-fmac-wl-v1-202505270447510000
