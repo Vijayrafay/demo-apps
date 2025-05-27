@@ -112,10 +112,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - bootstrap-3878.qasimplified.com
+    - bootstrap-7623.qasimplified.com
     secretName: cafe-ingress-secret
   rules:
-  - host: bootstrap-3878.qasimplified.com
+  - host: bootstrap-7623.qasimplified.com
     http:
       paths:
       - path: /tea

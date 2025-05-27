@@ -34,7 +34,7 @@ metadata:
   name: nginx-ingress
 spec:
   rules:
-  - host: bootstrap-2033.qasimplified.com
+  - host: bootstrap-2602.qasimplified.com
     http:
       paths:
       - path: /
