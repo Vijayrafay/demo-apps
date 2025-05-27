@@ -4,6 +4,21 @@ metadata:
   name: opa-bp
   project: defaultproject
 spec:
-  driftWebhook:
-    enabled: true
+  base:
+    name: default
+    version: 2.8.0
+  defaultAddons:
+    enableIngress: true
+    enableMonitoring: true
+  driftWebhook: {}
+  opaPolicy:
+    opaPolicy:
+    - name: policy-restricted
+      version: version-1748316570
+    - name: policy-privileged
+      version: version-1748316570
+    profile:
+      name: default
+      version: latest
   type: custom
+  version: v1
