@@ -1,0 +1,24 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ResourceTemplate
+metadata:
+  name: rauto-ec-resource-template-237927
+  project: defaultproject
+spec:
+  agents:
+  - name: fmac-agent
+  contexts:
+  - name: rauto-aws-config-config-context-237927
+  - name: rauto-ec-config-config-context-237927
+  hooks: {}
+  provider: terraform
+  providerOptions:
+    terraform:
+      backendType: system
+      lock: true
+      version: 1.5.0
+  repositoryOptions:
+    branch: master
+    directoryPath: workloads/eaas/terraform/aws/elasticache-private
+    name: rauto-repo-237927
+  version: version1-237927
+  versionState: active
