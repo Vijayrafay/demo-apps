@@ -14,4 +14,6 @@ spec:
     labels:
     - key: rafay.dev/clusterName
       value: automation-cluster-boot-eks-6907
+    - key: rafay.dev/clusterName
+      value: simha-may27-eks
   resourceQuotas: {}
