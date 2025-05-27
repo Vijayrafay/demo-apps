@@ -5,8 +5,7 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: opa-bp
-    version: v1
+    name: default
   cloudCredentials: simha-creds
   config:
     addons:
