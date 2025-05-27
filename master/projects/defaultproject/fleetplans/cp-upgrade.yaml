@@ -4,7 +4,29 @@ metadata:
   name: cp-upgrade
   project: defaultproject
 spec:
+  agents:
+  - name: fmac-agent
   fleet:
     kind: clusters
+    labels:
+      rafay.dev/clusterName: automation-cluster-boot-eks-6907
     projects:
     - name: defaultproject
+  operationWorkflow:
+    operations:
+    - action:
+        controlPlaneUpgradeConfig:
+          version: "1.30"
+        name: cp
+        type: controlPlaneUpgrade
+      name: upgrade
+      prehooks:
+      - containerConfig:
+          commands:
+          - get
+          - po
+          - -A
+          image: bitnami/kubectl
+          runner:
+            type: cluster
+        name: pre-hook
