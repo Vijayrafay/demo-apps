@@ -1,0 +1,61 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ResourceTemplate
+metadata:
+  labels:
+    resource: workload
+  name: madhufmac-test-workload-resource-template-test1
+  project: defaultproject
+spec:
+  contexts:
+  - name: rauto-workload-config-config-context-885990
+  provider: terraform
+  providerOptions:
+    driver:
+      name: madhucustom
+    terraform:
+      backendConfigs:
+      - $(key=eaas/\(environment.project.name)/\(environment.name)/rauto-workload-resource-template.tfstate)$
+      - region="us-east-1"
+      - bucket="madhucur2"
+      backendType: custom
+      refresh: true
+  repositoryOptions:
+    branch: fmac-testing
+    directoryPath: workloads/eaas/terraform/rafay-workload
+    name: rauto-repo-885990
+  variables:
+  - name: cluster_name
+    options:
+      override:
+        type: allowed
+    value: $(resource."madhufmac-test-eks-resource-template-test".output.eks_cluster_name.value)$
+    valueType: expression
+  - name: postgres_host
+    options:
+      override:
+        type: allowed
+    value: $(resource."madhufmac-test-rds-resource-template-test".output.rds_hostname.value)$
+    valueType: expression
+  - name: postgres_username
+    options:
+      description: this is postgres username
+      override:
+        type: allowed
+    value: $(resource."madhufmac-test-rds-resource-template-test".output.rds_username.value)$
+    valueType: expression
+  - name: postgres_password
+    options:
+      description: this is postgress password
+      override:
+        type: allowed
+    value: $(resource."madhufmac-test-rds-resource-template-test".output.rds_password.value)$
+    valueType: expression
+  - name: redis_config_endpoint
+    options:
+      description: this is redis end point
+      override:
+        type: allowed
+    value: $(resource."madhufmac-test-ec-resource-template-test".output.configuration_endpoint_address.value)$
+    valueType: expression
+  version: v22
+  versionState: active
