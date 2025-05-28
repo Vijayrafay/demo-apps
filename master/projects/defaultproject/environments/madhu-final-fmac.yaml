@@ -40,3 +40,9 @@ spec:
   - name: workload_namespace
     value: madhu-workload-namespace-885990
     valueType: text
+  - name: vpc_name
+    options:
+      override:
+        type: allowed
+    value: madhu-final-fmac-cluster
+    valueType: text
