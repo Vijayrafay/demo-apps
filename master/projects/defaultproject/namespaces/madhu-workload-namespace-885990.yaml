@@ -1,0 +1,13 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: madhu-workload-namespace-885990
+  project: defaultproject
+spec:
+  limitRange: {}
+  namespaceMeshPolicyParams: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: madhu-final-fmac-cluster
+  resourceQuotas: {}
