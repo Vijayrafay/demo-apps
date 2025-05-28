@@ -43,5 +43,5 @@ spec:
     resourceOptions:
       version: v2
     type: dynamic
-  version: v3
+  version: v4git
   versionState: active
