@@ -1,0 +1,35 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ResourceTemplate
+metadata:
+  labels:
+    resource: ec
+  name: madhufmac-test-ec-resource-template-test
+  project: defaultproject
+spec:
+  contexts:
+  - name: rauto-ec-config-config-context-885990
+  provider: terraform
+  providerOptions:
+    driver:
+      name: madhucustom
+    terraform:
+      backendConfigs:
+      - bucket="madhucur2"
+      - region="us-east-1"
+      - $(key=eaas/\(environment.project.name)/\(environment.name)/rauto-ec-resource-template.tfstate)$
+      backendType: custom
+      refresh: true
+  repositoryOptions:
+    branch: fmac-testing
+    directoryPath: workloads/eaas/terraform/aws/elasticache-private
+    name: rauto-repo-885990
+  variables:
+  - name: vpc_name
+    options:
+      description: test1 this is new description
+      override:
+        type: allowed
+    value: $(resource."madhufmac-test-eks-resource-template-test".output.eks_cluster_name.value)$
+    valueType: expression
+  version: v2
+  versionState: active
