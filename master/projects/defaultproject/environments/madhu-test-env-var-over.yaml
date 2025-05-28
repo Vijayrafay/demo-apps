@@ -11,7 +11,7 @@ spec:
   template:
     name: madhufmac-test-environment-eks-ec-rds-template-name-test
     version: v3
-    versionState: draft
+    versionState: active
   variables:
   - name: aws_cloud_provider_access_key
     options:
