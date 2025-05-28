@@ -1,0 +1,19 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: madhu-workload-name-885990
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://django-app-0.1.0.tgz
+      valuesPaths:
+      - name: file://values.yaml
+    options:
+      timeout: 0s
+    type: Helm
+  namespace: madhu-workload-namespace-885990
+  placement:
+    selector: rafay.dev/clusterName=madhu-final-fmac-cluster
+  version: v4
