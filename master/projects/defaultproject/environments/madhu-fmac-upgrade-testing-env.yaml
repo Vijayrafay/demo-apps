@@ -11,7 +11,7 @@ spec:
   template:
     name: madhufmac-test-environment-eks-ec-rds-template-name-test
     version: v2
-    versionState: draft
+    versionState: active
   variables:
   - name: aws_cloud_provider_access_key
     options:
@@ -42,3 +42,9 @@ spec:
   - name: eks_cluster_node_group_az
     value: '["us-east-1a"]'
     valueType: json
+  - name: workload_project
+    value: defaultproject
+    valueType: text
+  - name: workload_env
+    value: rauto-workload-name-885990
+    valueType: text
