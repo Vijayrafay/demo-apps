@@ -69,4 +69,5 @@ spec:
     projects:
     - name: rauto-infra-test-project
     - name: rauto-sharing-test-project
+    - name: fmac-terraform
   type: aws-eks
