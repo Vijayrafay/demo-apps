@@ -37,7 +37,7 @@ spec:
       override:
         type: allowed
     value: test-over
-    valueType: expression
+    valueType: text
   - name: eks_cluster_name
     value: madhu-fmac-env-org
     valueType: text
