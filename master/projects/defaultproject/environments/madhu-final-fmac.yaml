@@ -46,3 +46,6 @@ spec:
         type: allowed
     value: madhu-final-fmac-cluster
     valueType: text
+  - name: cluster_id
+    value: madhu-eaas-cluster-id-885990
+    valueType: text
