@@ -1,0 +1,13 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: rauto-workload-namespace-885990
+  project: defaultproject
+spec:
+  limitRange: {}
+  namespaceMeshPolicyParams: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: rauto-eaas-eks-885990
+  resourceQuotas: {}
