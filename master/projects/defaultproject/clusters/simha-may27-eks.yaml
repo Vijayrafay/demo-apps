@@ -24,7 +24,7 @@ spec:
       instanceTypes:
       - t3.xlarge
       maxSize: 2
-      minSize: 1
+      minSize: 0
       name: simha-may27-eks-ng
       ssh:
         allow: true
