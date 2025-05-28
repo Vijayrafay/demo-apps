@@ -4,6 +4,8 @@ metadata:
   name: madhu-test-env-var-over
   project: defaultproject
 spec:
+  agents:
+  - name: fmac-agent
   secret:
     name: file://artifacts/madhu-test-env-var-over/sealed-secret.yaml
   template:
