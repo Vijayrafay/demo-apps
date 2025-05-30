@@ -1,0 +1,36 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: WorkflowHandler
+metadata:
+  name: custom-driver2-task2-411686
+  project: defaultproject
+spec:
+  config:
+    container:
+      arguments:
+      - echo $RAUTO_ENV;echo $HELLO_ENV;echo $TEST_ENV
+      commands:
+      - /bin/ash
+      - -c
+      - --
+      cpuLimitMilli: "1024"
+      envVars:
+        AWS_ACCESS_KEY_ID: sealed://WorkflowHandlerconfig.container.envs.AWS_ACCESS_KEY_ID
+        AWS_SECRET_ACCESS_KEY: sealed://WorkflowHandlerconfig.container.envs.AWS_SECRET_ACCESS_KEY
+        DRIVER_DEBUG: sealed://WorkflowHandlerconfig.container.envs.DRIVER_DEBUG
+        MADHU_DEBUG: sealed://WorkflowHandlerconfig.container.envs.MADHU_DEBUG
+      image: alpine
+      imagePullCredentials:
+        password: sealed://registry_credentials
+      kubeOptions:
+        labels:
+          instance1: aws1
+          instance2: aws2
+      memoryLimitMb: "512"
+      volumeOptions: {}
+      volumes:
+      - mountPath: /tmpcustomdriver
+    type: container
+  inputs:
+  - name: rauto-task2-411686
+  secret:
+    name: file://artifacts/custom-driver2-task2-411686/sealed-secret.yaml

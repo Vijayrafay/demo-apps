@@ -1,0 +1,9 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: rauto-task1-411686
+  project: defaultproject
+spec:
+  files:
+  - data: eyJoZWxsbyI6ICJ3b3JsZCJ9
+    name: /path/to/output.json

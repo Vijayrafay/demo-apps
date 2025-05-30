@@ -1,0 +1,16 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: rauto-task2-411686
+  project: defaultproject
+spec:
+  envs:
+  - key: HELLO_ENV
+    value: $(resource."rautort1-411686".task."Task1".output.hello)$
+  - key: RAUTO_ENV
+    value: $(resource."rautort1-411686".task."Task1".output.rauto)$
+  - key: TEST_ENV
+    value: $(resource."rautort1-411686".task."Task1".output.test2)$
+  files:
+  - data: eyJoZWxsbyI6ICJ3b3JsZCJ9
+    name: /path/to/output.json

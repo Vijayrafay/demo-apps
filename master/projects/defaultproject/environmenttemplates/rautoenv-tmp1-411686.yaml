@@ -1,0 +1,15 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: EnvironmentTemplate
+metadata:
+  name: rautoenv-tmp1-411686
+  project: defaultproject
+spec:
+  hooks: {}
+  resources:
+  - kind: resourcetemplate
+    name: rautort1-411686
+    resourceOptions:
+      version: version1-411686
+    type: dynamic
+  version: version1-411686
+  versionState: active

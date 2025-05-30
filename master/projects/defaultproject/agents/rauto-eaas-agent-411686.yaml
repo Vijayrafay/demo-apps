@@ -1,0 +1,9 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: rauto-eaas-agent-411686
+  project: defaultproject
+spec:
+  active: true
+  type: Docker
+  version: r3.3.0
