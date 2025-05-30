@@ -1,0 +1,25 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  annotations:
+    rafay.dev/audit_type: BROWSER||Swagger-Codegen/1.0.0/python
+    rafay.dev/audit_user: onprem@rafay.co
+    rafay.dev/audit_user_group: Organization Admins,All Local Users
+  name: rauto-addon-527347
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: workloads/native_yaml/nginx_webserver/nginx.yaml
+      repository: rauto-git-repo
+      revision: master
+    type: Yaml
+  namespace: rauto-ns-527347
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-project-366639
+    - name: rauto-project-one-366639
+  version: rautoV1
+  versionState: active
