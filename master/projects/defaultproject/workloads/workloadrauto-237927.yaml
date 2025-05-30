@@ -11,7 +11,7 @@ spec:
       valuesPaths:
       - name: file://artifacts/workloadrauto-237927/helmworkload237927.yaml
     options:
-      maxHistory: 10
+      maxHistory: 20
       timeout: 5m0s
     type: Helm
   namespace: ns-237927
@@ -19,4 +19,4 @@ spec:
     environment:
       name: rauto-environment-eks-ec-rds-name-237927
     selector: rafay.dev/clusterName=rauto-eaas-eks-237927
-  version: workloadrauto-237927-v3-202505280855150000
+  version: workloadrauto-237927-v4-202505300817270000
