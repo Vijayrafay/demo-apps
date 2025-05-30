@@ -74,11 +74,11 @@ server:
   replicas: 1
   server:
     env:
-      celeryBrokerUrl: 'redis://madhu-postupgrade-eaas-cluster-id-885990.wh4pze.0001.use1.cache.amazonaws.com:6379/0'
-      celeryResultBackend: 'redis://madhu-postupgrade-eaas-cluster-id-885990.wh4pze.0001.use1.cache.amazonaws.com:6379/0'
+      celeryBrokerUrl: 'redis://madhu-eaas-cluster-id-885990.wh4pze.0001.use1.cache.amazonaws.com:6379/0'
+      celeryResultBackend: 'redis://madhu-eaas-cluster-id-885990.wh4pze.0001.use1.cache.amazonaws.com:6379/0'
       debug: "True"
       djangoDb: postgresql
-      postgresHost: 'madhutest-postupgrade.ctceqe48k3yp.us-east-1.rds.amazonaws.com'
+      postgresHost: 'madhu-final-fmac.ctceqe48k3yp.us-east-1.rds.amazonaws.com'
       postgresName: postgres
       postgresPassword: 'Rafay!2345'
       postgresPort: '5432'
@@ -91,11 +91,11 @@ worker:
   replicas: 1
   worker:
     env:
-      celeryBrokerUrl: 'redis://madhu-postupgrade-eaas-cluster-id-885990.wh4pze.0001.use1.cache.amazonaws.com:6379/0'
-      celeryResultBackend: 'redis://madhu-postupgrade-eaas-cluster-id-885990.wh4pze.0001.use1.cache.amazonaws.com:6379/0'
+      celeryBrokerUrl: 'redis://madhu-eaas-cluster-id-885990.wh4pze.0001.use1.cache.amazonaws.com:6379/0'
+      celeryResultBackend: 'redis://madhu-eaas-cluster-id-885990.wh4pze.0001.use1.cache.amazonaws.com:6379/0'
       debug: "True"
       djangoDb: postgresql
-      postgresHost: 'madhutest-postupgrade.ctceqe48k3yp.us-east-1.rds.amazonaws.com'
+      postgresHost: 'madhu-final-fmac.ctceqe48k3yp.us-east-1.rds.amazonaws.com'
       postgresName: postgres
       postgresPassword: 'Rafay!2345'
       postgresPort: '5432'
