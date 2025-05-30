@@ -4,6 +4,8 @@ metadata:
   name: madhutest-postupgrade
   project: defaultproject
 spec:
+  agents:
+  - name: fmac-agent
   secret:
     name: file://artifacts/madhutest-postupgrade/sealed-secret.yaml
   template:
@@ -11,9 +13,9 @@ spec:
     version: v3
     versionState: unspecified
   variables:
-  - name: aws_cloud_provider_access_key
+  - name: db_password
     options:
-      description: aws_access_key
+      description: db_password
       mask: true
       override:
         type: allowed
@@ -21,9 +23,9 @@ spec:
       sensitive: true
     value: sealed://variables.0.
     valueType: text
-  - name: db_password
+  - name: aws_cloud_provider_access_key
     options:
-      description: db_password
+      description: aws_access_key
       mask: true
       override:
         type: allowed
