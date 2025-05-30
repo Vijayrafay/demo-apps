@@ -31,5 +31,5 @@ spec:
         type: allowed
     value: $(resource."madhufmac-test-eks-resource-template-test".output.eks_cluster_name.value)$
     valueType: expression
-  version: v2
-  versionState: active
+  version: v3
+  versionState: draft
