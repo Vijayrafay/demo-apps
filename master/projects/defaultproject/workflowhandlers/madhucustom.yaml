@@ -7,7 +7,7 @@ metadata:
 spec:
   config:
     container:
-      cpuLimitMilli: "1024"
+      cpuLimitMilli: "1025"
       envVars:
         DRIVER_DEBUG: sealed://WorkflowHandlerconfig.container.envs.DRIVER_DEBUG
         TF_VAR_rafay_config_file: sealed://WorkflowHandlerconfig.container.envs.TF_VAR_rafay_config_file
