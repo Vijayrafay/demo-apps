@@ -6,7 +6,6 @@ metadata:
 spec:
   blueprintConfig:
     name: minimal
-    version: latest
   cloudCredentials: rauto-aws-cloud-provider-name-885990
   config:
     addons:
