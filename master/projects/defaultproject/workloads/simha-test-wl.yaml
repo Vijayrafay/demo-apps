@@ -5,6 +5,18 @@ metadata:
   project: defaultproject
 spec:
   artifact:
-    artifact: {}
+    artifact:
+      chartPath:
+        name: Helm/redis-16.12.0.tgz
+      repository: simha-git
+      revision: master
+      valuesPaths:
+      - name: Helm/values.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
     type: Helm
   namespace: simha-ns
+  placement:
+    selector: rafay.dev/clusterName=automation-cluster-boot-eks-6907
+  version: simha-test-wl-v1-202505301055460000
