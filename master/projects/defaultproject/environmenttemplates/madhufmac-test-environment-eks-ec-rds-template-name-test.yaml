@@ -14,21 +14,21 @@ spec:
   - kind: resourcetemplate
     name: madhufmac-test-eks-resource-template-test
     resourceOptions:
-      version: v2
+      version: v3
     type: dynamic
   - dependsOn:
     - name: madhufmac-test-eks-resource-template-test
     kind: resourcetemplate
     name: madhufmac-test-ec-resource-template-test
     resourceOptions:
-      version: v2
+      version: v3
     type: dynamic
   - dependsOn:
     - name: madhufmac-test-eks-resource-template-test
     kind: resourcetemplate
     name: madhufmac-test-rds-resource-template-test
     resourceOptions:
-      version: v2
+      version: v3
     type: dynamic
   - dependsOn:
     - name: madhufmac-test-ec-resource-template-test
@@ -36,12 +36,12 @@ spec:
     kind: resourcetemplate
     name: madhufmac-test-workload-resource-template-test1
     resourceOptions:
-      version: v22
+      version: v3
     type: dynamic
   - kind: resourcetemplate
     name: madhu-resource2
     resourceOptions:
-      version: v2
+      version: v3
     type: dynamic
-  version: v4git
-  versionState: active
+  version: v33
+  versionState: draft
