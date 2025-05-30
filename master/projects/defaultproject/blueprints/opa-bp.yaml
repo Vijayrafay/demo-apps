@@ -22,5 +22,5 @@ spec:
       name: default
       version: latest
   type: custom
-  version: v4
+  version: mad
   versionState: active
