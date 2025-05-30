@@ -5,7 +5,7 @@ metadata:
   project: defaultproject
 spec:
   base:
-    name: default
+    name: minimal
     version: 3.3.0
   defaultAddons:
     enableCni: true
@@ -22,5 +22,5 @@ spec:
       name: default
       version: latest
   type: custom
-  version: v3
+  version: v4
   versionState: active
