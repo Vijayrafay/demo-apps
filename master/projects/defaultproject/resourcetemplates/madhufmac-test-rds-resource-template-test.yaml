@@ -38,5 +38,5 @@ spec:
         type: allowed
     value: $(environment.name)$
     valueType: expression
-  version: v2
-  versionState: active
+  version: v3
+  versionState: draft

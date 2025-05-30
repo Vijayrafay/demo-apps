@@ -57,5 +57,5 @@ spec:
         type: allowed
     value: $(resource."madhufmac-test-ec-resource-template-test".output.configuration_endpoint_address.value)$
     valueType: expression
-  version: v22
-  versionState: active
+  version: v3
+  versionState: draft

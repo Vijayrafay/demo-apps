@@ -79,5 +79,5 @@ spec:
     enabled: true
     projects:
     - name: rauto-infra-test-project
-  version: v2
-  versionState: active
+  version: v3
+  versionState: draft
