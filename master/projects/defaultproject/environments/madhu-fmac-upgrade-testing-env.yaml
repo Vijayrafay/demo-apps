@@ -10,7 +10,7 @@ spec:
     name: file://artifacts/madhu-fmac-upgrade-testing-env/sealed-secret.yaml
   template:
     name: madhufmac-test-environment-eks-ec-rds-template-name-test
-    version: v2
+    version: v3
     versionState: unspecified
   variables:
   - name: aws_cloud_provider_access_key
