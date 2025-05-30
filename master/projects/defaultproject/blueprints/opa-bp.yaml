@@ -9,8 +9,6 @@ spec:
     version: 3.3.0
   defaultAddons:
     enableCni: true
-    enableIngress: true
-    enableMonitoring: true
     monitoring:
       gpuOperator: {}
   driftWebhook: {}
@@ -24,5 +22,5 @@ spec:
       name: default
       version: latest
   type: custom
-  version: v2
+  version: v3
   versionState: active
