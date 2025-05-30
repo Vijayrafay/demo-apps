@@ -1,0 +1,27 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: rauto-share-bp-527347
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 3.3.0
+  customAddons:
+  - name: rauto-addon-527347
+    version: rautoV1
+  defaultAddons:
+    enableIngress: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
+  driftWebhook:
+    enabled: true
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-project-366639
+    - name: rauto-project-one-366639
+  type: custom
+  version: v1
+  versionState: active
