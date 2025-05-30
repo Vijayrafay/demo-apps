@@ -5,4 +5,5 @@ metadata:
   project: defaultproject
 spec:
   limitRange: {}
+  namespaceMeshPolicyParams: {}
   resourceQuotas: {}
