@@ -1,0 +1,54 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: Environment
+metadata:
+  name: madhutest-postupgrade
+  project: defaultproject
+spec:
+  secret:
+    name: file://artifacts/madhutest-postupgrade/sealed-secret.yaml
+  template:
+    name: madhufmac-test-environment-eks-ec-rds-template-name-test
+    version: v3
+    versionState: unspecified
+  variables:
+  - name: aws_cloud_provider_access_key
+    options:
+      description: aws_access_key
+      mask: true
+      override:
+        type: allowed
+      required: true
+      sensitive: true
+    value: sealed://variables.0.
+    valueType: text
+  - name: db_password
+    options:
+      description: db_password
+      mask: true
+      override:
+        type: allowed
+      required: true
+      sensitive: true
+    value: sealed://variables.1.
+    valueType: text
+  - name: workload_namespace
+    value: madhu-postupgrade-namespace-885990
+    valueType: text
+  - name: aws_cloud_provider_name
+    value: madhu-postupgrade-aws-cloud-provider-name-885990
+    valueType: text
+  - name: name1
+    value: madhu-postupgrade-infra1-provisioner
+    valueType: text
+  - name: workload_name
+    value: madhu-postupgrade-workload-name-885990
+    valueType: text
+  - name: workload_env
+    value: madhu-postupgrade-workload-name-885990
+    valueType: text
+  - name: eks_cluster_name
+    value: madhu-postupgrade-eaas-eks-885990
+    valueType: text
+  - name: cluster_id
+    value: madhu-postupgrade-eaas-cluster-id-885990
+    valueType: text
