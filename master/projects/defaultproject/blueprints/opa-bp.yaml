@@ -22,3 +22,4 @@ spec:
       version: latest
   type: custom
   version: v1
+  versionState: active

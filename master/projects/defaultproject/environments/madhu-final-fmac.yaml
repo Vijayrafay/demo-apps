@@ -11,25 +11,27 @@ spec:
   template:
     name: madhufmac-test-environment-eks-ec-rds-template-name-test
     version: v2
-    versionState: active
+    versionState: unspecified
   variables:
   - name: aws_cloud_provider_access_key
     options:
       description: aws_access_key
+      mask: true
       override:
         type: allowed
       required: true
       sensitive: true
-    value: sealed://variables.0
+    value: sealed://variables.0.
     valueType: text
   - name: db_password
     options:
       description: db_password
+      mask: true
       override:
         type: allowed
       required: true
       sensitive: true
-    value: sealed://variables.1
+    value: sealed://variables.1.
     valueType: text
   - name: eks_cluster_name
     value: madhu-final-fmac-cluster

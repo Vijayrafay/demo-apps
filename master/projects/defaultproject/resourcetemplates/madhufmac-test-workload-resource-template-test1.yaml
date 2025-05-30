@@ -10,8 +10,6 @@ spec:
   - name: rauto-workload-config-config-context-885990
   provider: terraform
   providerOptions:
-    driver:
-      name: madhucustom
     terraform:
       backendConfigs:
       - $(key=eaas/\(environment.project.name)/\(environment.name)/rauto-workload-resource-template.tfstate)$
@@ -19,6 +17,8 @@ spec:
       - bucket="madhucur2"
       backendType: custom
       refresh: true
+    workflowHandler:
+      name: madhucustom
   repositoryOptions:
     branch: fmac-testing
     directoryPath: workloads/eaas/terraform/rafay-workload

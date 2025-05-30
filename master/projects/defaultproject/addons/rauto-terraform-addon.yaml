@@ -16,3 +16,4 @@ spec:
   namespace: rauto-bootstrap-namespace
   sharing: {}
   version: v1.0
+  versionState: active

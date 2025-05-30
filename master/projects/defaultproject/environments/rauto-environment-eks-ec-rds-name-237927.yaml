@@ -9,23 +9,25 @@ spec:
   template:
     name: rauto-environment-eks-ec-rds-template-name-237927
     version: version1-237927
-    versionState: active
+    versionState: unspecified
   variables:
   - name: db_password
     options:
       description: db_password
+      mask: true
       override:
         type: allowed
       required: true
       sensitive: true
-    value: sealed://variables.0
+    value: sealed://variables.0.
     valueType: text
   - name: aws_cloud_provider_access_key
     options:
       description: aws_access_key
+      mask: true
       override:
         type: allowed
       required: true
       sensitive: true
-    value: sealed://variables.1
+    value: sealed://variables.1.
     valueType: text

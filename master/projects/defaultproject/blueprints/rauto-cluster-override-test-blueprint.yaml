@@ -17,3 +17,4 @@ spec:
     enabled: true
   type: custom
   version: v1
+  versionState: active

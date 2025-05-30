@@ -16,3 +16,4 @@ spec:
   namespace: rauto-bootstrap-ns-548
   sharing: {}
   version: v1
+  versionState: active

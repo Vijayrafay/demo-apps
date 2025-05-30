@@ -10,8 +10,6 @@ spec:
   - name: rauto-eks-config-config-context-885990
   provider: terraform
   providerOptions:
-    driver:
-      name: madhucustom
     terraform:
       backendConfigs:
       - bucket="madhucur2"
@@ -19,6 +17,8 @@ spec:
       - $(key=eaas/\(environment.project.name)/\(environment.name)/rauto-eks-resource-template.tfstate)$
       backendType: custom
       refresh: true
+    workflowHandler:
+      name: madhucustom
   repositoryOptions:
     branch: fmac-testing
     directoryPath: workloads/eaas/terraform/rafay-eks
