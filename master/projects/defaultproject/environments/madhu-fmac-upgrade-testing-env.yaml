@@ -10,12 +10,12 @@ spec:
     name: file://artifacts/madhu-fmac-upgrade-testing-env/sealed-secret.yaml
   template:
     name: madhufmac-test-environment-eks-ec-rds-template-name-test
-    version: v3
+    version: v2
     versionState: unspecified
   variables:
-  - name: aws_cloud_provider_access_key
+  - name: db_password
     options:
-      description: aws_access_key
+      description: db_password
       mask: true
       override:
         type: allowed
@@ -23,9 +23,9 @@ spec:
       sensitive: true
     value: sealed://variables.0.
     valueType: text
-  - name: db_password
+  - name: aws_cloud_provider_access_key
     options:
-      description: db_password
+      description: aws_access_key
       mask: true
       override:
         type: allowed
