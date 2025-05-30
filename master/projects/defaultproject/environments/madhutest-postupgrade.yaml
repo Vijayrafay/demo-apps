@@ -10,7 +10,7 @@ spec:
     name: file://artifacts/madhutest-postupgrade/sealed-secret.yaml
   template:
     name: madhufmac-test-environment-eks-ec-rds-template-name-test
-    version: v3
+    version: v33
     versionState: unspecified
   variables:
   - name: db_password
