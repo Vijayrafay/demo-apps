@@ -7,7 +7,8 @@ spec:
   envs:
   - key: INFRACOST_API_KEY
     options:
+      mask: true
       sensitive: true
-    value: sealed://INFRACOST_API_KEY
+    value: sealed://INFRACOST_API_KEY.
   secret:
     name: file://artifacts/rauto-infra-config-config-context-671768/sealed-secret.yaml

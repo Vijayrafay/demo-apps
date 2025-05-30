@@ -22,19 +22,21 @@ spec:
   - name: aws_cloud_provider_access_key
     options:
       description: aws_access_key
+      mask: true
       override:
         type: allowed
       required: true
       sensitive: true
-    value: sealed://variables.4
+    value: sealed://variables.4.
     valueType: text
   - name: aws_cloud_provider_secret_key
     options:
       description: aws_secret
+      mask: true
       override:
         type: allowed
       sensitive: true
-    value: sealed://variables.5
+    value: sealed://variables.5.
     valueType: text
   - name: eks_cluster_region
     value: us-east-1

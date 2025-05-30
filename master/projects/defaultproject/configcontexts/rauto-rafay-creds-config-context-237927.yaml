@@ -7,6 +7,8 @@ spec:
   files:
   - data: c2VhbGVkOi8vZmlsZXMuMA==
     name: opt/rafay/rctl.conf
+    options:
+      mask: true
     sensitive: true
   secret:
     name: file://artifacts/rauto-rafay-creds-config-context-237927/sealed-secret.yaml

@@ -59,8 +59,6 @@ spec:
               type: http
   provider: terraform
   providerOptions:
-    driver:
-      name: madhucustom
     terraform:
       backendConfigs:
       - bucket="madhucur2"
@@ -69,6 +67,8 @@ spec:
       backendType: custom
       lock: false
       refresh: true
+    workflowHandler:
+      name: madhucustom
   repositoryOptions:
     branch: master
     directoryPath: workloads/eaas/terraform-guides/infrastructure-as-code/aws-ec2-instance/

@@ -10,6 +10,8 @@ spec:
   files:
   - data: c2VhbGVkOi8vZmlsZXMuMA==
     name: tmp/inputs/one.tfvars
+    options:
+      mask: true
     sensitive: true
   secret:
     name: file://artifacts/rauto-ec2-config-config-context-671768/sealed-secret.yaml

@@ -46,10 +46,11 @@ spec:
   - name: postgres_password
     options:
       description: this is postgress password
+      mask: true
       override:
         type: allowed
       sensitive: true
-    value: sealed://variables.3
+    value: sealed://variables.3.
     valueType: expression
   - name: redis_config_endpoint
     options:

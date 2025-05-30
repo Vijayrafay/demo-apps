@@ -22,11 +22,12 @@ spec:
   - name: db_password
     options:
       description: db_password
+      mask: true
       override:
         type: allowed
       required: true
       sensitive: true
-    value: sealed://variables.4
+    value: sealed://variables.4.
     valueType: text
   - name: region
     value: us-east-1
