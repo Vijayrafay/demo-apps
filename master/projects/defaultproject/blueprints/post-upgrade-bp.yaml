@@ -4,6 +4,24 @@ metadata:
   name: post-upgrade-bp
   project: defaultproject
 spec:
-  driftWebhook:
-    enabled: true
+  base:
+    name: default
+    version: 3.3.0
+  defaultAddons:
+    enableIngress: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
+  driftWebhook: {}
+  opaPolicy:
+    opaPolicy:
+    - name: policy-restricted
+      version: version-1748584963
+    - name: policy-privileged
+      version: version-1748584963
+    profile:
+      name: default
+      version: latest
   type: custom
+  version: v1
+  versionState: active
