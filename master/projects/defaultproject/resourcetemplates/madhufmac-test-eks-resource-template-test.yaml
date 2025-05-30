@@ -23,5 +23,5 @@ spec:
     branch: fmac-testing
     directoryPath: workloads/eaas/terraform/rafay-eks
     name: rauto-repo-885990
-  version: v2
-  versionState: active
+  version: v3
+  versionState: draft
