@@ -1,0 +1,22 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: rauto-cluster-override-test-blueprint
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 3.5.0
+  customAddons:
+  - name: rauto-cluster-override-test-addon
+    version: v1
+  defaultAddons:
+    enableIngress: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v1
+  versionState: active
