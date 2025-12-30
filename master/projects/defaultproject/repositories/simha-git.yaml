@@ -1,0 +1,26 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: simha-git
+  project: defaultproject
+spec:
+  agents:
+  - name: simha-agent
+  credentials:
+    password: sealed://credentials.password
+    username: vijay@rafay.co
+  endpoint: https://github.com/Vijayrafay/demo-apps.git
+  options: {}
+  secret:
+    name: file://artifacts/simha-git/sealed-secret.yaml
+  type: Git
+status:
+  agents:
+  - id: rx28oml
+    name: simha-agent
+  projects:
+  - projectId: 7w2lnkp
+    repositoryId: 7dkgjkx
+  webhookConfig:
+    webhookSecret: 531814b785fa33e04825e518367e056c5a3bcd6dccc9c0ea9e224ea79e2d79df
+    webhookURL: https://console.harish.dev.rafay-edge.net/v2/config/webhook/repository/7dkgjkx

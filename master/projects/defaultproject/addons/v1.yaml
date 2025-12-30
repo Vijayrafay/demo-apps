@@ -1,0 +1,21 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  annotations:
+    rafay.dev/audit_type: BROWSER||Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)
+      AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+    rafay.dev/audit_user: onprem@rafay.co
+    rafay.dev/audit_user_group: Organization Admins
+  name: v1
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      catalog: default-helm
+      chartName: simple-nginx
+      chartVersion: 0.1.0
+    type: Helm
+  namespace: simha-ns
+  sharing: {}
+  version: v1
+  versionState: active
