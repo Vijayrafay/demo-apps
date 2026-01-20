@@ -4,6 +4,7 @@ metadata:
   name: git-pipeline
   project: defaultproject
 spec:
+  active: true
   stages:
   - config:
       destinationRepo: {}
