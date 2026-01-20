@@ -1,0 +1,19 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: wl-3
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/wl-3/redis-17.3.11.tgz
+      valuesPaths:
+      - name: file://artifacts/wl-3/yamlworkload4084.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: simha-ns-3
+  placement:
+    selector: rafay.dev/clusterName=simha-eks-1

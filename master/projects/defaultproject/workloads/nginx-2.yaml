@@ -1,0 +1,19 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: nginx-2
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      catalog: default-helm
+      chartName: simple-nginx
+      chartVersion: 0.1.0
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: simha-ns-2
+  placement:
+    selector: rafay.dev/clusterName in (simha-eks-1,simha-role-eks)
+  version: nginx-2-v1-202601200847480000
