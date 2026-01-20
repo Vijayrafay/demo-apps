@@ -42,7 +42,7 @@ spec:
       tags:
         email: vijay@rafay.co
         env: qa
-      version: "1.30"
+      version: v1.30.14-eks-ac2d5a0
     network:
       cni:
         name: aws-cni
