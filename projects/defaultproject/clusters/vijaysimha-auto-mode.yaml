@@ -27,6 +27,23 @@ spec:
       nodePools:
       - system
       - general-purpose
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 1
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceTypes:
+      - t3.xlarge
+      maxSize: 2
+      minSize: 1
+      name: ng-4ce4b7c7
+      tags:
+        email: gopikrishna@rafay.co
+        env: dev
+      volumeSize: 80
+      volumeType: gp3
     metadata:
       name: vijaysimha-auto-mode
       region: us-west-2
