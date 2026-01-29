@@ -42,6 +42,7 @@ spec:
       tags:
         email: gopikrishna@rafay.co
         env: dev
+      version: "1.33"
       volumeSize: 80
       volumeType: gp3
     metadata:
