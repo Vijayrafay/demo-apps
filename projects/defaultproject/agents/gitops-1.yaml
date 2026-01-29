@@ -1,0 +1,10 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: gitops-1
+  project: defaultproject
+spec:
+  cluster:
+    name: simha-eks-1
+  type: Cluster
+  version: r3.3.0

@@ -1,0 +1,42 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: vijaysimha-auto-mode
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default
+    version: 3.3.0
+  cloudCredentials: simha-aws
+  config:
+    accessConfig:
+      authenticationMode: API
+      bootstrapClusterCreatorAdminPermissions: true
+    addons:
+    - name: aws-ebs-csi-driver
+      version: latest
+    addonsConfig: {}
+    autoModeConfig:
+      enabled: true
+      nodePools:
+      - system
+      - general-purpose
+    metadata:
+      name: vijaysimha-auto-mode
+      region: us-west-2
+      tags:
+        email: vijay@rafay.co
+        env: qa
+      version: "1.32"
+    network:
+      cni:
+        name: aws-cni
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: true
+      nat:
+        gateway: Single
+  proxyConfig: {}
+  type: aws-eks
