@@ -19,6 +19,8 @@ spec:
       version: v1.21.1-eksbuild.3
     - name: coredns
       version: v1.11.4-eksbuild.24
+    - name: kube-proxy
+      version: v1.32.11-eksbuild.2
     addonsConfig: {}
     autoModeConfig:
       enabled: true
