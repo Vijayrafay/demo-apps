@@ -6,6 +6,6 @@ metadata:
 spec:
   active: true
   cluster:
-    name: simha-29-jan
+    name: simha-feb9-eks
   type: Cluster
   version: r3.3.0
