@@ -1,0 +1,11 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: demo
+  project: defaultproject
+spec:
+  active: true
+  cluster:
+    name: mks-test-ha
+  type: Cluster
+  version: r3.7.0
