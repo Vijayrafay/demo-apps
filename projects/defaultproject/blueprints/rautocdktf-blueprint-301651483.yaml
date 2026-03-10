@@ -1,0 +1,26 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: rautocdktf-blueprint-301651483
+  project: defaultproject
+spec:
+  base:
+    name: default-aks
+    version: 3.7.0
+  customAddons:
+  - name: rautohelm-addon-301651483
+    version: v1.0
+  - name: rautoyaml-ssaddon-301651483
+    version: v1.0
+  defaultAddons:
+    enableIngress: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
+      metricsServer: {}
+      prometheusAdapter: {}
+  driftWebhook:
+    enabled: true
+  type: golden
+  version: v1.0
+  versionState: active

@@ -1,0 +1,21 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  annotations:
+    rafay.dev/audit_type: BROWSER||Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)
+      AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+    rafay.dev/audit_user: onprem@rafay.co
+  labels:
+    rafay.dev/version: v1
+  name: simha-addons
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/simha-addons/nginx.yaml
+    type: Yaml
+  namespace: simhans
+  sharing: {}
+  version: v1
+  versionState: active

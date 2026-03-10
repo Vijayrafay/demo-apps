@@ -1,0 +1,26 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  annotations:
+    rafay.dev/audit_type: BROWSER||terraform
+    rafay.dev/audit_user: onprem@rafay.co
+  labels:
+    rafay.dev/version: v1.0
+  name: rautohelm-addon-301651483
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: addons/helm3_workloads/chartmuseum/chartmuseum-3.4.0.tgz
+      repository: rauto-git-repo
+      revision: master
+      valuesPaths:
+      - name: addons/helm3_workloads/chartmuseum/chartmuseum-values.yaml
+    options:
+      timeout: 0s
+    type: Helm
+  namespace: default-rafay
+  sharing: {}
+  version: v1.0
+  versionState: active

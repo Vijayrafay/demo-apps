@@ -1,0 +1,23 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  annotations:
+    rafay.dev/audit_type: BROWSER||terraform
+    rafay.dev/audit_user: onprem@rafay.co
+  labels:
+    platform: terraform
+    rafay.dev/version: v1.0
+    rauto: ""
+  name: rauto-addon-terraform-664775122
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://addon-nginx.yaml
+    options: {}
+    type: Yaml
+  namespace: rauto-ns-664775122
+  sharing: {}
+  version: v1.0
+  versionState: active

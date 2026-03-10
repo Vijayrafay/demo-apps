@@ -1,0 +1,81 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    type: mks
+  name: rauto-cli-ha-simha
+  project: defaultproject
+spec:
+  blueprint:
+    name: minimal
+  config:
+    autoApproveNodes: true
+    highAvailability: true
+    kubernetesVersion: v1.34.1
+    location: sanjose-us
+    network:
+      cni:
+        name: Calico
+        version: 3.26.1
+      podSubnet: 10.244.0.0/16
+      serviceSubnet: 10.96.0.0/12
+    nodes:
+    - arch: amd64
+      hostname: mks-1
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.1.67
+      roles:
+      - Worker
+      - ControlPlane
+      ssh:
+        ipAddress: 129.146.157.194
+        port: "22"
+        privateKeyPath: /Users/vijay/Downloads/oci-abi-key.key
+        username: ubuntu
+    - arch: amd64
+      hostname: mks-2
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.1.207
+      roles:
+      - Worker
+      - ControlPlane
+      ssh:
+        ipAddress: 129.146.145.94
+        port: "22"
+        privateKeyPath: /Users/vijay/Downloads/oci-abi-key.key
+        username: ubuntu
+    - arch: amd64
+      hostname: mks-3
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.1.7
+      roles:
+      - Worker
+      - ControlPlane
+      ssh:
+        ipAddress: 129.146.70.76
+        port: "22"
+        privateKeyPath: /Users/vijay/Downloads/oci-abi-key.key
+        username: ubuntu
+    - arch: amd64
+      hostname: mks-4
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.1.104
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 129.146.162.105
+        port: "22"
+        privateKeyPath: /Users/vijay/Downloads/oci-abi-key.key
+        username: ubuntu
+    - arch: amd64
+      hostname: mks-5
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.1.133
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 161.153.102.142
+        port: "22"
+        privateKeyPath: /Users/vijay/Downloads/oci-abi-key.key
+        username: ubuntu
+  type: mks

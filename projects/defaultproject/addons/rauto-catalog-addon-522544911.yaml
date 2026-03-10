@@ -1,0 +1,24 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  annotations:
+    rafay.dev/audit_type: BROWSER||terraform
+    rafay.dev/audit_user: onprem@rafay.co
+  description: This is a terraform test catalog addon
+  labels:
+    rafay.dev/version: v1.0
+  name: rauto-catalog-addon-522544911
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      catalog: default-helm
+      chartName: opentelemetry-operator
+      chartVersion: 0.57.0
+    options:
+      timeout: 0s
+    type: Helm
+  namespace: rauto-namespace-522544911
+  sharing: {}
+  version: v1.0
+  versionState: active

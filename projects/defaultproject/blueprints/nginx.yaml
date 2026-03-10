@@ -1,0 +1,21 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: nginx
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 3.7.0
+  customAddons:
+  - name: simha-addons
+    version: v1
+  defaultAddons:
+    enableIngress: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
+  driftWebhook: {}
+  type: custom
+  version: v1
+  versionState: active

@@ -1,0 +1,28 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  annotations:
+    rafay.dev/audit_type: BROWSER||terraform
+    rafay.dev/audit_user: onprem@rafay.co
+  labels:
+    platform: terraform
+    rafay.dev/version: v1.0
+    rauto: ""
+  name: rauto-terraform-addon-901155272
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://nginx-9.4.2.tgz
+      valuesPaths:
+      - name: file://nginx-values-1-with-rauto-automation-ecr-registry.yaml
+      - name: file://nginx-values-2-with-rauto-automation-ecr-registry.yaml
+      - name: file://nginx-values-3-with-rauto-automation-ecr-registry.yaml
+    options:
+      timeout: 0s
+    type: Helm
+  namespace: rauto-ns-664775122
+  sharing: {}
+  version: v1.0
+  versionState: active

@@ -1,0 +1,22 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  annotations:
+    rafay.dev/audit_type: -||-
+    rafay.dev/audit_user: onprem@rafay.co
+  labels:
+    rafay.dev/version: v1
+  name: rauto-addon-5549355
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/rauto-addon-5549355/chartmuseum-3.4.0.tgz
+      valuesPaths:
+      - name: file://artifacts/rauto-addon-5549355/chartmuseum-values.yaml
+    type: Helm
+  namespace: default-rafay
+  sharing: {}
+  version: v1
+  versionState: active
