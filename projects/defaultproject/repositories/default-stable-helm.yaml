@@ -1,0 +1,16 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: default-stable-helm
+  project: defaultproject
+spec:
+  endpoint: https://charts.helm.sh/stable
+  options: {}
+  type: Helm
+status:
+  projects:
+  - projectId: rx28oml
+    repositoryId: rx28oml
+  webhookConfig:
+    webhookSecret: 730d2e2b5f57cb510856b97c27da47599c9472a669705be5a19f04ee2039cbed
+    webhookURL: https://console.vijay.dev.rafay-edge.net/v2/config/webhook/repository/rx28oml

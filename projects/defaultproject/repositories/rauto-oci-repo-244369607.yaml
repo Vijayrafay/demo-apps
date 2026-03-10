@@ -1,0 +1,21 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: rauto-oci-repo-244369607
+  project: defaultproject
+spec:
+  credentials:
+    password: sealed://credentials.password
+    username: automation-user@rafay.co
+  endpoint: oci://c8n.io/automation-user/nginx
+  options: {}
+  secret:
+    name: file://artifacts/rauto-oci-repo-244369607/sealed-secret.yaml
+  type: Helm
+status:
+  projects:
+  - projectId: rx28oml
+    repositoryId: jkedgmw
+  webhookConfig:
+    webhookSecret: 28c468629ca4076fd00aa5d3cd218a65f9ad8832bdcc1c87963d2e7a9396aec3
+    webhookURL: https://console.vijay.dev.rafay-edge.net/v2/config/webhook/repository/jkedgmw

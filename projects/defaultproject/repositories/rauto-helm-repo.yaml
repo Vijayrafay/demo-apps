@@ -1,0 +1,21 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: rauto-helm-repo
+  project: defaultproject
+spec:
+  credentials:
+    password: sealed://credentials.password
+    username: admin
+  endpoint: https://regression-charts.run.dev.rafay-edge.net/charts
+  options: {}
+  secret:
+    name: file://artifacts/rauto-helm-repo/sealed-secret.yaml
+  type: Helm
+status:
+  projects:
+  - projectId: rx28oml
+    repositoryId: pk0xlk6
+  webhookConfig:
+    webhookSecret: 57967497a67ad07ef8899a8bde9a85bb23f0f64a0b14799c8a6a683df664214c
+    webhookURL: https://console.vijay.dev.rafay-edge.net/v2/config/webhook/repository/pk0xlk6
